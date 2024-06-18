@@ -11,14 +11,20 @@ a similarity analysis between traditional projects and standardized products,
 and a generative design to optimize project configurations with modern methods of construction.
 In this repository we will store the sourcecode, test and efforts towards the development of the tool 
 
+## Libraries
+
+The project relies mainly on open source libraries and platforms whch include
+- https://threejs.org/
+- https://ifcopenshell.org/
+- https://github.com/TopoVague/Topologic
+- https://github.com/mcneel/opennurbs
 
 ## Team
-
-Evangelos Pantazis / ZHAW
-Furio Sondrini / Implenia
-Giulia Curletto / Implenia
-Jianpeng Cao / TU Delft
-Konrad Graser / ZHAW
+- Evangelos Pantazis / ZHAW - Researcher
+- Jianpeng Cao / TU Delft - Post Doc Researcher 
+- Konrad Graser / ZHAW - Research/Program Manager
+- Furio Sondrini / Implenia - Digital Design and Innovation Manager 
+- Giulia Curletto / Implenia - Digital Design and Innovation Manager 
 
 ## Research Partners  
 ZHAW - Zürcher Hochschule für Angewandte Wissenschaften
