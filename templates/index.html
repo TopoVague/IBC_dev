@@ -1,42 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>CSV to Grid with 3D Visualization and IFC Export</title>
-        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-        <script src="{{ url_for('static', filename='d3.v5.min.js') }}"></script>
-        <script src="{{ url_for('static', filename='lodash.min.js') }}"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSV to Grid with 3D Visualization and IFC Export</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="{{ url_for('static', filename='d3.v5.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='lodash.min.js') }}"></script>
+</head>
 
-
-	
 <body>
-    <div id="Welcome">
-       <h1> "Welcome to the Implenia Elements Catalog Alpha"</h1>
+    <div class="hero-image">
+        <div class="hero-text">
+            <h1> Welcome to the Implenia Elements Catalog Alpha </h1>
+            <p>This is a Work in Progress!</p>
+        </div>
+    </div> 
 
+    <div id="Welcome" style="padding-top: 40px;" >
+        
     </div>
+        
+    <div id="Container" style="padding: 40px;"> 
     <div id="FileLoad">
+        <label for="text">Load .csv file:</label>
         <input type="file" id="file">
     </div>
+
     <div id="Filters">
-        <label for="text">Category:</label>
-        <input type="text" class="filterInput" placeholder="Filter value 1"> <br>
-        <label for="text">Filter 2:</label>
+   
+        <label for="text">Element Type:</label>
+        <input type="text" class="filterInput" placeholder="What are you looking for i.e. Wall?"> <br>
+       <!-- <label for="text">Position (External, Internal):</label>
         <input type="text" class="filterInput" placeholder="Filter value 2"><br>
-        <label for="text">Filter 3:</label>
-        <input type="text" class="filterInput" placeholder="Filter value 3"><br>
+        <label for="text">Construction Type (i.e. 3d Mod, Facade, 2d, In Situ):</label>
+        <input type="text" class="filterInput" placeholder="Filter value 3"><br>-->
+
+        <label for="filter2">Element Position:</label>
+        <select id="filterlist2" class="filterMenu">
+            <option value="">Where is the element?</option>
+            <option value="INTERNAL">Internal</option>
+            <option value="EXTERNAL">External</option>
+        </select><br>
+
+        <label for="filter1">Fabrication Type:</label>
+        <select id="filterlist1" class="filterMenu">
+            <option value="">Select Fabrication Method</option>
+            <option value="2D Panels">2D Element</option>
+            <option value="3D Mod">3d Element</option>
+            <option value="Facade">Facade Element</option>
+            <option value="In Situ">In Situ</option>
+        </select><br>
+        
+
+        <!--Range filter -->
         <label for="minThickness">Min Thickness:</label>
-        <input type="number" id="minThickness" class="filterInput">
+        <input type="number" id="minThickness" class="filterInputRange">
         <label for="maxThickness">Max Thickness:</label>
-        <input type="number" id="maxThickness" class="filterInput">
-        <button id="filterButton">Filter</button>
+        <input type="number" id="maxThickness" class="filterInputRange">
+        <br>
+        <!--filter button -->
+        <button id="filterButton" class="Button">Filter Elements</button>
     </div>
         
     
 
     <div id="resultsCount" span style="color: red; font-size: large;"></div>
     <div id="gridContainer"></div>
+</div>
+    <!-- 3d viewer 
+    <div id="3d Viewer">
+        <iframe title="Speckle" src="https://app.speckle.systems/projects/f8fd6b29a7/models/625255f129#embed=%7B%22isEnabled%22%3Atrue%2C%22isTransparent%22%3Atrue%7D" width="100%" height="550" frameborder="0"></iframe>   
+    </div>-->
 
     <!-- Detail Modal -->
     <div id="detailModal" class="modal">

@@ -3,7 +3,6 @@
     var NEWLINE = '\n';
     var fileInput = document.getElementById('file');
     var gridContainer = document.getElementById('gridContainer');
-    var filterInputs = document.querySelectorAll('.filterInput');
     var filterButton = document.getElementById('filterButton');
     var resultsCountDiv = document.getElementById('resultsCount');
     var detailModal = document.getElementById('detailModal');
@@ -12,26 +11,27 @@
     var closeModal = document.querySelector('.close');
     var threeCanvas = document.getElementById('threeCanvas');
     var csvData = [];
-    var hiddenColumns = [
-        'NUMBER CODE',
+
+    var hiddenColumns = [    
+        'NUMBER CODE', 
+        'LOAD FUNCTION', 
+        'STIFFENING FUNCTION', 
+        'NUMBER CODE', 
         'LOAD FUNCTION',
-        'STIFFENING FUNCTION',
-        'NUMBER CODE',
-        'LOAD FUNCTION',
-        'PREFABRICATION',
+        'PREFABRICATION', 
         'WATER',
-        'HEATING',
+        'HEATING', 
         'VENTILATION',
         'ACUSTIC REQS',
-        'ELECTRICITY',
+        'ELECTRICITY', 
         'FIRE REGULATION',
         'FIRE PROTECTION',
         'FINISHING',
         'VERSION',
-        'ImageURL'
-    ];
+        'U-WERT',
+        'ImageURL']; 
 
-    if (!fileInput || !gridContainer || !filterInputs || !filterButton || !resultsCountDiv || !detailModal || !modalImage || !modalDetails || !closeModal || !threeCanvas) {
+    if (!fileInput || !gridContainer || !filterButton || !resultsCountDiv || !detailModal || !modalImage || !modalDetails || !closeModal || !threeCanvas) {
         console.error('One or more required elements are missing.');
         return;
     }
@@ -43,11 +43,22 @@
     });
 
     filterButton.addEventListener('click', function() {
-        var filterValues = Array.from(filterInputs).map(input => input.value.trim().toLowerCase()).filter(value => value);
-        var minThickness = parseFloat(document.getElementById('minThickness').value);
-        var maxThickness = parseFloat(document.getElementById('maxThickness').value);
-        console.log('Min Thickness:', minThickness, 'Max Thickness:', maxThickness);
-        toGrid(csvData, filterValues, isNaN(minThickness) ? null : minThickness, isNaN(maxThickness) ? null : maxThickness);
+        var filterValues = {
+            filter1: document.getElementById('filter1').value.trim().toLowerCase(),
+            filter2: document.getElementById('filter2').value.trim().toLowerCase(),
+            filter3: document.getElementById('filter3').value.trim().toLowerCase(),
+            minThickness: parseFloat(document.getElementById('minThickness').value),
+            maxThickness: parseFloat(document.getElementById('maxThickness').value)
+        };
+
+        // Convert empty string to null
+        if (filterValues.filter1 === "") filterValues.filter1 = null;
+        if (filterValues.filter2 === "") filterValues.filter2 = null;
+        if (filterValues.filter3 === "") filterValues.filter3 = null;
+        if (isNaN(filterValues.minThickness)) filterValues.minThickness = null;
+        if (isNaN(filterValues.maxThickness)) filterValues.maxThickness = null;
+
+        toGrid(csvData, filterValues);
     });
 
     closeModal.addEventListener('click', function() {
@@ -70,14 +81,13 @@
 
         reader.onload = function(e) {
             csvData = e.target.result.split(NEWLINE);
-            console.log('CSV Data:', csvData); // Log entire CSV data for verification
-            toGrid(csvData);
+            toGrid(csvData); // Load grid without filters initially
         };
 
         reader.readAsText(file);
     }
 
-    function toGrid(rows, filterValues = [], minThickness = null, maxThickness = null) {
+    function toGrid(rows, filterValues = {}) {
         if (!rows || rows.length === 0) {
             console.warn('No rows to process.');
             return;
@@ -88,10 +98,8 @@
         }
 
         var headers = rows[0].trim().split(DELIMITER);
-        //console.log('Headers:', headers); // Log headers for verification
 
         var filteredRowCount = 0;
-        var filteredThicknessRowCount = 0;
 
         for (var i = 1; i < rows.length; i++) {
             var r = rows[i].trim();
@@ -100,47 +108,33 @@
             }
 
             var cols = r.split(DELIMITER);
-
             if (cols.length === 0) {
                 continue;
             }
 
-            var matchesAllFilters = filterValues.every(filterValue => 
-                cols.some(col => col.toLowerCase().includes(filterValue))
-            );
+            var filter1Index = headers.indexOf('FILTER1');
+            var filter2Index = headers.indexOf('FILTER2');
+            var filter3Index = headers.indexOf('FILTER3');
+            var thicknessIndex = headers.indexOf('THICKNESS (mm)');
 
-            if (!matchesAllFilters) {
+            if (filter1Index === -1 || filter2Index === -1 || filter3Index === -1 || thicknessIndex === -1) {
+                console.error('One or more required columns not found.');
                 continue;
             }
 
-            var thicknessIndex = headers.indexOf('THICKNESS (mm)'); // Adjust the column name as per your CSV
-            if (thicknessIndex === -1) {
-                console.error('THICKNESS column not found in CSV.');
-                continue;
-            }
-
+            var filter1 = cols[filter1Index].trim().toLowerCase();
+            var filter2 = cols[filter2Index].trim().toLowerCase();
+            var filter3 = cols[filter3Index].trim().toLowerCase();
             var thickness = parseFloat(cols[thicknessIndex]);
-            console.log(`Parsed thickness for row ${i}:`, thickness); // Log parsed thickness for each row
 
-
-            if (isNaN(thickness)) {
-                console.error('Invalid thickness value:', cols[thicknessIndex]);
-                continue;
-            }
-
-            if ((minThickness !== null && thickness < minThickness) || (maxThickness !== null && thickness > maxThickness)) {
-                console.log(`Row ${i} excluded due to thickness filter:`, thickness);
-                continue;
-            }
-
-            if (thickness> minThickness  && thickness < maxThickness) {
-                filteredThicknessRowCount +=1;
-                console.log(`GOT in HERE- number of elemetns within range:`, filteredThicknessRowCount);
-            }
+            if (filterValues.filter1 && filterValues.filter1 !== filter1) continue;
+            if (filterValues.filter2 && filterValues.filter2 !== filter2) continue;
+            if (filterValues.filter3 && filterValues.filter3 !== filter3) continue;
+            if (filterValues.minThickness !== null && thickness < filterValues.minThickness) continue;
+            if (filterValues.maxThickness !== null && thickness > filterValues.maxThickness) continue;
 
             filteredRowCount++;
 
-            
             var gridItem = document.createElement('div');
             gridItem.classList.add('gridItem');
 
@@ -188,39 +182,39 @@
         modalImage.src = imageUrl;
         modalDetails.innerHTML = '';
         let partWidth = 1, partHeight = 1, partDepth = 1;
-        let objectName = '';
-        let objectCategory = '';
+        objectCode = '';
+        objectThickness = '';
+        objectIsExternal = '';
 
         details.forEach(function(detail) {
             var p = document.createElement('p');
             p.textContent = `${detail.header}: ${detail.value}`;
             modalDetails.appendChild(p);
 
-            if (detail.header === 'NAME') {
-                objectName = detail.value;
+            if (detail.header === 'NUMBER CODE') {
+                objectCode = detail.value;
             } else if (detail.header === 'CATEGORY') {
                 objectCategory = detail.value.toLowerCase();
+            } else if (detail.header === 'THICKNESS (mm)') {
+                objectThickness = detail.value; 
+            } else if (detail.header === 'EXTERNAL') {
+                objectIsExternal = detail.value;
             }
 
             switch (objectCategory) {
                 case 'wall':
                     partWidth = 1;
                     partHeight = 3;
-                    partDepth = 0.3;
+                    partDepth = objectThickness * 0.001;
                     break;
-                case 'slab':
-                    partWidth = 1;
-                    partHeight = 0.2;
-                    partDepth = 1;
-                    break;
-                case 'column':
-                    partWidth = 0.2;
+                case 'floor':
+                    partWidth = objectThickness * 0.001;
                     partHeight = 3;
                     partDepth = 0.2;
                     break;
                 case 'beam':
-                    partWidth = 0.2;
-                    partHeight = 3;
+                    partWidth = 3;
+                    partHeight = objectThickness * 0.001;
                     partDepth = 0.2;
                     break;
                 default:
@@ -233,17 +227,19 @@
         detailModal.style.display = 'block';
 
         document.getElementById('exportButton').addEventListener('click', function() {
+            var width = partWidth;
+            var height = partHeight;
+            var depth = partDepth;
+
             fetch('/export_ifc', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    width: partWidth,
-                    height: partHeight,
-                    depth: partDepth,
-                    name: objectName,
-                    category: objectCategory
+                    width: width,
+                    height: height,
+                    depth: depth
                 })
             })
             .then(response => response.blob())
@@ -258,25 +254,22 @@
             })
             .catch(error => console.error('Error exporting IFC:', error));
         });
-
         renderObject(partWidth, partHeight, partDepth);
     }
 
-    function renderObject(width = 1, height = 1, depth = 1) {
+    function renderObject(width, height, depth) {
         if (threeCanvas.renderer) {
             threeCanvas.renderer.dispose();
         }
-
         var scene = new THREE.Scene();
         scene.background = new THREE.Color(0xffffff);
 
         var camera = new THREE.PerspectiveCamera(75, threeCanvas.clientWidth / threeCanvas.clientHeight, 0.1, 1000);
-        
         var renderer = new THREE.WebGLRenderer({ antialias: true, canvas: threeCanvas });
         renderer.setSize(threeCanvas.clientWidth, threeCanvas.clientHeight);
         renderer.setClearColor(0xffffff);
 
-        threeCanvas.renderer = renderer; 
+        threeCanvas.renderer = renderer;
 
         var geometry = new THREE.BoxGeometry(width, height, depth);
         var material = new THREE.MeshBasicMaterial({ color: 0x696969 });

@@ -4,9 +4,7 @@
     var fileInput = document.getElementById('file');
     var gridContainer = document.getElementById('gridContainer');
     var filterInputs = document.querySelectorAll('.filterInput');
-    var filterRange = document.getElementById('filterRange');
     var filterButton = document.getElementById('filterButton');
-    var filterMenu = document.getElementById('filterMenu');
     var resultsCountDiv = document.getElementById('resultsCount');
     var detailModal = document.getElementById('detailModal');
     var modalImage = document.getElementById('modalImage');
@@ -20,15 +18,7 @@
         'LOAD FUNCTION', 
         'STIFFENING FUNCTION', 
         'NUMBER CODE', 
-        'LOAD FUNCTION',
-        'PREFABRICATION', 
-        'WATER',
-        'HEATING', 
-        'VENTILATION', 
-        'ACUSTIC REQS', 
-        'ELECTRICITY', 
-        'FIRE REGULATION', 
-        'FIRE PROTECTION',
+        'LOAD FUNCTION','PREFABRICATION', 'WATER','HEATING', 'VENTILATION', 'ACUSTIC REQS', 'ELECTRICITY', 'FIRE REGULATION', 'FIRE PROTECTION',
         'FINISHING',
         'VERSION',
         'ImageURL']; 
@@ -45,41 +35,18 @@
         }
     });
 
-
-
     filterButton.addEventListener('click', function() {
         //var filterValues = Array.from(filterInputs).map(input => input.value.trim().toLowerCase()).filter(value => value);
         //toGrid(csvData, filterValues);
         var filterValues = Array.from(filterInputs).map(input => input.value.trim().toLowerCase()).filter(value => value);
-
-        //MAYBE DO THIS MORE ELEGANTLY
-        var dropdownValue1 = document.getElementById("filterlist1");
-        var menufilter1 = dropdownValue1.value.toLowerCase();
-        var dropdownValue2 = document.getElementById("filterlist2");
-        var menufilter2 = dropdownValue2.value.toLowerCase();
-
-       
-        //var extraFilters = filterValues
-        if (menufilter1 !== "" ){
-            filterValues.push(menufilter1)
-        }
-        if (menufilter2 !== ""){
-            filterValues.push(menufilter2)
-        }
-
-
-        //get the min and max thickness
         var minThickness = parseFloat(document.getElementById('minThickness').value);
         var maxThickness = parseFloat(document.getElementById('maxThickness').value);
+        console.log('Min Thickness:', minThickness, 'Max Thickness:', maxThickness);
         
-        console.log('Current range:', minThickness, maxThickness);
-        console.log('Current filters:', filterValues);
-        console.log(typeof maxThickness);
-        toGrid(csvData, filterValues,  minThickness, maxThickness);
+        toGrid(csvData, filterValues, isNaN(minThickness) ? null : minThickness, isNaN(maxThickness) ? null : maxThickness);
        // toGrid(csvData, filterValues, minThickness, maxThickness);
     });
-   
-    //function to close the model window 
+
     closeModal.addEventListener('click', function() {
         detailModal.style.display = 'none';
     });
@@ -106,7 +73,7 @@
 
         reader.readAsText(file);
     }
-    // The function that show the filtered results in a grid
+
     function toGrid(rows, filterValues = [], minThickness = null, maxThickness = null) {
         if (!rows || rows.length === 0) {
             console.warn('No rows to process.');
@@ -120,7 +87,6 @@
 
         var headers = rows[0].trim().split(DELIMITER);
 
-        //initialize a counter to count results
         var filteredRowCount = 0;
 
         // Filter and add rows
@@ -136,26 +102,6 @@
                 continue;
             }
 
-           
-
-            var thicknessIndex = headers.indexOf('THICKNESS (mm)'); 
-            var thickness = parseFloat(cols[thicknessIndex]);
-            //console.log("this is the thickness: "+thickness,  "and is a: " , typeof thickness);
-            
-            if (isNaN(thickness)) {
-                console.error('Invalid thickness value in the .csv:', cols[thicknessIndex]);
-                continue;
-            }
-            //SANITY CHECK
-            // console.log('Row:', cols, 'Thickness:', thickness);
-            //console.log("this is the thickness:  "+thickness);
-
-            // Check if thickness is within the specified range
-            if ((minThickness !== null && thickness < minThickness) || (maxThickness !== null && thickness > maxThickness)) {
-                continue;// Skip if outside the range
-                console.log("Got in here:  "+thickness);
-            }
-
             // Apply filters (case-insensitive)
             var matchesAllFilters = filterValues.every(filterValue => 
                 cols.some(col => col.toLowerCase().includes(filterValue))
@@ -164,7 +110,25 @@
             if (!matchesAllFilters) {
                 continue;
             }
-            //increment the Counter for the filtered results
+
+            var thicknessIndex = headers.indexOf('THICKNESS (mm)'); // 
+       
+            var thickness = parseFloat(cols[thicknessIndex]);
+            console.log('Thickness is:', thickness);
+            if (isNaN(thickness)) {
+                console.error('Invalid thickness value:', cols[thicknessIndex]);
+                continue;
+            }
+
+            console.log('Row:', cols, 'Thickness:', thickness);
+            //console.log("this is the thickness:  "+thickness);
+            if ((minThickness !== null && thickness < minThickness) || (maxThickness !== null && thickness > maxThickness)) {
+                continue;
+            }
+
+            if ((thickness < maxThickness)) {
+               console.log("Got in here:  "+thickness);
+            }
             filteredRowCount++;
 
             //create grid items
@@ -216,8 +180,6 @@
         resultsCountDiv.textContent = `Number of filtered results: ${filteredRowCount}`;
     }
 
-
-    //the method to show the detail
     function showDetailModal(imageUrl, details) {
         modalImage.src = imageUrl;
         modalDetails.innerHTML = '';
@@ -282,12 +244,10 @@
             
         });
 
-
-
         //style the modal window
         detailModal.style.display = 'block';
 
-        //export method
+
         document.getElementById('exportButton').addEventListener('click', function() {
             // Get the current dimensions of the 3D object
             var width = partWidth;
@@ -323,7 +283,7 @@
     }
 
 
-    // render the object using the three 
+  
 
     function renderObject(width, height, depth) {
         // Ensure previous renderer is disposed if exists
@@ -371,6 +331,7 @@
         animate();
     }
 
+  
 
-    console.log('You are running Three.js version:', THREE.REVISION);
+    console.log('Three.js version:', THREE.REVISION);
 })();
