@@ -1,5 +1,5 @@
 
-# Intelligent Builindg Configurator (iBC) 
+# Intelligent Building Configurator (iBC) 
 A tool for Rapid Design Generation and Optimization in Modern Methods of Construction
 
 ![05b_Apartment-level Configure](https://github.com/TopoVague/IBC_dev/assets/8251842/3b3893f9-127d-4e81-b2ad-a4cafe06546d)
