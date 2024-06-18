@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>CSV to Grid with 3D Visualization and IFC Export</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="{{ url_for('static', filename='d3.v5.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='lodash.min.js') }}"></script>
+
+
+	
+<body>
+    <div id="Welcome">
+       <h1> "Welcome to the Implenia Elements Catalog Alpha"</h1>
+
+    </div>
+    <div id="FileLoad">
+        <input type="file" id="file">
+    </div>
+    <div id="Filters">
+        <label for="text">Category:</label>
+        <input type="text" class="filterInput" placeholder="Filter value 1"> <br>
+        <label for="text">Filter 2:</label>
+        <input type="text" class="filterInput" placeholder="Filter value 2"><br>
+        <label for="text">Filter 3:</label>
+        <input type="text" class="filterInput" placeholder="Filter value 3"><br>
+        <label for="minThickness">Min Thickness:</label>
+        <input type="number" id="minThickness" class="filterInput">
+        <label for="maxThickness">Max Thickness:</label>
+        <input type="number" id="maxThickness" class="filterInput">
+        <button id="filterButton">Filter</button>
+    </div>
+        
+    
+
+    <div id="resultsCount" span style="color: red; font-size: large;"></div>
+    <div id="gridContainer"></div>
+
+    <!-- Detail Modal -->
+    <div id="detailModal" class="modal">
+        <div class="modal-content">
+            
+            
+            <span class="close">&times;</span>
+            <img id="modalImage" src="" alt="Image">
+            <div id="modalDetails"></div>
+            <canvas id="threeCanvas"></canvas>
+            <button id="exportButton">Export as IFC</button>
+            
+            <!--<form id="detailForm">
+                <label for="width">Width:</label>
+                <input type="text" id="width" name="width"><br>
+                <label for="height">Height:</label>
+                <input type="text" id="height" name="height"><br>
+                <label for="depth">Depth:</label>
+                <input type="text" id="depth" name="depth"><br>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name"><br>
+                <label for="category">Category:</label>
+                <input type="text" id="category" name="category"><br>
+                <button type="button" id="submitDetails">Submit</button>
+                
+            </form>-->
+        </div>
+    </div>
+
+    <!-- Your JavaScript file -->
+    <script src="{{ url_for('static', filename='IBC_app_0_1.js') }}"></script>
+    <!-- Your JavaScript file  
+    <script src="{{ url_for('static', filename='3dmLoader1.js') }}"></script>-->  
+</body>
+</html>

@@ -1,0 +1,126 @@
+#gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gridItem {
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    background: #fff;
+}
+
+.gridItem img {
+    max-width: 100%;
+    height: auto;
+}
+
+p {
+    font-family: Courier New, Verdana, sans-serif;
+    }
+
+
+.resultsCount {
+    color:#ff0000;
+}
+table {
+border-collapse: collapse;
+width: 100%    
+}
+table td,
+table th{
+    border: 1px, solid #ddd;
+    padding: 0.5em;
+}
+
+table tr:nth-child(2n){
+    background-color: #f2f2f2;
+}
+
+table tr:hover{
+    background-color: #ddd;
+}
+
+table th{
+
+    padding-top: 1em;
+    padding-bottom: 1em;
+    text-align: left;
+    background-color: rgb(67, 67, 67);
+    color:#ddd;
+}
+
+#gridContainer {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 10px;
+}
+
+.gridItem {
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+    text-align: left;
+    -webkit-text-fill-color: grey;
+    background: #fff;
+    cursor: pointer;
+}
+.gridItem:hover{
+    -webkit-text-fill-color: black;
+    text-emphasis-style: bold;
+}
+
+.gridItem img {
+    max-width: 100%;
+    height: auto;
+}
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+    padding-top: 60px;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    text-align: center;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modalImage {
+    width: 100%;
+    height: auto;
+}
+
+#threeCanvas {
+    width: 100%;
+    height: 400px;
+    background-color: #fefefe;
+}

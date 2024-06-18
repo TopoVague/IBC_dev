@@ -1,0 +1,29 @@
+import ifcopenshell
+print("The current version of ifcopenshell is: "+ ifcopenshell.version)
+
+#Run some tests
+#open a file 
+ifc1 = ifcopenshell.open('C:/Users/panz/Documents/AC20-FZK-Haus.ifc')
+
+# a sample export from the catalog
+#ifc2 =ifcopenshell.open('C:/Users/panz/Documents/GitHub/IBC/Tests/buildup-Flachglas_AG_vetroTherm_1_0_OW_Trio-35 mm.ifc')
+ifc2 = ifcopenshell.open('C:/Users/panz/Documents/240514_test slab_export.ifc')
+
+print("The file follows the ", ifc2.schema, " Schema") # May return IFC2X3 or IFC4
+print(ifc2.by_id(1))
+#get the walls
+walls = ifc2.by_type('IfcWall')
+print("there currently ", len(walls) , "objects in the file that are classified as walls")
+
+slabs = ifc2.by_type('IfcSlab')
+print("there currently ", len(slabs) , "objects in the file that are classified as slabs")
+
+
+
+#look into one element
+slab = ifc2.by_type('IfcSlab')[0]
+print(slab.get_info()) 
+
+import ifcopenshell.util
+import ifcopenshell.util.element
+print(ifcopenshell.util.element.get_psets(slab))
