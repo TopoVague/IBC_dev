@@ -11,10 +11,24 @@ app = Flask(__name__)
 logging.basicConfig(level=logging.INFO)
 
 
-@app.route('/')
+@app.route('/index.html')
 def index():
     return render_template('index.html')
     #return render_template('helloThree.html')
+
+@app.route('/catalog.html')
+def Catalog():
+    return render_template('catalog.html')
+
+@app.route('/graphDB.html')
+def graphDB():
+    return render_template('graphDB.html')
+
+@app.route('/about.html')
+def About():
+    return render_template('about.html')
+
+
 @app.route('/script.js')
 def serve_script():
     return send_file('script.js')

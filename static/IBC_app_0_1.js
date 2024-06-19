@@ -17,6 +17,7 @@
     // Add the headers of columns you want to hide here
     var hiddenColumns = [    
         'NUMBER CODE', 
+        'CATEGORY', 
         'LOAD FUNCTION', 
         'STIFFENING FUNCTION', 
         'NUMBER CODE', 
@@ -31,6 +32,8 @@
         'FIRE PROTECTION',
         'FINISHING',
         'VERSION',
+        'PLACEMENT',
+        'U-WERT',
         'ImageURL']; 
 
 

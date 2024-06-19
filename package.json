@@ -1,19 +1,19 @@
 {
   "dependencies": {
+    "bootstrap": "^5.3.3",
     "rhino3dm": "^8.6.1",
     "three": "^0.165.0",
     "web-ifc": "^0.0.54"
   },
   "devDependencies": {
-    "vite": "^5.2.12",
     "@parcel/config-default": "^2.10.3",
     "parcel": "^2.10.0",
-    "parcel-reporter-static-files-copy": "^1.5.3"
+    "parcel-reporter-static-files-copy": "^1.5.3",
+    "vite": "^5.2.12"
   },
   "keywords": [],
   "author": "Evan Pantazis",
   "license": "ISC",
-
   "staticFiles": {
     "staticOutPath": "assets"
   }
