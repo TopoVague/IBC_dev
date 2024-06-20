@@ -8,6 +8,7 @@
     var filterButton = document.getElementById('filterButton');
     var filterMenu = document.getElementById('filterMenu');
     var resultsCountDiv = document.getElementById('resultsCount');
+    var elementsCountDiv = document.getElementById('elementsCount');
     var detailModal = document.getElementById('detailModal');
     var modalImage = document.getElementById('modalImage');
     var modalDetails = document.getElementById('modalDetails');
@@ -37,7 +38,7 @@
         'ImageURL']; 
 
 
-    if (!fileInput || !gridContainer || !filterInputs || !filterButton || !resultsCountDiv || !detailModal || !modalImage || !modalDetails || !closeModal || !threeCanvas) {
+    if (!fileInput || !gridContainer || !filterInputs || !filterButton || !resultsCountDiv || !elementsCountDiv || !detailModal || !modalImage || !modalDetails || !closeModal || !threeCanvas) {
         console.error('One or more required elements are missing.');
         return;
     }
@@ -123,11 +124,13 @@
 
         var headers = rows[0].trim().split(DELIMITER);
 
+        var allitems = -1;
         //initialize a counter to count results
-        var filteredRowCount = 0;
+        var filteredItems = 0;
 
         // Filter and add rows
         for (var i = 1; i < rows.length; i++) {
+            allitems +=1;
             var r = rows[i].trim();
             if (!r) {
                 continue;
@@ -166,9 +169,9 @@
 
             if (!matchesAllFilters) {
                 continue;
-            }
+a           }
             //increment the Counter for the filtered results
-            filteredRowCount++;
+            filteredItems++;
 
             //create grid items
             var gridItem = document.createElement('div');
@@ -216,7 +219,8 @@
         }
 
         // Update the results count message
-        resultsCountDiv.textContent = `Number of filtered results: ${filteredRowCount}`;
+        resultsCountDiv.textContent = `Number of elements matching criteria: ${filteredItems}`;
+        elementsCountDiv.textContent = `Number of elements in the library: ${allitems}`;
     }
 
 

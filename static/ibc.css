@@ -3,15 +3,6 @@
  */
 
 
-/* Custom default button */
-.btn-secondary,
-.btn-secondary:hover,
-.btn-secondary:focus {
-  color: #333;
-  text-shadow: none; /* Prevent inheritance from `body` */
-}
-
-
 /*
  * Base structure
  */
@@ -23,7 +14,7 @@ body {
 }
 
 .cover-container {
-  max-width: 42em;
+  max-width: 72em;
 }
 
 .container {
@@ -38,22 +29,23 @@ body {
  */
 
 .nav-masthead .nav-link {
-  color: rgba(255, 255, 255, .5);
+  color: rgb(75, 75, 75);
   border-bottom: .25rem solid transparent;
 }
 
 .nav-masthead .nav-link:hover,
 .nav-masthead .nav-link:focus {
-  border-bottom-color: rgba(255, 255, 255, .25);
+  border-bottom-color: rgb(228, 154, 28);
 }
 
 .nav-masthead .nav-link + .nav-link {
   margin-left: 1rem;
+  color: rgb(102, 102, 102);
 }
 
 .nav-masthead .active {
-  color: #fff;
-  border-bottom-color: #fff;
+  color: rgb(228, 154, 28);
+  border-bottom-color: rgb(228, 154, 28);
 }
 
 
@@ -63,13 +55,13 @@ body, html {
   font-family: 'Courier New', Courier, monospace, Helvetica, sans-serif;
 }
 
+
 /* The hero image */
 .hero-image {
   /*Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
   /*url("../02_assets/images/heroImage1.png ")*/
-  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(113, 106, 50, 0.5)), url("https://www.dropbox.com/scl/fi/1o2vuf22tp0firzk002ug/heroImage1.png?rlkey=47ajwi521j759m6cd2628vcc1&dl=1");
-
-  height: 40%;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(255, 184, 28, 0.5)), url("https://www.dropbox.com/scl/fi/1o2vuf22tp0firzk002ug/heroImage1.png?rlkey=47ajwi521j759m6cd2628vcc1&dl=1");
+  height: 60%;
   /* Position and center the image to scale nicely on all screens */
   background-position: center;
   background-repeat: no-repeat;
@@ -114,13 +106,26 @@ p {
 
 
 .resultsCount {
+  font-family: Inter,sans-serif;
+  font-size: 16px;
   color:#ff0000;
 }
+
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+}
+
+
 
 .Button{
   align-items: center;
   background-color:#FFB81C;
-  border: 2px solid #000;
+  border: 1px solid #000;
   box-sizing: border-box;
   color: #000;
   cursor: pointer;
@@ -129,7 +134,7 @@ p {
   font-family: Inter,sans-serif;
   font-size: 16px;
   font-weight: 600;
-  height: 48px;
+  height: 32px;
   justify-content: center;
   letter-spacing: -.8px;
   line-height: 24px;
@@ -145,12 +150,92 @@ p {
 
 }
 
-
 .Button:hover {
   background-color: #FFA21C; /* fix here implenia color  */
   color: white;
   border: 2px solid #fff;
 }
+
+
+.resultsCount{
+  color:  #FFA21C;
+  font-size: 16px;
+  font-weight: 600;
+  height: 48px;
+  justify-content: left;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 140px;
+  padding: 6px;
+  margin: 6px;;
+}
+
+/* Style The Dropdown Button */
+.filterMenu {
+  background-color: white;
+  color: rgb(0, 0, 0);
+  border: 2px solid #000;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: center;
+  letter-spacing: -.8px;
+  line-height: 24px;
+  min-width: 180px;
+  padding: 6px;
+  font-size: 14px;
+  margin: 6px;;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 180px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.filterInputRange{
+  margin: 5px;
+  width: 150px;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; 
+
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: rgb(255, 255, 255);
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .filterMenu {
+  background-color: rgb(228,154,28);
+}
+
+
+
 
 table {
 border-collapse: collapse;
@@ -252,4 +337,3 @@ table th{
   height: 400px;
   background-color: #fefefe;
 }
-

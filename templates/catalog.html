@@ -1,60 +1,89 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- A page where a CSV is loaded and parsed. The objects are placed ina Grid with 3D Visualization and IFC Export-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSV to Grid with 3D Visualization and IFC Export</title>
+    <title>iBC DEV - Catalog </title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ibc.css') }}">
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
     <!--Some scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="{{ url_for('static', filename='d3.v5.min.js') }}"></script>
     <script src="{{ url_for('static', filename='lodash.min.js') }}"></script>
+
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
 </head>
 
 <body>
-    <!--HERO IMAGE-->
-    
-    <div class="hero-image">
-        <div class="hero-text">
-            <h1> Welcome to the Implenia Elements Catalog Alpha </h1>
-            <p>This is a Work in Progress, so excuse and report to us possible errors you might encounter!</p>
-        </div>
-    </div> 
-    
+
+    <div class="cover-container d-flex w-100 h-100 p-12 mx-auto flex-column">
+        <header class="mb-auto">
+          <div>
+            <h3 class="float-md-start mb-0">iBC</h3>
+            <nav class="nav nav-masthead justify-content-center float-md-end">
+              <a class="nav-link fw-bold py-1 px-0" href="index.html">Home</a>
+              <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="catalog.html">Building Element Catalog</a>
+              <a class="nav-link fw-bold py-1 px-0" href="graphDB.html">KempsPage</a>
+              <a class="nav-link fw-bold py-1 px-0" href="about.html">About</a>
+            </nav>
+          </div>
+        </header>
+
+
+
    
     <div class="container" style = "padding-top: 40px" > 
+        
+            <h1> Welcome to Building Elements Catalog for Industrialized Construction - Alpha! </h1>
+            <p>This is a Work in Progress, so excuse and report to us possible errors you might encounter!</p>
     </div>
     
     <!--FILTERS SECTION--> 
     <div  class="container">
         <div class="row">
              <!--fILE lOADER-->   
-            <div class="col-md-6" id="FileLoad">
-                <h2> Database File Loader   
-                    <input type="file" id="file" accept=".csv" style="display: none;">
-                    <label for="file" class="Button">Load .csv file</label>
-                    <pre id="fileContent"></pre>
-                </h2>
-             <!--filter button -->
-            <h2> Define the Filters   &
-                <button id="filterButton" class="Button">Filter Elements</button>
-                <div id="resultsCount" span style="color: red; font-size: large;"></div>
-            </h2>
+            <div class="col-md-4" id="FileLoad">
+                <h2> Load Database   </h2>
+
+                <input type="file" id="file" accept=".csv" style="display: none;">
+                <label for="file" class="Button">Browse .csv file</label>
+                <pre id="fileContent"></pre>
             
             </div>
-            <div class="col-md-6" id="Filters">
-                <label for="text">Element Type:</label>
-                <input type="text" class="filterInput" placeholder="What are you looking for i.e. Wall?"> <br>
+                
+            <div class="col-md-4" id="Filters">
+                <h2> Search Elements..</h2>
+                <label for="text"></label>
+                <input type="text" class="filterInput" placeholder="What are you looking for?">
+                <button id="filterButton" class="Button"> <i class="fa fa-search"></i></button>
+
+                <div id="elementsCount" span style="color: rgb(0, 0, 0); font-size: large;"></div>
+                <div id="resultsCount" span style="color: red; font-size: large;"></div>          
+            </div>
+
+
+            <div class="col-md-4" id="Filters">
+
+                <h2> Filter! </h2>
                 <!-- <label for="text">Position (External, Internal):</label>
                 <input type="text" class="filterInput" placeholder="Filter value 2"><br>
                 <label for="text">Construction Type (i.e. 3d Mod, Facade, 2d, In Situ):</label>
                 <input type="text" class="filterInput" placeholder="Filter value 3"><br>-->
 
+                 <!--Range filter -->
+                 <label for="minThickness">Min Thickness:</label>
+                 <input type="number" id="minThickness" class="filterInputRange"><br>
+                 <label for="maxThickness">Max Thickness:</label>
+                 <input type="number" id="maxThickness" class="filterInputRange">
+                 <br>
+
+
                 <label for="filter2">Element Position:</label>
                 <select id="filterlist2" class="filterMenu">
-                    <option value="">Where is the element?</option>
+                    <option value="">Select Placement</option>
                     <option value="INTERNAL">Internal</option>
                     <option value="EXTERNAL">External</option>
                 </select><br>
@@ -67,23 +96,16 @@
                     <option value="Facade">Facade Element</option>
                     <option value="In Situ">In Situ</option>
                 </select><br>
-                
-
-                <!--Range filter -->
-                <label for="minThickness">Min Thickness:</label>
-                <input type="number" id="minThickness" class="filterInputRange">
-                <label for="maxThickness">Max Thickness:</label>
-                <input type="number" id="maxThickness" class="filterInputRange">
-                <br>
-                
-            </div>
+                <!--filter button -->
+               <button id="filterButton" class="Button">Filter Elements</button>
+               
+           </div>
 
         </div>
     <div>
-    <!--filter button -->
-    <div class="container">
+    <!--The grid of filtered elements -->
+    <div class="container" style ="padding-top: 50px;">
         <div id="gridContainer"></div>
-    
     </div>
 
  <!-- Detail Modal -->
@@ -111,6 +133,7 @@
             
         </form>-->
     </div>
+</div>
 </div>
     <!-- 3d viewer 
     <div class="container" id="speckleViewer" style="padding: 40px;"> 
