@@ -70,6 +70,32 @@ body, html {
 }
 
 
+/* The hero image */
+.catalog-image {
+  /*Use "linear-gradient" to add a darken background effect to the image (photographer.jpg). This will make the text easier to read */
+  /*url("../02_assets/images/heroImage1.png ")*/
+  background-image: linear-gradient(rgba(255, 255, 255, 0.5),rgba(247, 213, 139, 0.5)), url("https://www.dropbox.com/scl/fi/ejv8hal3j4mqjvn5we1pq/heroImage4.png?rlkey=cedweohkcaf5yjcwiqnf9jorq&dl=1");
+  height: 80%;
+  /* Position and center the image to scale nicely on all screens */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Place text in the middle of the image */
+.catalog-text {
+  text-align: center;
+  position: absolute;
+  font-family: 'Courier New', Courier, monospace, Helvetica, sans-serif;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(65, 65, 65);
+}
+
+
+
 /* Place text in the middle of the image */
 .hero-text {
   text-align: center;
@@ -78,6 +104,12 @@ body, html {
   left: 50%;
   transform: translate(-50%, -50%);
   color: rgb(255, 255, 255);
+}
+
+.text-footer{
+    --bs-text-opacity: 1;
+    color: rgb(228, 154, 28);
+
 }
 
 #gridContainer {
@@ -101,8 +133,14 @@ body, html {
 
 p {
   font-family: Courier New, Verdana, sans-serif;
+  color:#4d4d4d;
   }
 
+selectedPart {
+  font-family: Courier New, Verdana, sans-serif;
+
+  color:#4d4d4d;
+  }
 
 
 .resultsCount {
@@ -172,19 +210,33 @@ p {
 
 /* Style The Dropdown Button */
 .filterMenu {
-  background-color: white;
+  background-color:#FFB81C;
   color: rgb(0, 0, 0);
-  border: 2px solid #000;
+  border: 3px solid #000;
+  box-sizing: border-box;
+  color: #000;
+  cursor: pointer;
+  display: inline-flex;
+  fill: #000;
+  font-family: Inter,sans-serif;
   font-size: 16px;
   font-weight: 600;
+  height: 30px;
   justify-content: center;
   letter-spacing: -.8px;
   line-height: 24px;
-  min-width: 180px;
-  padding: 6px;
-  font-size: 14px;
-  margin: 6px;;
-  height: 40px;
+  min-width: 140px;
+  outline: 0;
+  padding: 0 17px;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-top: 6px;
+  margin-bottom: 6px;
   border: none;
   cursor: pointer;
 }
@@ -204,6 +256,7 @@ p {
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
 }
+
 
 .filterInputRange{
   margin: 5px;
@@ -309,13 +362,13 @@ table th{
   padding: 20px;
   border: 1px solid #888;
   width: 80%;
-  max-width: 600px;
+  max-width: 800px;
   text-align: center;
 }
 
 .close {
   color: #aaa;
-  float: right;
+  float: center;
   font-size: 28px;
   font-weight: bold;
 }

@@ -6,43 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>iBC DEV - Catalog </title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='ibc.css') }}">
+    <!-- Load icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     <link href="../static/css/bootstrap.min.css" rel="stylesheet">
+    
     <!--Some scripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="{{ url_for('static', filename='d3.v5.min.js') }}"></script>
     <script src="{{ url_for('static', filename='lodash.min.js') }}"></script>
+    
+    <!-- Include your loader file as a module -->
+    <script type="module" src="{{ url_for('static', filename='loadOBJ1.js') }}"></script>
 
-    <!-- Load icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
     
 </head>
 
-<body>
+<body class="d-flex h-100 ">
 
-    <div class="cover-container d-flex w-100 h-100 p-12 mx-auto flex-column">
-        <header class="mb-auto">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+       
           <div>
             <h3 class="float-md-start mb-0">iBC</h3>
             <nav class="nav nav-masthead justify-content-center float-md-end">
               <a class="nav-link fw-bold py-1 px-0" href="index.html">Home</a>
               <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="catalog.html">Building Element Catalog</a>
-              <a class="nav-link fw-bold py-1 px-0" href="graphDB.html">KempsPage</a>
+              <a class="nav-link fw-bold py-1 px-0" href="graphDB.html">GraphDB</a>
               <a class="nav-link fw-bold py-1 px-0" href="about.html">About</a>
             </nav>
           </div>
-        </header>
 
+  
 
+    <div class="catalog-image"  style = "padding-top: 50px;" style="padding-top: 200px;" >
+        <div class="catalog-text"></div>
 
-   
-    <div class="container" style = "padding-top: 40px" > 
+      </div> 
+      <!-- a dummy class -->
+    <div class="container"  style = "padding-bottom: 5px;" >
         
-            <h1> Welcome to Building Elements Catalog for Industrialized Construction - Alpha! </h1>
-            <p>This is a Work in Progress, so excuse and report to us possible errors you might encounter!</p>
-    </div>
+        <h1> Welcome to the Building Elements Catalog for Industrialized Construction - Alpha Version! </h1>
+        <p>This is a Work in Progress, so excuse and report to us possible errors you might encounter!</p>
+        
+    </div> 
+
     
     <!--FILTERS SECTION--> 
-    <div  class="container">
+    <div  class="container justify-content-left" style="padding-top: 50px;" >
         <div class="row">
              <!--fILE lOADER-->   
             <div class="col-md-4" id="FileLoad">
@@ -60,49 +71,47 @@
                 <input type="text" class="filterInput" placeholder="What are you looking for?">
                 <button id="filterButton" class="Button"> <i class="fa fa-search"></i></button>
 
-                <div id="elementsCount" span style="color: rgb(0, 0, 0); font-size: large;"></div>
-                <div id="resultsCount" span style="color: red; font-size: large;"></div>          
+               <label for="filter2">Element Position:</label><br>
+               <select id="filterlist2" class="filterMenu">
+                   <option value="">Filter by Position</option>
+                   <option value="INTERNAL">Internal</option>
+                   <option value="EXTERNAL">External</option>
+               </select><br>
+
+               <label for="filter1">Fabrication Type:</label><br>
+               <select id="filterlist1" class="filterMenu">
+                   <option value="">Filter by Fabrication Type</option>
+                   <option value="2D Panels">2D Element</option>
+                   <option value="3D Mod">3d Element</option>
+                   <option value="Facade">Facade Element</option>
+                   <option value="In Situ">In Situ</option>
+               </select><br>
+
+               <!--Range filter -->
+               <label for="minThickness">Min Thickness:</label>
+               <input type="number" id="minThickness" class="filterInputRange"><br>
+               <label for="maxThickness">Max Thickness:</label>
+               <input type="number" id="maxThickness" class="filterInputRange">
+               <br>
+                        
             </div>
 
 
             <div class="col-md-4" id="Filters">
-
-                <h2> Filter! </h2>
+                <h2> Results...</h2>
                 <!-- <label for="text">Position (External, Internal):</label>
                 <input type="text" class="filterInput" placeholder="Filter value 2"><br>
                 <label for="text">Construction Type (i.e. 3d Mod, Facade, 2d, In Situ):</label>
                 <input type="text" class="filterInput" placeholder="Filter value 3"><br>-->
-
-                 <!--Range filter -->
-                 <label for="minThickness">Min Thickness:</label>
-                 <input type="number" id="minThickness" class="filterInputRange"><br>
-                 <label for="maxThickness">Max Thickness:</label>
-                 <input type="number" id="maxThickness" class="filterInputRange">
-                 <br>
-
-
-                <label for="filter2">Element Position:</label>
-                <select id="filterlist2" class="filterMenu">
-                    <option value="">Select Placement</option>
-                    <option value="INTERNAL">Internal</option>
-                    <option value="EXTERNAL">External</option>
-                </select><br>
-
-                <label for="filter1">Fabrication Type:</label>
-                <select id="filterlist1" class="filterMenu">
-                    <option value="">Select Fabrication Method</option>
-                    <option value="2D Panels">2D Element</option>
-                    <option value="3D Mod">3d Element</option>
-                    <option value="Facade">Facade Element</option>
-                    <option value="In Situ">In Situ</option>
-                </select><br>
-                <!--filter button -->
-               <button id="filterButton" class="Button">Filter Elements</button>
-               
+                <div id="elementsCount" span style="color: rgb(0, 0, 0); font-size: large;"></div>
+                <div id="resultsCount" span style="color: red; font-size: large;"></div>  
+                 
+                <!--filter button 
+               <button id="filterButton" class="Button">Filter Elements</button>--> 
            </div>
-
         </div>
     <div>
+
     <!--The grid of filtered elements -->
     <div class="container" style ="padding-top: 50px;">
         <div id="gridContainer"></div>
@@ -115,8 +124,19 @@
         <span class="close">&times;</span>
         <img id="modalImage" src="" alt="Image">
         <div id="modalDetails"></div>
+
         <canvas id="threeCanvas"></canvas>
-        <button id="exportButton">Export as IFC</button>
+        <div class="row">
+            <div class="col-md-4" >
+                <button id="exportButton"  class="Button">Export as IFC</button>
+            </div>
+            <div class="col-md-4" >
+                <button id="simpleViewButton"  class="Button">Simple View</button>
+            </div>
+            <div class="col-md-4" >
+            <button id="detailedViewButton"  class="Button">Detailed View</button>
+            </div>
+        </div>
         
         <!--<form id="detailForm">
             <label for="width">Width:</label>
@@ -135,6 +155,12 @@
     </div>
 </div>
 </div>
+
+    <!--LOADER TEST
+    <div class="container">
+        <p>Click the following button to see the function in action</p>  
+        <input type = "button" onclick = "init()" value = "Load Obj">  
+    </div>-->
     <!-- 3d viewer 
     <div class="container" id="speckleViewer" style="padding: 40px;"> 
         <div id="3d Viewer">
@@ -146,11 +172,11 @@
 
     <!-- Your JavaScript files -->
     <script src="{{ url_for('static', filename='IBC_app_0_1.js') }}"></script>
-    <!-- Your JavaScript file  
-    <script src="{{ url_for('static', filename='3dmLoader1.js') }}"></script>-->  
+    <!-- Your JavaScript file 
+    <script src="{{ url_for('static', filename='loadOBJ1.js') }}"></script> -->  
 
     <footer class="mt-auto text-white-50">
-        <p>This project is a joint collaboration of <a href="https://implenia.com/" class="text-white">Implenia</a>, and <a href="https://www.zhaw.ch/de/archbau/institute/ibp/" class="text-white">@ZHAW IBP</a>  and is supported by <a href="https://www.innosuisse.ch/inno/de/home.html" class="text-white">Innosuisse</a>  </p>
+        <p>This project is a joint collaboration of <a href="https://implenia.com/" class="text-footer">Implenia</a>, and <a href="https://www.zhaw.ch/de/archbau/institute/ibp/" class="text-footer">@ZHAW IBP</a>  and is supported by <a href="https://www.innosuisse.ch/inno/de/home.html" class="text-footer">Innosuisse</a>  </p>
     </footer>
 </body>
 </html>
