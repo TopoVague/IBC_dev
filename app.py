@@ -27,6 +27,13 @@ def export_ifc():
     create_ifc_file(width, height, depth, file_path)
     return send_file(file_path, as_attachment=True)
 
+@app.route('/graphDB.html')
+def neo4j_page():
+    return render_template('graphDB.html')
+
+@app.route('/graphDB.js')
+def serve_app_js():
+    return send_file('graphDB.js')
 
 # the method that creates the ifc file
 def create_ifc_file(width, height, depth, file_path):
