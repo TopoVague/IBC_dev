@@ -21,7 +21,16 @@ The project relies mainly on open source libraries and platforms whch include
 
 ## Dependencies
 -flask
+
 -node.js
+
+-three.js
+
+-Python
+
+-ifcOpenShell
+
+-TopologicPy
 
 
 ## Instructions
