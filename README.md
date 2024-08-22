@@ -81,4 +81,4 @@ Implenia AG - https://implenia.com/
 
 ## Funding Partners  
 Innosuisse - Swiss Innovation Agency- https://www.innosuisse.admin.ch/en
-108.408 IP-SBM 
+Research Grant : 108.408 IP-SBM 
