@@ -27,13 +27,19 @@ The project relies mainly on open source libraries and platforms whch include
 ## Instructions
 (This part will be developing as we progress)
 
--Clone the repository to your computer
--Open the folder on your machine (preferable using an IDE like Visual Studio Code (https://code.visualstudio.com/)
--Cd to the root folder i.e. C:\Users\YourUserName\Documents\GitHub\IBC 
--Make sure you have installed the dependecies above, you can do this by using pip install and/or npm
--Run the python script  appTesting.py or app.py by running the command python appTesting.py
--Open a browser window and enter the following http://localhost:5000/  (this will create a local server and load the index.html that is located in the templates folder
--Load a .csv file to browse the catalog and you should see sth like the following
+01-Clone the repository to your computer
+
+02-Open the folder on your machine (preferable using an IDE like Visual Studio Code (https://code.visualstudio.com/)
+
+03-Cd to the root folder i.e. C:\Users\YourUserName\Documents\GitHub\IBC 
+
+04-Make sure you have installed the dependecies above, you can do this by using pip install and/or npm
+
+05-Run the python script  appTesting.py or app.py by running the command python appTesting.py
+
+06-Open a browser window and enter the following http://localhost:5000/  (this will create a local server and load the index.html that is located in the templates folder
+
+07-Load a .csv file to browse the catalog and you should see sth like the following
 
 ![Screenshot 2024-06-18 111506](https://github.com/TopoVague/IBC_dev/assets/8251842/f72e2d94-42ff-4620-8393-ace0c286f960)
 
