@@ -43,12 +43,16 @@ The project relies mainly on open source libraries and platforms whch include
 
 ![Screenshot 2024-06-18 111506](https://github.com/TopoVague/IBC_dev/assets/8251842/f72e2d94-42ff-4620-8393-ace0c286f960)
 
-General guidelines
-In the node_modules folders all the libraries etc are stored
-Put any html files that you develop in the templates folder (i.e. if you want to create extra pages as we continue to develop the project)
-Put your the scripts that you want to run in to static folder 
-Put files that you load (i.e. 3d models, images etc) in the 02_assets folder (we might need to change this)  
-Keep tests and development files in the 01_CodingTests Folder 
+**General guidelines**
+-Place any relevant you are using In the node_modules folders 
+
+-Put any html files that you develop in the templates folder (i.e. if you want to create extra pages as we continue to develop the project)
+
+-Put your the scripts that you want to run in to static folder 
+
+-Put files that you load (i.e. 3d models, images etc) in the 02_assets folder (we might need to change this)  
+
+-Keep tests and development files in the 01_CodingTests Folder 
 
 
 
