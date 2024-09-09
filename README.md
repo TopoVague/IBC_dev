@@ -74,11 +74,11 @@ The project relies mainly on open source libraries and platforms whch include
 - Giulia Curletto / Implenia - Digital Design and Innovation Manager 
 
 ## Research Partners  
-[ZHAW](https://www.zhaw.ch/de/archbau/institute/ibp/) Zurich School of Applied Sciences - Zürcher Hochschule für Angewandte Wissenschaften - 
+[ZHAW](https://www.zhaw.ch/de/archbau/institute/ibp/) - Zurich School of Applied Sciences / Zürcher Hochschule für Angewandte Wissenschaften 
 
 ## Implementation Partners
-Implenia AG - https://implenia.com/
+[Implenia AG](https://implenia.com/)
 
 ## Funding Partners  
-Innosuisse - Swiss Innovation Agency- https://www.innosuisse.admin.ch/en
+[Innosuisse](https://www.innosuisse.admin.ch/en) - Swiss Innovation Agency
 Research Grant : 108.408 IP-SBM 
