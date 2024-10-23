@@ -276,10 +276,11 @@
             p.textContent = `${detail.header}: ${detail.value}`;
             modalDetails.appendChild(p);
 
-            console.log( "the selected object's details are : ", p.textContent);
+            //console.log( "the selected object's details are : ", p.textContent);
 
             // Set object name and category based on the details
             //This is where we pass the values from the csv into parameters
+            //SWITCH IF TO CASE 
             if (detail.header === 'Name') {objectName = detail.value;}
             if (detail.header === 'NumberCode') {objectCode = detail.value;}
             if (detail.header === 'Variation') {objectVariation = detail.value;}
@@ -307,7 +308,6 @@
             if (detail.header === 'AcoustingRating') { objectAcousticRating = detail.value; }
             if (detail.header === 'ThermalTransmittance') { objectThermalRating = detail.value; }
 
-       
             // Some prints for sanity check
             //console.log("the code of selected item is:" +objectCode);
             //console.log("the thickness of selected item is:" +objectThickness);
@@ -355,15 +355,11 @@
             var hasWaterPipes =  objectHasWaterPipes ;
             var hasVentilation =  objectHasVentilation;
             var hasHeating =  objectHasHeating;
-            
+            console.log('yo 1')
             // Send a request to the server to create the IFC file
-            //here is WHERE WE PASS THE PROPERTIES FROM the csv to send it to the python 
             fetch('/export_ifc', {
                 method: 'POST',
-                mode: "no-cors",
-                headers: {
-                    'Content-Type': 'application/json'
-                },
+                headers: {'Content-Type': 'application/json'},
                 body: JSON.stringify({
                     name: name,
                     codeName: codeName,

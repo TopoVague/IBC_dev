@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, send_file, jsonify
+from flask_cors import CORS
 import json
 import ifcopenshell
 import os
@@ -9,6 +10,7 @@ import logging
 from dataclasses import dataclass
 
 app = Flask(__name__)
+CORS(app)
 logging.basicConfig(level=logging.INFO)
 
 #PARAMETERS TO PASS IN THE FILE
@@ -236,8 +238,7 @@ END-ISO-10303-21;
 
         
         # IFC hierarchy creation
-        
-
+    
         #create a site for the Project
         site = ifcfile.createIfcSite(create_guid(), owner_history, siteName, None, None, site_placement, None, None, "ELEMENT", None, None, None, None, None)
         
@@ -253,8 +254,8 @@ END-ISO-10303-21;
         container_storey = ifcfile.createIfcRelAggregates(create_guid(), owner_history, "Building Container", None, building, [building_storey])
         container_site = ifcfile.createIfcRelAggregates(create_guid(), owner_history, "Site Container", None, site, [building])
         container_project = ifcfile.createIfcRelAggregates(create_guid(), owner_history, "Project Container", None, ifcfile.by_type(projectName)[0], [site])    
-        #print("the name of the object to export is: " , ifcFileParams.name)
-        # add a if else to check on category and based on that crteate  different .ifc geometry
+        print("the name of the object to export is: " , ifcFileParams.name)
+        # add a if else to check on category and based on that create  different .ifc geometry
         print(f'got here')
         
         #HERE MAYBE ADD A CHECK ABOUT THE VARIATION AND CREATE MATERIAL ACCORDINGLY
