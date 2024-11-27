@@ -33,24 +33,60 @@ The project relies mainly on open source libraries and platforms whch include
 -TopologicPy
 
 
-## Instructions
+
+
+## Instructions for accessing the SQL database setup by Implenia
+
+You can access the SQL database by doing the following steps
+1) To Connect to the Implenia Virtual Machine and
+2) Open  Azure Data Studio (Suggested software )
+3) Connect to Server: sqs-weu-sqlserver001-dev01.database.windows.net
+4) Select Database: SDB-IBC-DEV01
+
+ 
+Admin Users 
+exa_epantazis@implenia.com
+exa_jcao@implenia.com
+
+adm_sbinkert@implenia.com
+adm_jweis@implenia.com
+
+ 
+## Instructions for the Building Element Catalogue - Rhino/Ghx Viewer
+
+You can locally view and export ithe Catalog of parts using the Graphical User Interface within Rhinoceros 3d
+1) You  need to have Rhino 7 or 8 installed on your laptop/machine
+2) You need to have the following libraries installed: a) [Human UI](https://www.food4rhino.com/en/app/human-ui), b) [Metahopper](https://www.food4rhino.com/en/app/metahopper) c) [Bullant and RhinoIfc](https://geometrygym.wordpress.com/downloads-windows/) d) [Speckle](https://www.speckle.systems/download) 
+3) Open the file .ghx which you can find in the  04_readAndParse_ElementCatalog_v0_1
+4) Read the instructions on the top of the script to be able to navigate 
+5) In the folder input you can find a sample .xls file that you can use to parse. You will need to point to this file in the script
+6) you may need to adjust the file path of the catalog images to view them, but you should see something like the following image
+   
+![GUI](https://github.com/user-attachments/assets/807920cd-a199-40e9-a91d-d20fbdeb3897)
+
+
+## Instructions for the Building Element Catalogue - Web Viewer
 (This part will be developing as we progress)
 
-01-Clone the repository to your computer
+1) Clone the repository to your computer
 
-02-Open the folder on your machine (preferable using an IDE like Visual Studio Code (https://code.visualstudio.com/)
+2) Open the folder on your machine (preferable using an IDE like Visual Studio Code (https://code.visualstudio.com/)
 
-03-Cd to the root folder i.e. C:\Users\YourUserName\Documents\GitHub\IBC 
+3) Cd to the root folder i.e. C:\Users\YourUserName\Documents\GitHub\IBC 
 
-04-Make sure you have installed the dependecies above, you can do this by using pip install and/or npm
+4) Make sure you have installed the dependecies above, you can do this by using **pip install** or **npm**
 
-05-Run the python script  appTesting.py or app.py by running the command python appTesting.py
+5) Run the python script  appTesting.py or app.py by running the following command: **python appTesting.py**
 
-06-Open a browser window and enter the following http://localhost:5000/  (this will create a local server and load the index.html that is located in the templates folder
+6) Open a browser window and enter the following URL: http://localhost:5000/index.html  (this will create a local server and load the index.html that is located in the templates folder)
 
-07-Load a .csv file to browse the catalog and you should see sth like the following
+7) Navigate to the page of the catalog http://localhost:5000/catalog.html
+
+8) Load the file BuildingElementCatalog_Phase5.csv (or one with the same strcuture) to browse the catalog and you should see sth like the following
+9) You can now browse,filter and download the elements that exist in the catalogue
 
 ![Screenshot 2024-06-18 111506](https://github.com/TopoVague/IBC_dev/assets/8251842/f72e2d94-42ff-4620-8393-ace0c286f960)
+
 
 **General guidelines**
 -Place any relevant you are using In the node_modules folders 
