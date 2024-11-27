@@ -62,7 +62,7 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 5) In the folder input you can find a sample .xls file that you can use to parse. You will need to point to this file in the script
 6) you may need to adjust the file path of the catalog images to view them, but you should see something like the following image
    
-![GUI](https://github.com/user-attachments/assets/807920cd-a199-40e9-a91d-d20fbdeb3897)
+![ZHAW_implenia_GUI_local_ve03](https://github.com/user-attachments/assets/31968860-6e0d-43e6-ab2d-536bcdf71998)
 
 
 ## Instructions for the Building Element Catalogue - Web Viewer
@@ -84,8 +84,9 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 
 8) Load the file BuildingElementCatalog_Phase5.csv (or one with the same strcuture) to browse the catalog and you should see sth like the following
 9) You can now browse,filter and download the elements that exist in the catalogue
+    
+![ZHAW_implenia_GUI_web_04_CatalogBrowser](https://github.com/user-attachments/assets/9c245cff-2155-4871-801a-a4648752415c)
 
-![Screenshot 2024-06-18 111506](https://github.com/TopoVague/IBC_dev/assets/8251842/f72e2d94-42ff-4620-8393-ace0c286f960)
 
 
 **General guidelines**
@@ -103,7 +104,7 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 
 
 ## Team
-- Evangelos Pantazis / ZHAW - Researcher
+- Evangelos Pantazis / ZHAW - Senior Researcher
 - Jianpeng Cao / TU Delft - Post Doc Researcher 
 - Konrad Graser / ZHAW - Research/Program Manager
 - Furio Sondrini / Implenia - Digital Design and Innovation Manager 
