@@ -45,7 +45,6 @@ let polylineCounter = 0;
 
 // Define room colors
 const roomColors = {
-    'apartment': 'rgba(255, 255, 255, 0.5)', // White
     'living_room': 'rgba(255, 0, 0, 0.5)', // Red
     'kitchen': 'rgba(0, 255, 0, 0.5)', // Green
     'bathroom': 'rgba(0, 0, 255, 0.5)', // Blue
@@ -1020,8 +1019,100 @@ function loadPolylines() {
 }
 
 // Event listener for "Export JSON" button
-// Event listener for "Export JSON" button
-exportJsonButton.addEventListener('click', () => {
+// exportJsonButton.addEventListener('click', (event) => {
+//     event.preventDefault(); // Prevent any default behavior
+
+//     // Check if there are polylines to export
+//     if (allPolylines.length === 0) {
+//         alert("No polylines to export.");
+//         return;
+//     }
+//     if (scaleFactor === null) {
+//         alert("Scale factor is not set. Please draw the first segment and set the scale factor before exporting.");
+//         return;
+//     }
+
+//     // Create the panels JSON structure
+//     const panels = {
+//         "attributes": {},
+//         "items": {},
+//         "max_key": 0
+//     };
+//     let segmentKey = 0;
+
+//     allPolylines.forEach(polyline => {
+//         const points = polyline.points;
+//         const roomType = polyline.roomType;
+
+//         const roomTag = roomTags.find(tag => {
+//             const centroid = calculateCentroid(polyline.points);
+//             return tag.roomType === roomType &&
+//                    tag.position.x === centroid.x &&
+//                    tag.position.y === centroid.y;
+//         });
+
+//         const apartmentIndex = roomTag ? roomTag.apartment : "N/A";
+
+//         for (let i = 0; i < points.length - 1; i++) {
+//             const startPoint = points[i];
+//             const endPoint = points[i + 1];
+
+//             const realStartX = startPoint.x * scaleFactor;
+//             const realStartY = startPoint.y * scaleFactor;
+//             const realEndX = endPoint.x * scaleFactor;
+//             const realEndY = endPoint.y * scaleFactor;
+
+//             const panel = {
+//                 "panel_type": "WAL_21_CNI_REN",
+//                 "start_point": [
+//                     parseFloat(realStartX.toFixed(2)),
+//                     parseFloat(realStartY.toFixed(2)),
+//                     0.0
+//                 ],
+//                 "end_point": [
+//                     parseFloat(realEndX.toFixed(2)),
+//                     parseFloat(realEndY.toFixed(2)),
+//                     0.0
+//                 ],
+//                 "height": storyHeight,
+//                 "thickness": 0.2,
+//                 "room": roomType,
+//                 "apartment": apartmentIndex
+//             };
+
+//             panels.items[segmentKey] = panel;
+//             segmentKey++;
+//         }
+//     });
+
+//     panels.max_key = segmentKey;
+
+//     const jsonData = {
+//         "panels": panels
+//     };
+
+//     const jsonString = JSON.stringify(jsonData, null, 4);
+
+//     const blob = new Blob([jsonString], { type: "application/json" });
+//     const url = URL.createObjectURL(blob);
+//     const a = document.createElement('a');
+//     a.href = url;
+//     a.download = "panels.json";
+//     document.body.appendChild(a);
+//     a.click();
+
+//     document.body.removeChild(a);
+//     URL.revokeObjectURL(url);
+
+//     console.log("JSON exported successfully.");
+//     // Do NOT call drawPDFOnCanvas() or clear allPolylines here
+// });
+
+
+exportJsonButton.addEventListener('click', (event) => {
+    event.preventDefault(); // Prevent any default behavior
+
+    // Check if there are polylines to export
     if (allPolylines.length === 0) {
         alert("No polylines to export.");
         return;
@@ -1031,41 +1122,57 @@ exportJsonButton.addEventListener('click', () => {
         return;
     }
 
+    // Create the panels and rooms JSON structures
     const panels = {
         "attributes": {},
         "items": {},
         "max_key": 0
     };
-
+    const rooms = {}; // Initialize the rooms object
     let segmentKey = 0;
+    let roomId = 0;
 
     allPolylines.forEach(polyline => {
         const points = polyline.points;
         const roomType = polyline.roomType;
 
-        // Find the specific room tag associated with this polyline
+        // Find the associated room tag
         const roomTag = roomTags.find(tag => {
             const centroid = calculateCentroid(polyline.points);
             return tag.roomType === roomType &&
                    tag.position.x === centroid.x &&
                    tag.position.y === centroid.y;
         });
-        
-        const apartmentIndex = roomTag ? roomTag.apartment : "N/A"; // Get the correct apartment index
 
+        const apartmentIndex = roomTag ? roomTag.apartment : "N/A";
+
+        // Create a unique identifier for the room (room type + apartment association)
+        const roomKey = `${roomType}_${apartmentIndex}_${roomId}`;
+        const roomPoints = points.map(point => ({
+            x: parseFloat((point.x * scaleFactor).toFixed(2)),
+            y: parseFloat((point.y * scaleFactor).toFixed(2)),
+            z: 0.0 // Assume all rooms are on the same plane
+        }));
+
+        // Add the room to the rooms object
+        rooms[roomKey] = {
+            "room_type": roomType,
+            "apartment": apartmentIndex,
+            "coordinates": roomPoints
+        };
+
+        // Add panels for each segment of the polyline
         for (let i = 0; i < points.length - 1; i++) {
             const startPoint = points[i];
             const endPoint = points[i + 1];
 
-            // Assign real-world start point coordinates using scaleFactor
             const realStartX = startPoint.x * scaleFactor;
             const realStartY = startPoint.y * scaleFactor;
             const realEndX = endPoint.x * scaleFactor;
             const realEndY = endPoint.y * scaleFactor;
 
-            // Define the panel object
             const panel = {
-                "panel_type": "WallType1",
+                "panel_type": "WAL_21_CNI_REN",
                 "start_point": [
                     parseFloat(realStartX.toFixed(2)),
                     parseFloat(realStartY.toFixed(2)),
@@ -1077,41 +1184,37 @@ exportJsonButton.addEventListener('click', () => {
                     0.0
                 ],
                 "height": storyHeight,
-                "thickness": 0.2, // Fixed thickness
+                "thickness": 0.2,
                 "room": roomType,
-                "apartment": apartmentIndex // Correct apartment index from roomTag
+                "apartment": apartmentIndex
             };
 
-            // Add the panel to items
             panels.items[segmentKey] = panel;
             segmentKey++;
         }
+
+        roomId++; // Increment the room ID for unique identification
     });
 
-    // Add max_key to reflect the total number of segments
     panels.max_key = segmentKey;
 
     const jsonData = {
-        "panels": panels
+        "panels": panels,
+        "rooms": rooms
     };
 
-    // Convert JSON object to string
     const jsonString = JSON.stringify(jsonData, null, 4);
 
-    // Create a Blob from the JSON string
     const blob = new Blob([jsonString], { type: "application/json" });
-
-    // Create a link to download the Blob
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = "panels.json";
+    a.download = "panels_with_rooms.json";
     document.body.appendChild(a);
     a.click();
 
-    // Clean up
     document.body.removeChild(a);
     URL.revokeObjectURL(url);
 
-    alert("JSON exported successfully.");
+    console.log("JSON with rooms exported successfully.");
 });
