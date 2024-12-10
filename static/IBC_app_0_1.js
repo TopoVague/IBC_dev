@@ -16,16 +16,25 @@
 
     // Add the headers of columns you want to hide here
     var hiddenColumns = [    
-        'NameDE',
+        'BuildingID',
+        'LevelID',
+        'SpaceProgram',
         'Category', 
+        'Material',
+        'BuildingPhase',
+        'eBKP-H',
         'NumberCode', 
+        'NameDE',
         'Variation', 
         'Width', 
         'Height',
+        'Thickness',
         'LoadBearing', 
         'StiffeningFunction', 
         'Prefabrication', 
         'Placement', 
+        'ANF Schallschutz',
+        'ANF Brandschutz',
         'Water', 
         'Heating',
         'Ventilation',
@@ -35,8 +44,14 @@
         'AcoustingRating',
         'ThermalTransmittance',
         'Finishing',
-        'Version',
-        'Reasoning',
+        'LeadTime',
+        'MaterialCost',
+        'LaborCost',
+        'CostEstimatingMethod',
+        'Version', 
+        'Comments',
+        'LinkToIfc',
+        'ReferenceGeometry',
         'ImageURL']; 
 
     if (!fileInput || !gridContainer || !filterInputs || !filterButton || !resultsCountDiv || !elementsCountDiv || !detailModal || !modalImage || !modalDetails || !closeModal || !threeCanvas) {
@@ -117,7 +132,7 @@
     
 
 
-    // FUNCTION THAT ADDS THE FILTERSED RESULT TO A GRID 
+    // FUNCTION THAT ADDS THE FILTERED RESULT TO A GRID 
     function toGrid(rows, filterValues = [], minThickness = null, maxThickness = null) {
         if (!rows || rows.length === 0) {
             console.warn('No rows to process.');
