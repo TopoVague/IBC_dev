@@ -105,10 +105,11 @@
         //get filter values 
         var dropdownValue1 = document.getElementById("filterlist1");
         var menufilter1 = dropdownValue1.value.toLowerCase();
+        
         var dropdownValue2 = document.getElementById("filterlist2");
         var menufilter2 = dropdownValue2.value.toLowerCase();
         //get the min and max thickness
-        //TO DO add min and max thickness  into the fliterValues variable
+        //add min and max thickness  into the fliterValues variable
         var minThickness = parseFloat(document.getElementById('minThickness').value);
         var maxThickness = parseFloat(document.getElementById('maxThickness').value);
        
@@ -143,7 +144,7 @@
             gridContainer.removeChild(gridContainer.firstChild);
         }
         var headers = rows[0].trim().split(DELIMITER);
-        //initialize a counter for all the elements in the livrary
+        //initialize a counter for all the elements in the library
         var allitems = -1;
         //initialize a counter to count results
         var filteredItems = 0;
@@ -370,7 +371,6 @@
             var hasWaterPipes =  objectHasWaterPipes ;
             var hasVentilation =  objectHasVentilation;
             var hasHeating =  objectHasHeating;
-            console.log('yo 1')
             // Send a request to the server to create the IFC file
             fetch('/export_ifc', {
                 method: 'POST',
