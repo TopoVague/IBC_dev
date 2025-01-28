@@ -102,6 +102,7 @@
         var filterValues = Array.from(filterInputs).map(input => input.value.trim().toLowerCase()).filter(value => value);
 
         //MAYBE DO THIS MORE ELEGANTLY
+        //FIND A WAY TO ADD FILTER FOR FALSE TRUE i.e. is external/internal
         //get filter values 
         var dropdownValue1 = document.getElementById("filterlist1");
         var menufilter1 = dropdownValue1.value.toLowerCase();
