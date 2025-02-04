@@ -1,0 +1,103 @@
+{
+    "panels": {
+        "attributes": {},
+        "items": {
+            "0": {
+                "panel_type": "WAL_21_CNI_REN",
+                "start_point": [
+                    9.95,
+                    11.24,
+                    0
+                ],
+                "end_point": [
+                    14.95,
+                    11.24,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bathroom",
+                "apartment": "Apartment 1"
+            },
+            "39": {
+                "panel_type": "WAL_21_CNI_REN",
+                "start_point": [
+                    22.96,
+                    3.22,
+                    0
+                ],
+                "end_point": [
+                    17.96,
+                    3.43,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 2"
+            },
+            "40": {
+                "panel_type": "WAL_21_CNI_REN",
+                "start_point": [
+                    17.96,
+                    3.43,
+                    0
+                ],
+                "end_point": [
+                    17.96,
+                    8.7,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 2"
+            }
+        },
+        "max_key": 41
+    },
+    "spaces": {
+        "1": {
+            "room_type": "bathroom",
+            "apartment": "Apartment 1",
+            "coordinates": [
+                {
+                    "x": 9.95,
+                    "y": 11.24,
+                    "z": 0
+                },
+                {
+                    "x": 14.95,
+                    "y": 11.24,
+                    "z": 0
+                },
+                {
+                    "x": 14.95,
+                    "y": 14.39,
+                    "z": 0
+                },
+                {
+                    "x": 12.48,
+                    "y": 14.39,
+                    "z": 0
+                },
+                {
+                    "x": 12.48,
+                    "y": 13.02,
+                    "z": 0
+                },
+                {
+                    "x": 10.02,
+                    "y": 13.02,
+                    "z": 0
+                },
+                {
+                    "x": 9.95,
+                    "y": 11.24,
+                    "z": 0
+                }
+            ]
+        }
+
+    }
+}
