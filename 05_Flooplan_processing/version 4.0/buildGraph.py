@@ -1,215 +1,236 @@
 import json
 import networkx as nx
-from itertools import combinations
 import matplotlib.pyplot as plt
 from matplotlib.patches import Patch
+from shapely.geometry import Point, Polygon, LineString
+from itertools import combinations
 
-
+# -------------------- Drawing Function --------------------
 def draw_graph(G):
-    plt.figure(figsize=(14, 10))  # Increase figure size for clarity
+    """Visualize the graph with color-coded node types."""
+    plt.figure(figsize=(12, 8))
+    pos = nx.spring_layout(G, seed=42)  # reproducible layout
 
-    pos = nx.spring_layout(G, seed=42)  # Fixed layout for reproducibility
-
-    # Node colors based on type
+    # Color-code nodes by 'type'
     node_colors = []
-    for node, attrs in G.nodes(data=True):
-        if attrs.get('type') == 'room':
+    for node, data in G.nodes(data=True):
+        ntype = data.get('type', 'unknown')
+        if ntype == 'wall':
+            node_colors.append('lightgray')
+        elif ntype == 'room':
             node_colors.append('lightblue')
-        elif attrs.get('type') == 'apartment':
+        elif ntype == 'apartment':
             node_colors.append('lightgreen')
         else:
-            node_colors.append('lightgray')  # Walls
+            node_colors.append('white')
 
-    # Draw nodes with larger size
-    nx.draw_networkx_nodes(G, pos, node_color=node_colors, node_size=1200, edgecolors='black')
+    # Draw nodes and edges
+    nx.draw_networkx_nodes(G, pos, node_color=node_colors, node_size=800, edgecolors='black')
+    nx.draw_networkx_edges(G, pos, edge_color='gray')
+    nx.draw_networkx_labels(G, pos, font_size=8, font_weight='bold')
 
-    # Draw edges
-    edge_labels = {(u, v): attrs['type'] for u, v, attrs in G.edges(data=True)}
-    nx.draw_networkx_edges(G, pos, edge_color='gray', width=1.5)
+    # Edge labels (e.g., "belongs_to", "identical", etc.)
+    edge_labels = {(u, v): d.get('type', '') for u, v, d in G.edges(data=True)}
+    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_color='red', font_size=7)
 
-    # Draw labels with larger font
-    nx.draw_networkx_labels(G, pos, font_size=12, font_weight="bold")  # Bigger node labels
-    nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=10, font_color='red')  # Bigger edge labels
-
-    # Add larger legend
-    legend_labels = [
-        Patch(facecolor='lightblue', edgecolor='black', label='Room'),
-        Patch(facecolor='lightgreen', edgecolor='black', label='Apartment'),
-        Patch(facecolor='lightgray', edgecolor='black', label='Wall')
+    # Legend
+    legend_elems = [
+        Patch(facecolor='lightgray', label='Wall'),
+        Patch(facecolor='lightblue', label='Room (Space)'),
+        Patch(facecolor='lightgreen', label='Apartment'),
     ]
-    plt.legend(handles=legend_labels, loc='upper right', fontsize=12)  # Increase legend font size
-
-    plt.title("Graph Representation of Floorplan", fontsize=14, fontweight='bold')  # Bigger title
+    plt.legend(handles=legend_elems, loc='upper right', fontsize=10)
+    plt.title("Floorplan Graph", fontsize=12, fontweight='bold')
     plt.show()
 
 
-# Function to check if two walls are identical (order-independent)
-def are_walls_identical(wall1, wall2):
-    return (wall1['start_point'] == wall2['start_point'] and wall1['end_point'] == wall2['end_point']) or \
-           (wall1['start_point'] == wall2['end_point'] and wall1['end_point'] == wall2['start_point'])
+# -------------------- Geometry Utilities --------------------
+def are_walls_identical(w1, w2):
+    """Check if two walls are identical, ignoring endpoint order."""
+    return (
+        (w1['start_point'] == w2['start_point'] and w1['end_point'] == w2['end_point'])
+        or
+        (w1['start_point'] == w2['end_point'] and w1['end_point'] == w2['start_point'])
+    )
 
-# Function to normalize apartment names by removing spaces
-def normalize_apartment_name(apartment_name):
-    return apartment_name.replace(" ", "") if apartment_name else apartment_name
+def normalize_apartment_name(name):
+    """Remove spaces from apartment name to standardize mapping."""
+    if not name:
+        return "None"
+    return name.replace(" ", "")
 
-# Load the data from the JSON file
-with open('floorplan.json', 'r') as file:
-    data = json.load(file)
-
-panels = data['panels']['items']
-
-# Initialize an undirected graph
-G = nx.Graph()
-
-# Track unique rooms and apartments to create nodes with simplified naming
-room_nodes = {}
-apartment_nodes = {}
-apartment_to_rooms = {}
-
-# Counters for unique IDs
-room_counter = 1
-apartment_counter = 1
-
-# Mapping to ensure unique naming
-room_mapping = {}
-apartment_mapping = {}
-
-# Add wall nodes with attributes to the graph
-for key, wall in panels.items():
-    # Convert start_point and end_point lists to comma-separated strings
-    start_point_str = ','.join(map(str, wall['start_point']))
-    end_point_str = ','.join(map(str, wall['end_point']))
-    
-    # Add the wall node with string-converted points
-    wall_node_attrs = {
-        'panel_type': wall['panel_type'],  # string
-        'start_point': start_point_str,    # string
-        'end_point': end_point_str,        # string
-        'height': wall['height'],          # number
-        'thickness': wall['thickness'],    # number
-        'room': wall['room'] if wall['room'] else "None",  # string or "None"
-        'apartment': wall.get('apartment', "None")          # string
-    }
-    G.add_node(key, **wall_node_attrs)
-
-    # Simplify room naming
-    room_key = (wall['room'], wall.get('apartment', "None"))
-    if room_key not in room_mapping:
-        room_id = f"room{room_counter}"
-        room_mapping[room_key] = room_id
-        G.add_node(room_id, type='room', name=wall['room'] if wall['room'] else "None", apartment=wall.get('apartment', "None"))
-        room_nodes[room_id] = room_id
-        room_counter += 1
-    else:
-        room_id = room_mapping[room_key]
-
-    # Add an edge between the wall node and its corresponding room node
-    G.add_edge(room_id, key, type='belongs_to')
-
-    # Simplify apartment naming
-    apartment_name = wall.get('apartment', "None")
-    if apartment_name != "None":
-        apartment_name_norm = normalize_apartment_name(apartment_name)
-        if apartment_name_norm not in apartment_mapping:
-            apartment_id = f"apartment{apartment_counter}"
-            apartment_mapping[apartment_name_norm] = apartment_id
-            G.add_node(apartment_id, type='apartment', name=apartment_name)
-            apartment_nodes[apartment_name_norm] = apartment_id
-            apartment_counter += 1
-        else:
-            apartment_id = apartment_mapping[apartment_name_norm]
-        
-        # Map the room to the apartment
-        if apartment_name_norm not in apartment_to_rooms:
-            apartment_to_rooms[apartment_name_norm] = set()
-        apartment_to_rooms[apartment_name_norm].add(room_id)
-
-# Add edges between room nodes and their respective apartment nodes
-for apartment_name_norm, rooms in apartment_to_rooms.items():
-    apartment_node_id = apartment_mapping[apartment_name_norm]
-    for room_id in rooms:
-        G.add_edge(room_id, apartment_node_id, type='belongs_to')
-
-# Add edges based on identical walls only
-for key1, key2 in combinations(panels.keys(), 2):
-    wall1 = panels[key1]
-    wall2 = panels[key2]
-
-    if are_walls_identical(wall1, wall2):
-        G.add_edge(key1, key2, type='identical')
-
-# **Debugging Outputs**
-
-# Debug: Print apartment nodes
-print("Apartment nodes:")
-for apt_name_norm, apt_id in apartment_nodes.items():
-    print(f"  {apt_name_norm}: {apt_id}")
-
-# Debug: Print 'identical' edges
-print("\nIdentical edges:")
-for u, v, attrs in G.edges(data=True):
-    if attrs.get('type') == 'identical':
-        print(f"  {u} <-> {v}")
-
-# Debug: Print all 'belongs_to' edges
-print("\nBelongs_to edges (Room <-> Wall):")
-for u, v, attrs in G.edges(data=True):
-    if attrs.get('type') == 'belongs_to':
-        print(f"  {u} <-> {v}")
-
-# Debug: Print all room nodes
-print("\nRoom nodes:")
-for room_id, room_attr in G.nodes(data=True):
-    if room_attr.get('type') == 'room':
-        print(f"  {room_id}: {room_attr}")
-
-# Function to find and link core rooms to apartments through identical walls
+# -------------------- BFS: Connect Core -> Apartment --------------------
 def connect_core_to_apartments(graph):
-    # Find all core room nodes
-    core_nodes = [node for node, attr in graph.nodes(data=True) if attr.get('type') == 'room' and attr.get('name') == 'core']
-
-    print(f"\nIdentified core nodes: {core_nodes}")
+    """
+    From each room with room_type='core', BFS outward.
+    Whenever we encounter an apartment node, link them (core -> apartment).
+    """
+    core_nodes = [n for n, d in graph.nodes(data=True)
+                  if d.get('type') == 'room' and d.get('room_type') == 'core']
 
     for core_node in core_nodes:
-        print(f"\nProcessing core node: {core_node}")
-
-        # Use BFS to find all paths from the core room
         visited = set()
-        queue = [(core_node, [])]  # (current node, path to current node)
+        queue = [core_node]
         while queue:
-            current_node, path = queue.pop(0)
-
-            if current_node in visited:
+            current = queue.pop(0)
+            if current in visited:
                 continue
-            visited.add(current_node)
+            visited.add(current)
 
-            # Check if we've reached an apartment
-            if graph.nodes[current_node].get('type') == 'apartment':
-                # Establish a direct core-to-apartment connection
-                graph.add_edge(core_node, current_node, type='core_to_apartment')
-                print(f"  Connected core '{core_node}' to apartment '{current_node}' via path: {path}")
-                continue
+            # If we reached an apartment node, connect
+            if graph.nodes[current].get('type') == 'apartment':
+                graph.add_edge(core_node, current, type='core_to_apartment')
+                # continue searching if you want multiple connections
 
-            # Traverse neighbors
-            for neighbor in graph.neighbors(current_node):
-                if neighbor not in visited:
-                    queue.append((neighbor, path + [current_node]))
-                    
-# Apply the function to the graph
-connect_core_to_apartments(G)
-draw_graph(G)
+            # Explore neighbors
+            for nbr in graph.neighbors(current):
+                if nbr not in visited:
+                    queue.append(nbr)
 
-# Check if connections were made
-print("\nAfter connecting core to apartments:")
-for u, v, attrs in G.edges(data=True):
-    if attrs.get('type') == 'core_to_apartment':
-        print(f"  {u} <-> {v} (core_to_apartment)")
+def transform_identical_walls(G):
+    """Modifies the graph in-place so that two identical walls sharing
+    the same two rooms become a simple chain: room_a - A - identical - B - room_b."""
 
-# Export the graph to GraphML
-try:
-    nx.write_graphml(G, "walls_and_rooms_graph.graphml")
-    print("\nGraph export completed successfully.")
-except nx.NetworkXError as e:
-    print(f"GraphML Export Error: {e}")
+    def get_room_neighbors(node):
+        """Return all 'room' neighbors connected to 'node' via an edge type='belongs_to'."""
+        rooms = set()
+        for nbr in G.neighbors(node):
+            # Check that neighbor is type=room and edge type=belongs_to
+            if G.nodes[nbr].get('type') == 'room' and G.edges[node, nbr].get('type') == 'belongs_to':
+                rooms.add(nbr)
+        return rooms
 
-print("Graph export completed successfully.")
+    # Gather all pairs of nodes connected by an 'identical' edge
+    identical_pairs = [(u, v)
+                       for u, v, data in G.edges(data=True)
+                       if data.get('type') == 'identical']
+
+    for A, B in identical_pairs:
+        rooms_A = get_room_neighbors(A)
+        rooms_B = get_room_neighbors(B)
+
+        # We only do the chain transform if they share EXACTLY the same two rooms
+        if rooms_A == rooms_B and len(rooms_A) == 2:
+            room_a, room_b = sorted(rooms_A)  # consistent ordering
+            # Remove B->room_a belongs_to edge (so B connects only to room_b)
+            if G.has_edge(B, room_a) and G.edges[B, room_a].get('type') == 'belongs_to':
+                G.remove_edge(B, room_a)
+            # Remove A->room_b belongs_to edge (so A connects only to room_a)
+            if G.has_edge(A, room_b) and G.edges[A, room_b].get('type') == 'belongs_to':
+                G.remove_edge(A, room_b)
+
+# -------------------- Main Script --------------------
+if __name__ == "__main__":
+    # 1) Load JSON
+    with open('floorplan.json', 'r') as f:
+        data = json.load(f)
+
+    panels = data['panels']['items']  # dict of wall definitions
+    spaces = data['spaces']          # dict of polygons
+
+    G = nx.Graph()
+
+    # 2) Create space polygons + room nodes (use 'room_type' key)
+    space_polygons = {}
+    space_node_map = {}
+    for space_id, space_info in spaces.items():
+        coords_2d = [(c['x'], c['y']) for c in space_info['coordinates']]
+        poly = Polygon(coords_2d)
+
+        # Create a node label, e.g., "space_0"
+        space_label = f"space_{space_id}"
+
+        # Convert coords to string to avoid GraphML errors
+        coords_str = ";".join(f"{x},{y}" for (x, y) in coords_2d)
+
+        G.add_node(
+            space_label,
+            type='room',
+            room_type=space_info['room_type'],      # e.g. "bathroom", "bedroom", "core"
+            apartment=space_info.get('apartment', 'None'),
+            coordinates=coords_str
+        )
+        space_polygons[space_id] = poly
+        space_node_map[space_id] = space_label
+
+    # 3) Create apartment nodes from the spaces
+    apt_map = {}
+    apt_counter = 1
+    for space_id, space_info in spaces.items():
+        apt_raw = space_info.get('apartment', 'None')
+        if apt_raw == 'None':
+            continue
+
+        apt_norm = normalize_apartment_name(apt_raw)
+        if apt_norm not in apt_map:
+            apt_node = f"apartment_{apt_counter}"
+            G.add_node(apt_node, type='apartment', name=apt_raw)
+            apt_map[apt_norm] = apt_node
+            apt_counter += 1
+
+        # Link the space node to this apartment node
+        space_node = space_node_map[space_id]
+        G.add_edge(space_node, apt_map[apt_norm], type='belongs_to')
+
+    # 4) Add each wall node & link it to the correct space
+    for wall_key, w_data in panels.items():
+        # The JSON "room": "bathroom", "bedroom", etc. => store it as 'room_type'
+        w_room_type = w_data.get('room', 'None')
+        w_apartment = w_data.get('apartment', 'None')
+
+        # Convert the start/end points to strings for GraphML
+        start_pt_str = str(w_data['start_point'])
+        end_pt_str   = str(w_data['end_point'])
+
+        # Create wall node with 'room_type' so it matches space nodes
+        G.add_node(
+            wall_key,
+            type='wall',
+            panel_type="WAL_21_CNI_REN",
+            start_point=start_pt_str,
+            end_point=end_pt_str,
+            height=float(w_data['height']),
+            thickness=float(w_data['thickness']),
+            room_type=w_room_type,      # <--- store as room_type
+            apartment=w_apartment
+        )
+
+        # Evaluate geometry: use entire line to avoid corner-only attachments
+        from shapely.geometry import LineString
+        start_xy = (w_data['start_point'][0], w_data['start_point'][1])
+        end_xy   = (w_data['end_point'][0],   w_data['end_point'][1])
+        wall_line = LineString([start_xy, end_xy])
+
+        # Among all spaces, find polygon(s) with same (room_type + apartment)
+        # and check if polygon fully covers the line
+        for space_id, poly in space_polygons.items():
+            space_label = space_node_map[space_id]
+            space_attr  = G.nodes[space_label]
+
+            if (space_attr.get('room_type') == w_room_type and
+                space_attr.get('apartment') == w_apartment):
+
+                # If polygon fully covers the line, link
+                if poly.covers(wall_line):
+                    G.add_edge(wall_key, space_label, type='belongs_to')
+
+    # 5) Mark identical walls (optional)
+    wall_keys = list(panels.keys())
+    for k1, k2 in combinations(wall_keys, 2):
+        if are_walls_identical(panels[k1], panels[k2]):
+            G.add_edge(k1, k2, type='identical')
+
+    # 6) Connect core rooms to apartments (optional BFS)
+    connect_core_to_apartments(G)
+
+    transform_identical_walls(G)
+
+    # 7) Draw the graph (optional)
+    draw_graph(G)
+
+    # 8) Export to GraphML
+    try:
+        nx.write_graphml(G, "walls_and_rooms_graph.graphml")
+        print("GraphML export completed successfully.")
+    except nx.NetworkXError as e:
+        print("Error exporting to GraphML:", e)

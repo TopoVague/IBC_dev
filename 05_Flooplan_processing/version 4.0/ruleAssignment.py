@@ -28,7 +28,7 @@ for node, attrs in G.nodes(data=True):
         for neighbor in G.neighbors(node):
             neighbor_attrs = G.nodes[neighbor]
             # Check if the neighbor is a "core" room
-            if neighbor_attrs.get("type") == "room" and neighbor_attrs.get("name") == "core":
+            if neighbor_attrs.get("type") == "room" and neighbor_attrs.get("room_type") == "core":
                 G.nodes[node]["panel_type"] = "WAL_26"
                 print(f"Rule 2 applied: Node {node} is connected to core room {neighbor}")
                 break  # No need to check other neighbors
