@@ -32,7 +32,17 @@ The project relies mainly on open source libraries and platforms whch include
 
 -TopologicPy
 
+-networkx
 
+-matplotlib
+
+-shapely
+
+-itertools
+
+-json
+
+-xml.etree.ElementTree
 
 
 ## Instructions for accessing the SQL database setup by Implenia
@@ -88,6 +98,18 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 ![ZHAW_implenia_GUI_web_04_CatalogBrowser](https://github.com/user-attachments/assets/9c245cff-2155-4871-801a-a4648752415c)
 
 
+## Workflow Overview
+The workflow consists of the following steps:
+
+1) Floor Plan Annotation (Web Interface) – Users can upload PDFs, draw polylines to define rooms, classify spaces, and group them into apartments.
+
+2) Export to JSON – Annotated floor plans are exported as structured JSON files.
+
+3) Graph Processing – JSON files are converted into a graph representation using buildGraph.py.
+
+4) Rule-Based Classification – The ruleAssignment.py script assigns classifications to building elements.
+
+5) Final JSON Update – updateJSON.py updates the exported JSON with assigned classifications.
 
 **General guidelines**
 -Place any relevant you are using In the node_modules folders 
