@@ -145,11 +145,14 @@ How to process your floor plan, you should follow these steps:
    
    5.4 if you want to clear everything, for example, do it from scratch, click "Clear PDF", and reupload a PDF.
    
-   5.5 one the right side bar, you will see the information about the room
+   5.5 one the right side panel, you will see the information about the room
    
    5.6 chnage the room type, you can create another polyline for a different room
    
-
+6. After all room is annotated with polyline, click "Define Apartment" to define apartment one by one.
+7. Select rooms you want to group as an apartment by clicking the "room tag" of each room, the color of selected room tag will change to orange.
+8. Click "Confirm Grouping", the apartment profile will automatically appear in the right side panel. Please check the profile to make sure the apartment is defined correctly
+9. Click "Export JSON", the initial bill of material file could be downloaded as "<PDF_File_Name>+bom.json".
 
 
 
