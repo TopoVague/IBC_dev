@@ -103,6 +103,20 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 -Keep tests and development files in the 01_CodingTests Folder 
 
 ## Workflow Overview of Floor Plan Processing Tool
+
+The workflow consists of the following steps:
+
+1) Floor Plan Annotation (Web Interface) – Users can upload PDFs, draw polylines to define rooms, classify spaces, and group them into apartments.
+
+2) Export to JSON – Annotated floor plans are exported as structured JSON files.
+
+3) Graph Processing – JSON files are converted into a graph representation using buildGraph.py.
+
+4) Rule-Based Classification – The ruleAssignment.py script assigns classifications to building elements.
+
+5) Final JSON Update – updateJSON.py updates the exported JSON with assigned classifications.
+
+## Detailed Instruction
 Before running the files, install the dependency by running 
 
 pip install numpy networkx matplotlib shapely 
@@ -136,17 +150,7 @@ How to process your floor plan, you should follow these steps:
    5.6 chnage the room type, you can create another polyline for a different room
    
 
-The workflow consists of the following steps:
 
-1) Floor Plan Annotation (Web Interface) – Users can upload PDFs, draw polylines to define rooms, classify spaces, and group them into apartments.
-
-2) Export to JSON – Annotated floor plans are exported as structured JSON files.
-
-3) Graph Processing – JSON files are converted into a graph representation using buildGraph.py.
-
-4) Rule-Based Classification – The ruleAssignment.py script assigns classifications to building elements.
-
-5) Final JSON Update – updateJSON.py updates the exported JSON with assigned classifications.
 
 
 ## Team
