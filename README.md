@@ -114,15 +114,25 @@ python -m http.server 8000, open the http://127.0.0.1:8000/index.html in your br
 How to process your floor plan, you should follow these steps:
 
 1. Upload a PDF file by click "Choose File" button and select your file; (You should choose a file that you know at least one real dimension)
+   
 2. Enter the "floor height" (unit: meter)
+   
 3. Scale and move the uploaded PDF file on the canvas and click button "Start Drawing" (be careful! one drawingn mode is activated, the PDF should be fixed)
+   
 4. Choose the room type in the list (by default the room type is "living room")
+   
 5. Start drawing the polyline following the boundary of the room (by enter the "shift" you are able to draw vertical and horizontal line)
+    
    5.1 after drawing first line segment, you will be asked to enter the real distance of the segment, so as to calculate the ratio
+   
    5.2 if you draw the polyline by mistake, complete the polyline by randomly enclose it, a pop-up window will let you cancel the drawing
+   
    5.3 if you want to clear the polyline after created it (confirm in the 5.2 step), click "Clear Polylines" button, it will clear the last polyline you created.)
+   
    5.4 if you want to clear everything, for example, do it from scratch, click "Clear PDF", and reupload a PDF.
+   
    5.5 one the right side bar, you will see the information about the room
+   
    5.6 chnage the room type, you can create another polyline for a different room
    
 
