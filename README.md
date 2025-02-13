@@ -150,11 +150,15 @@ then type
 8. Click "Confirm Grouping", the apartment profile will automatically appear in the right side panel. Please check the profile to make sure the apartment is defined correctly
 9. Click "Export JSON", the initial bill of material file could be downloaded as "<File_Name>+bom.json".
 
-### How to infer the panel type information (by default, the wall type in the exported JSON file is ""WAL_21_CNI_REN""), you should follow these steps:
+### How to infer the panel type information 
+(by default, the wall type in the exported JSON file is ""WAL_21_CNI_REN""), you should follow these steps:
 
 1. Save the exported JSON file in the same folder of other three python files
+   
 2. In the terminal, run **python buildGraph.py <File_Name>**, output file <File_Name>+bom.graphml
+   
 3. run **python ruleAssignment.py <File_Name>**, output file <File_Name>+bom_updated.graphml
+   
 4. run **python updateJSON.py <File_Name>**, output file <File_Name>+bom_udpated.json
 
 
