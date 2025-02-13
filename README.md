@@ -119,40 +119,43 @@ The workflow consists of the following steps:
 ## Detailed Instruction
 Before running the files, install the dependency by running 
 
-pip install numpy networkx matplotlib shapely 
+**pip install numpy networkx matplotlib shapely** 
 
 then type 
 
-python -m http.server 8000, open the http://127.0.0.1:8000/index.html in your browser. You will see the Floor Plan Processing Tool!
+**python -m http.server 8000**, open the http://127.0.0.1:8000/index.html in your browser. You will see the Floor Plan Processing Tool!
 
-How to process your floor plan, you should follow these steps:
+### How to process your floor plan, you should follow these steps:
 
 1. Upload a PDF file by click "Choose File" button and select your file; (You should choose a file that you know at least one real dimension)
-   
 2. Enter the "floor height" (unit: meter)
-   
 3. Scale and move the uploaded PDF file on the canvas and click button "Start Drawing" (be careful! one drawingn mode is activated, the PDF should be fixed)
-   
 4. Choose the room type in the list (by default the room type is "living room")
-   
 5. Start drawing the polyline following the boundary of the room (by enter the "shift" you are able to draw vertical and horizontal line)
     
-   5.1 after drawing first line segment, you will be asked to enter the real distance of the segment, so as to calculate the ratio
+   5.1 After drawing first line segment, you will be asked to enter the real distance of the segment, so as to calculate the ratio
    
-   5.2 if you draw the polyline by mistake, complete the polyline by randomly enclose it, a pop-up window will let you cancel the drawing
+   5.2 If you draw the polyline by mistake, complete the polyline by randomly enclose it, a pop-up window will let you cancel the drawing
    
-   5.3 if you want to clear the polyline after created it (confirm in the 5.2 step), click "Clear Polylines" button, it will clear the last polyline you created.)
+   5.3 If you want to clear the polyline after created it (confirm in the 5.2 step), click "Clear Polylines" button, it will clear the last polyline you created.)
    
-   5.4 if you want to clear everything, for example, do it from scratch, click "Clear PDF", and reupload a PDF.
+   5.4 If you want to clear everything, for example, do it from scratch, click "Clear PDF", and reupload a PDF.
    
-   5.5 one the right side panel, you will see the information about the room
+   5.5 One the right side panel, you will see the information about the room
    
-   5.6 chnage the room type, you can create another polyline for a different room
+   5.6 Chnage the room type, you can create another polyline for a different room
    
 6. After all room is annotated with polyline, click "Define Apartment" to define apartment one by one.
 7. Select rooms you want to group as an apartment by clicking the "room tag" of each room, the color of selected room tag will change to orange.
 8. Click "Confirm Grouping", the apartment profile will automatically appear in the right side panel. Please check the profile to make sure the apartment is defined correctly
-9. Click "Export JSON", the initial bill of material file could be downloaded as "<PDF_File_Name>+bom.json".
+9. Click "Export JSON", the initial bill of material file could be downloaded as "<File_Name>+bom.json".
+
+### How to infer the panel type information (by default, the wall type in the exported JSON file is ""WAL_21_CNI_REN""), you should follow these steps:
+
+1. Save the exported JSON file in the same folder of other three python files
+2. In the terminal, run **python buildGraph.py <File_Name>**, output file <File_Name>+bom.graphml
+3. run **python ruleAssignment.py <File_Name>**, output file <File_Name>+bom_updated.graphml
+4. run **python updateJSON.py <File_Name>**, output file <File_Name>+bom_udpated.json
 
 
 
