@@ -1304,7 +1304,7 @@ exportJsonButton.addEventListener('click', (event) => {
 
     const jsonData = {
         "panels": panels,
-        "spaces": rooms
+        "rooms": rooms
     };
 
     const jsonString = JSON.stringify(jsonData, null, 4);

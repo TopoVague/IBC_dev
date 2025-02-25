@@ -15,7 +15,7 @@ output_graphml = f"{base_name}_bom_updated.graphml"
 G = nx.read_graphml(input_graphml)
 print(f"Loaded graph with {G.number_of_nodes()} nodes and {G.number_of_edges()} edges.\n")
 
-# Rule 1: Assign "WAL_21" to panels with no "Identical" edges
+# Rule 1: Assign "WAL_01_CNI_REN" to panels with no "Identical" edges
 print("\nApplying Rule 1...")
 for node, attrs in G.nodes(data=True):
     # Check if it's a panel node by "panel_type" being initially "WAL_21_CNI_REN"
@@ -25,10 +25,10 @@ for node, attrs in G.nodes(data=True):
             G[node][neighbor].get("type") == "identical" for neighbor in G.neighbors(node)
         )
         if not has_identical_edge:
-            G.nodes[node]["panel_type"] = "WAL_21"
-            print(f"  Panel {node}: Assigned WAL_21 (no identical edges).")
+            G.nodes[node]["panel_type"] = "WAL_01_CNI_REN"
+            print(f"  Panel {node}: Assigned WAL_01_CNI_REN (no identical edges).")
 
-# Rule 2: Assign "WAL_26" to panels belonging to the "Core" room
+# Rule 2: Assign "WAL_20_STD_REN" to panels belonging to the "Core" room
 print("\nApplying Rule 2...")
 for node, attrs in G.nodes(data=True):
     if attrs.get("panel_type") and attrs["panel_type"] == "WAL_21_CNI_REN":  # Process only panels
@@ -36,12 +36,12 @@ for node, attrs in G.nodes(data=True):
             neighbor_attrs = G.nodes[neighbor]
             # Check if the neighbor is a "core" room
             if neighbor_attrs.get("type") == "room" and neighbor_attrs.get("room_type") == "core":
-                G.nodes[node]["panel_type"] = "WAL_26"
+                G.nodes[node]["panel_type"] = "WAL_20_STD_REN "
                 print(f"Rule 2 applied: Node {node} is connected to core room {neighbor}")
                 break  # No need to check other neighbors
 
 
-# Rule 3: Assign "WAL_24" to isolated panels within apartment-specific subgraphs
+# Rule 3: Assign "WAL_22_STD_REN" to isolated panels within apartment-specific subgraphs
 print("\nApplying Rule 3...")
 apartment_panels = {}
 for node, attrs in G.nodes(data=True):
@@ -68,15 +68,15 @@ for apartment, panel_nodes in apartment_panels.items():
                 subgraph.remove_edge(node, neighbor)
                 print(f"  Cut edge {node} <-> {neighbor} (not in subgraph).")
 
-    # Assign "WAL_24" to panels with no "Identical" edges in the subgraph
+    # Assign "WAL_22_STD_REN" to panels with no "Identical" edges in the subgraph
     for node in subgraph.nodes:
         if subgraph.nodes[node].get("panel_type") == "WAL_21_CNI_REN":
             has_identical_edge = any(
                 subgraph[node][neighbor].get("type") == "identical" for neighbor in subgraph.neighbors(node)
             )
             if not has_identical_edge:
-                G.nodes[node]["panel_type"] = "WAL_24"
-                print(f"  Panel {node}: Assigned WAL_24 (isolated in subgraph).")
+                G.nodes[node]["panel_type"] = "WAL_22_STD_REN"
+                print(f"  Panel {node}: Assigned WAL_22_STD_REN (isolated in subgraph).")
 
 # Apply Rule 4: For panel nodes that have an edge 'belongs_to' a bathroom room
 for node, attrs in G.nodes(data=True):
@@ -85,14 +85,14 @@ for node, attrs in G.nodes(data=True):
         for neighbor in G.neighbors(node):
             neighbor_attrs = G.nodes[neighbor]
             # Check if the neighbor is a "bathroom" room
-            if neighbor_attrs.get("type") == "room" and neighbor_attrs.get("name") == "bathroom":
+            if neighbor_attrs.get("type") == "room" and neighbor_attrs.get("room_type") == "bathroom":
                 if attrs["panel_type"] == "WAL_21_CNI_REN":
-                    # Replace panel_type with "WAL_33 "
-                    G.nodes[node]["panel_type"] = "WAL_33 "
+                    # Replace panel_type with "WAL_45_STD_TIL  "
+                    G.nodes[node]["panel_type"] = "WAL_45_STD_TIL  "
                     print(f"Rule 4 applied (replaced): Node {node} updated to {G.nodes[node]['panel_type']}")
                 else:
-                    # Append "WAL_33 " to the existing panel_type
-                    G.nodes[node]["panel_type"] += " WAL_33 "
+                    # Append "WAL_45_STD_TIL " to the existing panel_type
+                    G.nodes[node]["panel_type"] += " WAL_45_STD_TIL "
                     print(f"Rule 4 applied (appended): Node {node} updated to {G.nodes[node]['panel_type']}")
                 break  # No need to check other neighbors
 
@@ -108,7 +108,7 @@ for node, attrs in G.nodes(data=True):
             # Check for a connection to "corridor" or "living room"
             if (
                 neighbor_attrs.get("type") == "room" and
-                neighbor_attrs.get("name") in ["corridor", "living_room"]
+                neighbor_attrs.get("room_type") in ["corridor", "living_room"]
             ):
                 has_corridor_or_living_room_connection = True
             # Collect panels connected by "Identical" edges
@@ -126,18 +126,18 @@ for node, attrs in G.nodes(data=True):
                         # Check if the second neighbor is a bathroom
                         if (
                             second_neighbor_attrs.get("type") == "room" and
-                            second_neighbor_attrs.get("name") == "bathroom"
+                            second_neighbor_attrs.get("room_type") == "bathroom"
                         ):
-                            # Assign "WAL_31" to the original panel node
-                            G.nodes[node]["panel_type"] = "WAL_31"
+                            # Assign "WAL_43_STD_REN" to the original panel node
+                            G.nodes[node]["panel_type"] = "WAL_43_STD_REN"
                             print(f"Rule 5 applied: Node {node} updated to {G.nodes[node]['panel_type']}")
                             break  # No need to check further
 
 
-# Apply Rule 6: Assign "WAL_25" to the rest of the panel nodes
+# Apply Rule 6: Assign "WAL_40_STD_REN" to the rest of the panel nodes
 for node, attrs in G.nodes(data=True):
     if attrs.get("panel_type") == "WAL_21_CNI_REN":
-        G.nodes[node]["panel_type"] = "WAL_25"
+        G.nodes[node]["panel_type"] = "WAL_40_STD_REN"
         print(f"Rule 6 applied: Node {node} updated to {G.nodes[node]['panel_type']}")
 
 

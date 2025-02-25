@@ -37,7 +37,7 @@ def draw_graph(G):
     # Legend
     legend_elems = [
         Patch(facecolor='lightgray', label='Wall'),
-        Patch(facecolor='lightblue', label='Room (Space)'),
+        Patch(facecolor='lightblue', label='Room'),
         Patch(facecolor='lightgreen', label='Apartment'),
     ]
     plt.legend(handles=legend_elems, loc='upper right', fontsize=10)
@@ -55,7 +55,7 @@ def are_walls_identical(w1, w2):
     )
 
 def normalize_apartment_name(name):
-    """Remove spaces from apartment name to standardize mapping."""
+    """Remove rooms from apartment name to standardize mapping."""
     if not name:
         return "None"
     return name.replace(" ", "")
@@ -137,38 +137,38 @@ if __name__ == "__main__":
         data = json.load(f)
 
     panels = data['panels']['items']  # dict of wall definitions
-    spaces = data['spaces']          # dict of polygons
+    rooms = data['rooms']          # dict of polygons
 
     G = nx.Graph()
 
-    # 2) Create space polygons + room nodes (use 'room_type' key)
-    space_polygons = {}
-    space_node_map = {}
-    for space_id, space_info in spaces.items():
-        coords_2d = [(c['x'], c['y']) for c in space_info['coordinates']]
+    # 2) Create room polygons + room nodes (use 'room_type' key)
+    room_polygons = {}
+    room_node_map = {}
+    for room_id, room_info in rooms.items():
+        coords_2d = [(c['x'], c['y']) for c in room_info['coordinates']]
         poly = Polygon(coords_2d)
 
-        # Create a node label, e.g., "space_0"
-        space_label = f"space_{space_id}"
+        # Create a node label, e.g., "room_0"
+        room_label = f"room_{room_id}"
 
         # Convert coords to string to avoid GraphML errors
         coords_str = ";".join(f"{x},{y}" for (x, y) in coords_2d)
 
         G.add_node(
-            space_label,
+            room_label,
             type='room',
-            room_type=space_info['room_type'],      # e.g. "bathroom", "bedroom", "core"
-            apartment=space_info.get('apartment', 'None'),
+            room_type=room_info['room_type'],      # e.g. "bathroom", "bedroom", "core"
+            apartment=room_info.get('apartment', 'None'),
             coordinates=coords_str
         )
-        space_polygons[space_id] = poly
-        space_node_map[space_id] = space_label
+        room_polygons[room_id] = poly
+        room_node_map[room_id] = room_label
 
-    # 3) Create apartment nodes from the spaces
+    # 3) Create apartment nodes from the rooms
     apt_map = {}
     apt_counter = 1
-    for space_id, space_info in spaces.items():
-        apt_raw = space_info.get('apartment', 'None')
+    for room_id, room_info in rooms.items():
+        apt_raw = room_info.get('apartment', 'None')
         if apt_raw == 'None':
             continue
 
@@ -179,11 +179,11 @@ if __name__ == "__main__":
             apt_map[apt_norm] = apt_node
             apt_counter += 1
 
-        # Link the space node to this apartment node
-        space_node = space_node_map[space_id]
-        G.add_edge(space_node, apt_map[apt_norm], type='belongs_to')
+        # Link the room node to this apartment node
+        room_node = room_node_map[room_id]
+        G.add_edge(room_node, apt_map[apt_norm], type='belongs_to')
 
-    # 4) Add each wall node & link it to the correct space
+    # 4) Add each wall node & link it to the correct room
     for wall_key, w_data in panels.items():
         # The JSON "room": "bathroom", "bedroom", etc. => store it as 'room_type'
         w_room_type = w_data.get('room', 'None')
@@ -193,7 +193,7 @@ if __name__ == "__main__":
         start_pt_str = str(w_data['start_point'])
         end_pt_str   = str(w_data['end_point'])
 
-        # Create wall node with 'room_type' so it matches space nodes
+        # Create wall node with 'room_type' so it matches room nodes
         G.add_node(
             wall_key,
             type='wall',
@@ -212,18 +212,18 @@ if __name__ == "__main__":
         end_xy   = (w_data['end_point'][0],   w_data['end_point'][1])
         wall_line = LineString([start_xy, end_xy])
 
-        # Among all spaces, find polygon(s) with same (room_type + apartment)
+        # Among all rooms, find polygon(s) with same (room_type + apartment)
         # and check if polygon fully covers the line
-        for space_id, poly in space_polygons.items():
-            space_label = space_node_map[space_id]
-            space_attr  = G.nodes[space_label]
+        for room_id, poly in room_polygons.items():
+            room_label = room_node_map[room_id]
+            room_attr  = G.nodes[room_label]
 
-            if (space_attr.get('room_type') == w_room_type and
-                space_attr.get('apartment') == w_apartment):
+            if (room_attr.get('room_type') == w_room_type and
+                room_attr.get('apartment') == w_apartment):
 
                 # If polygon fully covers the line, link
                 if poly.covers(wall_line):
-                    G.add_edge(wall_key, space_label, type='belongs_to')
+                    G.add_edge(wall_key, room_label, type='belongs_to')
 
     # 5) Mark identical walls (optional)
     wall_keys = list(panels.keys())
