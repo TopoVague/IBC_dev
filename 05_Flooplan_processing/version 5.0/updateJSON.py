@@ -19,7 +19,7 @@ def parse_graphml(graphml_path):
             panel_type = None
             for data in node.findall('graphml:data', namespaces):
                 # This assumes 'd0' is the key storing panel_type
-                if data.get('key') == 'd5':
+                if data.get('key') == 'd4':
                     panel_type = data.text.strip() if data.text else ''
                     break
             if panel_type:
