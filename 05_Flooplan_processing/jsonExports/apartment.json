@@ -17,7 +17,7 @@
                 "height": 3,
                 "thickness": 0.2,
                 "room": "living_room",
-                "apartment": "Apartment 1"
+                "apartment": "Apartment 1"   
             },
             "1": {
                 "panel_type": "WAL_21_CNI_REN",
