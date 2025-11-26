@@ -121,9 +121,13 @@ Before running the files, install the dependency by running
 
 **pip install numpy networkx matplotlib shapely** 
 
+then cd to the directory where you have the files currently GitHub/IBC/05_Flooplan_processing/version_5_0
+
 then type 
 
-**python -m http.server 8000**, open the http://127.0.0.1:8000/index.html in your browser. You will see the Floor Plan Processing Tool!
+**python -m http.server 8000**, 
+
+open the http://127.0.0.1:8000/index.html in your browser. You will see the Floor Plan Processing Tool!
 
 ### How to process your floor plan, you should follow these steps:
 
