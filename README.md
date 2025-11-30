@@ -191,7 +191,7 @@ open the http://127.0.0.1:8000/index.html in your browser. You will see the Floo
 
 ### How to identify the frequent patterns
 
-1. In the terminal, type "uvicorn app.main:app --reload"
+1. Download "06. Module Platform". In the terminal, type "uvicorn app.main:app --reload"
 2. Open the local interface at: http://127.0.0.1:8000
 3. Upload the MSD dataset in csv format
 4. Change the variables, including "Rooms", "Max Width", "Compactness" and "Min Support"
