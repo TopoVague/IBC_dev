@@ -163,17 +163,28 @@ open the http://127.0.0.1:8000/index.html in your browser. You will see the Floo
    
 3. run **python ruleAssignment.py <File_Name>**, output file <File_Name>+bom_updated.graphml
 
-3.1 Rule explanation:
+3.1 Rule explanation
+
 3.1.1 Focus entire floorplan
-   a. Find all exterior walls: --> Assign WAL_01_CNI_REN (former WAL_21)
+
+   a. Find all exterior walls: --> Assign WAL_01_CNI_REN 
+
 3.1.2 Focus functional units
-   a. Find all the walls along the core: --> Assign WAL_20_STD_REN  (former WAL_26)
-   b. Find all the apartment partition walls: --> Assign WAL_22_STD_REN (former WAL_24)
+
+   a. Find all the walls along the core: --> Assign WAL_20_STD_REN 
+
+   b. Find all the apartment partition walls: --> Assign WAL_22_STD_REN 
+
 3.1.3 Focus within each apartment
-   a. Find all the bathroom walls: --> Assign the WAL_45_STD_TIL (former WAL_33) on the inner perimeter
-   b. Find all walls between bathroom and kitchen or bedroom : Assign WAL_40_STD_REN (former WAL_25)toward kitchen or bedroom
-   c. Find all walls between bathroom and corridor or living room: Assign WAL_43_STD_REN (former WAL_31) toward kitchen or bedroom
-   d. Assign WAL_40_STD_REN (former WAL_25) to all the other walls
+
+   a. Find all the bathroom walls: --> Assign the WAL_45_STD_TIL  on the inner perimeter
+
+   b. Find all walls between bathroom and kitchen or bedroom : Assign WAL_40_STD_REN toward kitchen or bedroom
+
+   c. Find all walls between bathroom and corridor or living room: Assign WAL_43_STD_REN toward kitchen or bedroom
+
+   d. Assign WAL_40_STD_REN to all the other walls
+
 3.1.4 Focus on the shaft (longer side of bathroom + adjacent wet room)
    
 4. run **python updateJSON.py <File_Name>**, output file <File_Name>+bom_udpated.json
