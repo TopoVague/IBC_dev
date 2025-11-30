@@ -162,10 +162,31 @@ open the http://127.0.0.1:8000/index.html in your browser. You will see the Floo
 2. In the terminal, run **python buildGraph.py <File_Name>**, output file <File_Name>+bom.graphml
    
 3. run **python ruleAssignment.py <File_Name>**, output file <File_Name>+bom_updated.graphml
+
+3.1 Rule explanation:
+3.1.1 Focus entire floorplan
+   a. Find all exterior walls: --> Assign WAL_01_CNI_REN (former WAL_21)
+3.1.2 Focus functional units
+   a. Find all the walls along the core: --> Assign WAL_20_STD_REN  (former WAL_26)
+   b. Find all the apartment partition walls: --> Assign WAL_22_STD_REN (former WAL_24)
+3.1.3 Focus within each apartment
+   a. Find all the bathroom walls: --> Assign the WAL_45_STD_TIL (former WAL_33) on the inner perimeter
+   b. Find all walls between bathroom and kitchen or bedroom : Assign WAL_40_STD_REN (former WAL_25)toward kitchen or bedroom
+   c. Find all walls between bathroom and corridor or living room: Assign WAL_43_STD_REN (former WAL_31) toward kitchen or bedroom
+   d. Assign WAL_40_STD_REN (former WAL_25) to all the other walls
+3.1.4 Focus on the shaft (longer side of bathroom + adjacent wet room)
    
 4. run **python updateJSON.py <File_Name>**, output file <File_Name>+bom_udpated.json
 
+### How to identify the frequent patterns
 
+1. In the terminal, type "uvicorn app.main:app --reload"
+2. Open the local interface at: http://127.0.0.1:8000
+3. Upload the MSD dataset in csv format
+4. Change the variables, including "Rooms", "Max Width", "Compactness" and "Min Support"
+5. Click the button "Mine & Filter"
+6. Click the button "Group Patterns"
+7. Enter the room combination, then click "Search" to query the specific patterns
 
 ## Team
 - Evangelos Pantazis / ZHAW - Senior Researcher
