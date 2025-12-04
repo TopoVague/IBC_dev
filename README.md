@@ -56,7 +56,8 @@ adm_sbinkert@implenia.com
 adm_jweis@implenia.com
 
  
-## B.1 Instructions for the Building Element Catalogue - Rhino/Ghx Viewer
+## B. Instructions for the Building Element Catalogue - 
+### B.1 Rhino/Ghx Viewer
 
 You can locally view and export ithe Catalog of parts using the Graphical User Interface within Rhinoceros 3d
 1) You  need to have Rhino 7 or 8 installed on your laptop/machine
@@ -69,7 +70,7 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 ![ZHAW_implenia_GUI_local_ve03](https://github.com/user-attachments/assets/31968860-6e0d-43e6-ab2d-536bcdf71998)
 
 
-## B.2 Instructions for the Building Element Catalogue - Web Viewer
+### B.1 Web Viewer
 (This part will be developing as we progress)
 
 1) Clone the repository to your computer
