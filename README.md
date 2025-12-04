@@ -39,7 +39,7 @@ The project relies mainly on open source libraries and platforms whch include
 -shapely
 
 
-## Instructions for accessing the SQL database setup by Implenia
+## A. Instructions for accessing the SQL database setup by Implenia
 
 You can access the SQL database by doing the following steps
 1) To Connect to the Implenia Virtual Machine and
@@ -56,7 +56,7 @@ adm_sbinkert@implenia.com
 adm_jweis@implenia.com
 
  
-## Instructions for the Building Element Catalogue - Rhino/Ghx Viewer
+## B.1 Instructions for the Building Element Catalogue - Rhino/Ghx Viewer
 
 You can locally view and export ithe Catalog of parts using the Graphical User Interface within Rhinoceros 3d
 1) You  need to have Rhino 7 or 8 installed on your laptop/machine
@@ -69,7 +69,7 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 ![ZHAW_implenia_GUI_local_ve03](https://github.com/user-attachments/assets/31968860-6e0d-43e6-ab2d-536bcdf71998)
 
 
-## Instructions for the Building Element Catalogue - Web Viewer
+## B.2 Instructions for the Building Element Catalogue - Web Viewer
 (This part will be developing as we progress)
 
 1) Clone the repository to your computer
@@ -102,7 +102,7 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 
 -Keep tests and development files in the 01_CodingTests Folder 
 
-## Workflow Overview of Floor Plan Processing Tool
+## C.1 Workflow Overview of Floor Plan Processing Tool
 
 The workflow consists of the following steps:
 
@@ -189,15 +189,19 @@ open the http://127.0.0.1:8000/index.html in your browser. You will see the Floo
    
 4. run **python updateJSON.py <File_Name>**, output file <File_Name>+bom_udpated.json
 
-### How to identify the frequent patterns
+### D. How to identify the frequent patterns
 
-1. Download "06. Module Platform". In the terminal, type "uvicorn app.main:app --reload"
-2. Open the local interface at: http://127.0.0.1:8000
-3. Upload the MSD dataset in csv format
-4. Change the variables, including "Rooms", "Max Width", "Compactness" and "Min Support"
-5. Click the button "Mine & Filter"
-6. Click the button "Group Patterns"
-7. Enter the room combination, then click "Search" to query the specific patterns
+1. Download "06. Module Platform".
+2. In the terminal, type "uvicorn app.main:app --reload"
+3. Open the local interface at: http://127.0.0.1:8000
+4. Upload the MSD dataset in csv format
+5. Change the variables, including "Rooms", "Max Width", "Compactness" and "Min Support"
+6. Click the button "Mine & Filter"
+7. Click the button "Group Patterns"
+8. Enter the room combination, then click "Search" to query the specific patterns
+
+
+
 
 ## Team
 - Evangelos Pantazis / ZHAW - Senior Researcher
