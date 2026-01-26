@@ -1,0 +1,88 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+#canvas-container {
+    text-align: center;
+}
+
+canvas {
+    border: 1px solid black;
+    cursor: crosshair;
+    display: block;
+    margin: 0 auto;
+}
+
+#sidebar {
+    width: 300px;
+    height: 100vh; 
+    overflow-y: auto; 
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f0f0f0; 
+}
+
+.legend-item {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.legend-color {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid #000;
+}
+
+.polyline-info {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.controls > * {
+    margin: 0 10px;
+}
+
+.polyline-info canvas {
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+}
+
+button, select, input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+}
+
+button:hover, select:hover, input:hover {
+    background-color: #e0e0e0;
+}
+
+/* Specific styles for gridUnitSize input */
+#gridUnitSize {
+    width: 80px;
+}

@@ -1,0 +1,28 @@
+{'id': 289, 
+'type': 'IfcSlab', 
+'GlobalId': '2TgKkVIhH4$xpZD3I04Q_V', 
+'OwnerHistory': #22=IfcOwnerHistory(#19,#21,$,.ADDED.,1715775122,$,$,1715775122), 
+'Name': ' SLA_21', 
+'Description': None, 
+'ObjectType': None, 
+'ObjectPlacement': #301=IfcLocalPlacement(#45,#5), 
+'Representation': #288=IfcProductDefinitionShape($,$,(#284)), 
+'Tag': None, 'PredefinedType': 'FLOOR'
+}
+{
+'Pset_SlabCommon': 
+{
+'Reference': 'Slab', 
+'ThermalTransmittance': 0.7,
+ 'IsExternal': False, 
+'LoadBearing': True, 
+'id': 132}, 
+'Slab_properties': 
+{
+'Area': 1.0, 
+'Perimeter': 1000.0, 
+'Unbounded Height': 0.255, 
+'Volume': 255000000.0, 
+'id': 306
+}
+}
