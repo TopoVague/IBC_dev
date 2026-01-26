@@ -113,6 +113,7 @@ C.2 A Rhino/Ghx based which allows the user to load a dxf with a floorplan and f
 
 ### C.1 Workflow Overview of Floor Plan Processing Tool-WEB
 
+TODO Add an image here
 
 The workflow consists of the following steps:
 
