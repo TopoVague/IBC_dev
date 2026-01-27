@@ -39,6 +39,12 @@ The project relies mainly on open source libraries and platforms whch include
 
 -shapely
 
+-neo4j
+
+-gspan
+
+-
+
 
 ## A. Instructions for accessing the SQL database setup by Implenia
 
@@ -113,7 +119,6 @@ C.2 A Rhino/Ghx based which allows the user to load a dxf with a floorplan and f
 
 ### C.1 Workflow Overview of Floor Plan Processing Tool-WEB
 
-
 The workflow consists of the following steps:
 
 1) Floor Plan Annotation (Web Interface) – Users can upload PDFs, draw polylines to define rooms, classify spaces, and group them into apartments.
@@ -164,40 +169,46 @@ open the http://127.0.0.1:8000/index.html in your browser. You will see the Floo
 8. Click "Confirm Grouping", the apartment profile will automatically appear in the right side panel. Please check the profile to make sure the apartment is defined correctly
 9. Click "Export JSON", the initial bill of material file could be downloaded as "<File_Name>+bom.json".
 
+The Exported file can be loaded and visualized in Rhino/ghx
 
 
 ### C.2 Workflow Overview of Floor Plan Processing Tool-Rhino/Ghx 
 
+This step allows the user to load a floorplan and format it into a .csv file following the Modified Swiss Dwelling format. The reason to follow this format is to be able to compare candidate Designs with a lot floorplans so that you can run similarity analysis
+
 TODO - EVAN TO ADD better explanation HERE
 
-This workflow allows the user to load a floorplan and format it into a .csv file following the Modified Swiss Dwelling format. The reason to follow this format is to be able to compare candidate Designs with a lot floorplans so that you can run similarity analysis
-
-
-1. You can navigate to the folder 05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH
+1. You can navigate to the following folder: 05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH
 2. you can open the script readFlooplan_andFormat_ToMSD_csv.gh
-3. You can load a dxf file of a flooplnas. You can find template files here : 
+3. You can load a .dxf or .3dm file of a flooplans. You can find template files here : 
 05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH\implenia_CaseStudies_floorplans
-4. The file should be strcutured as follows 
+4. To ensure no errors the file should be strcutured as follows 
 	a) room outlines should be closed polylines and in a layer called: ""
-	b)ADd
+	b) ADd
 	c) ADD
 
 5. The script identifies the spaces and creates a csv file with the geometry characterized
 6. The .csv file can be loaed onto a Jupyter notebook to run a similarity analysis
  
 
-### D. Workflow to do similarity Analysis
-you can use the notebooks in the following folders 
-IBC_dev\06_MSD_Floorplan_SimilarityAnalysis
+### D. Workflow to perform similarity Analysis
+This workflow allows the user to load a candidate floorplan and assess if it is a good fit for being constructed using the kit of parts. You can use the notebooks (.ipynb) in the following folder to run this similarity analysis: IBC_dev\06_MSD_Floorplan_SimilarityAnalysis
 
-MSD_to_IBC_Analysis.ipynb allows one understand the structure and content of Modified Swiss Dwellings dataset and create some graphs 
+File 01: MSD_to_IBC_Analysis.ipynb 
+allows one to:
+1. understand the structure and content of Modified Swiss Dwellings dataset 
+2. access different elements
+3. Ananlyse the floorplans and buildings within the dataset and create some graphs 
 
-MSD_to_Apartment_Layouts_EP.ipynb allows one 
+File 02: MSD_to_Apartment_Layouts_EP.ipynb allows one 
 1. to load the data, add a floorplan, 
 2. get different elements of the floorplan
 3. Run a similarity analysis
 4. Create a graph
 
+you can also access the files online by going to
+file01: https://colab.research.google.com/drive/1eWkULnThK1OuBiPrxwL76eywloHiC3t9
+file02: https://colab.research.google.com/drive/1vbqq6exLeOkzwvlGbymi_6qU3cqmQNt0
 
 	
 ### E. Workflow for assigning specific element types to walls following a set of rules 
@@ -241,14 +252,15 @@ MSD_to_Apartment_Layouts_EP.ipynb allows one
 
 ### F. How to identify the frequent patterns of space so that you can identify potential modules
 
-1. Download "07_DetectPossible3dModules.
-2. In the terminal, type "uvicorn app.main:app --reload"
-3. Open the local interface at: http://127.0.0.1:8000
-4. Upload the MSD dataset in csv format
-5. Change the variables, including "Rooms", "Max Width", "Compactness" and "Min Support"
-6. Click the button "Mine & Filter"
-7. Click the button "Group Patterns"
-8. Enter the room combination, then click "Search" to query the specific patterns
+1. Navigate to the folder and download it "07_DetectPossible3dModules/"
+2. Installed dependencies via pip if have not done so already by typing the following command "python -m pip install "uvicorn[standard]" fastapi neo4j pandas gspan-mining matplotlib flask
+4. In the terminal, type "uvicorn app.main:app --reload"
+5. Open the local interface at: http://127.0.0.1:8000
+6. Upload the MSD dataset in csv format - link to file:https://drive.google.com/file/d/1D67DLh8-EFHx-juhb2mAnI9XtV1O-_7l/view?usp=drive_link
+7. Change the variables, including "Rooms", "Max Width", "Compactness" and "Min Support"
+8. Click the button "Mine & Filter"
+9. Click the button "Group Patterns"
+10. Enter the room combination, then click "Search" to query the specific patterns
 
 
 
