@@ -1,50 +1,22 @@
-<!doctype html>
-<html lang="en" class="h-100">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Jianpeng">
-    <meta name="generator" content="Hugo 0.104.2">
-    <title>A page to visualize somethings from the graph database</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/">
-    <link href="../static/css/bootstrap.min.css" rel="stylesheet">
-
-  
-    <!-- Custom styles for this template -->
-    <link href="/static/ibc.css" rel="stylesheet">
-  </head>
-  <body class="d-flex h-100 text-center text-bg-dark">
-    
-<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
-  <header class="mb-auto">
-    <div>
-      <h3 class="float-md-start mb-0">iBC</h3>
-      <nav class="nav nav-masthead justify-content-center float-md-end">
-        <a class="nav-link fw-bold py-1 px-0" href="index.html">Home</a>
-        <a class="nav-link fw-bold py-1 px-0" href="catalog.html">Building Element Catalog</a>
-        <a class="nav-link fw-bold py-1 px-0 active" aria-current="page" href="graphDb.html">GraphDB</a>
-        <a class="nav-link fw-bold py-1 px-0" href="about.html">About</a>
-      </nav>
-    </div>
-  </header>
-
-  <main class="px-3">
-    <h1>Kemp's Page</h1>
-    <p class="lead">Here is basic page where Kemp can run his code and experiment </p>
-
-  </main>
-
-  <footer class="mt-auto text-white-50">
-    <p>This project is a joint collaboration of <a href="https://implenia.com/" class="text-white">Implenia</a>, and <a href="https://www.zhaw.ch/de/archbau/institute/ibp/" class="text-white">@ZHAW IBP</a>  and is supported by <a href="https://www.innosuisse.ch/inno/de/home.html" class="text-white">Innosuisse</a>  </p>
-  </footer>
-</div>
-
-
-    
-  </body>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Neo4j Graph Visualization</title>
+    <style type="text/css">
+        #viz {
+            width: 100%;
+            height: 100vh;
+            border: 1px solid lightgray;
+        }
+    </style>
+    <!-- Load vis-network for graph visualization -->
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <!-- Load neo4j-driver directly -->
+    <script src="https://cdn.jsdelivr.net/npm/neo4j-driver/lib/browser/neo4j-web.min.js"></script>
+    <!-- Load the external JavaScript file -->
+    <script src="/graphDB.js"></script>
+</head>
+<body>
+    <div id="viz"></div>
+</body>
 </html>
-
-
-
