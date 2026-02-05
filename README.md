@@ -86,16 +86,16 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 
 3) Cd to the root folder i.e. C:\Users\YourUserName\Documents\GitHub\IBC 
 
-4) Make sure you have installed the dependecies above, you can do this by using **pip install** or **npm**
+4) Make sure you have installed the dependecies above, you can do this by using **pip install** or **npm** . Alternatively , if you are using anaconda,  you can create envrironment with all the required libraries by following these steps: a) find in the rootfolder the file IBC_dev/IBCenvironment.yml  b) open the anaconda command prompt and cd to the root folder  c) type: **conda env create -f IBCenvironment.yml** (The first line of the yml file sets the new environment's name) d) **conda activate IBCtestenv** e)  Verify that the new environment was installed correctly by typing:  conda env list
 
-5) Run the python script  appTesting.py or app.py by running the following command: **python appTesting.py**
+6) Run the python script  appTesting.py or app.py by running the following command: **python appTesting.py**
 
-6) Open a browser window and enter the following URL: http://localhost:5000/index.html  (this will create a local server and load the index.html that is located in the templates folder)
+7) Open a browser window and enter the following URL: http://localhost:5000/index.html  (this will create a local server and load the index.html that is located in the templates folder)
 
-7) Navigate to the page of the catalog http://localhost:5000/catalog.html
+8) Navigate to the page of the catalog http://localhost:5000/catalog.html
 
-8) Load the file BuildingElementCatalog_Phase5.csv (or one with the same strcuture) to browse the catalog and you should see sth like the following
-9) You can now browse,filter and download the elements that exist in the catalogue
+9) Load the file BuildingElementCatalog_Phase5.csv (or one with the same strcuture) to browse the catalog and you should see sth like the following
+10) You can now browse,filter and download the elements that exist in the catalogue
     
 ![ZHAW_implenia_GUI_web_04_CatalogBrowser](https://github.com/user-attachments/assets/9c245cff-2155-4871-801a-a4648752415c)
 
