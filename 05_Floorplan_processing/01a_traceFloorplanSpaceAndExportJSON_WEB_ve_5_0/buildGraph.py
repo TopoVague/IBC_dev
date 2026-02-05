@@ -137,7 +137,7 @@ if __name__ == "__main__":
         data = json.load(f)
 
     panels = data['panels']['items']  # dict of wall definitions
-    rooms = data['rooms']          # dict of polygons
+    rooms = data['spaces']          # dict of polygons with spaces boundaries 
 
     G = nx.Graph()
 

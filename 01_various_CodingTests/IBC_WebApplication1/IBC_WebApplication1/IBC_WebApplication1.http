@@ -1,0 +1,6 @@
+@IBC_WebApplication1_HostAddress = http://localhost:5217
+
+GET {{IBC_WebApplication1_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
