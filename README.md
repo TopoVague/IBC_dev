@@ -125,11 +125,7 @@ The workflow consists of the following steps:
 
 2) Export to JSON – Annotated floor plans are exported as structured JSON files.
 
-3) Graph Processing – JSON files are converted into a graph representation using buildGraph.py.
 
-4) Rule-Based Classification – The ruleAssignment.py script assigns classifications to building elements.
-
-5) Final JSON Update – updateJSON.py updates the exported JSON with assigned classifications.
 
 ## Detailed Instruction
 Before running the files, install the dependency by running 
@@ -162,7 +158,7 @@ open the http://127.0.0.1:8000/index.html in your browser. You will see the Floo
    
    5.5 One the right side panel, you will see the information about the room
    
-   5.6 Chnage the room type, you can create another polyline for a different room
+   5.6 Change the room type, you can create another polyline for a different room
    
 6. After all room is annotated with polyline, click "Define Apartment" to define apartment one by one.
 7. Select rooms you want to group as an apartment by clicking the "room tag" of each room, the color of selected room tag will change to orange.
@@ -176,19 +172,20 @@ The Exported file can be loaded and visualized in Rhino/ghx
 
 This step allows the user to load a floorplan and format it into a .csv file following the Modified Swiss Dwelling format. The reason to follow this format is to be able to compare candidate Designs with a lot floorplans so that you can run similarity analysis
 
-TODO - EVAN TO ADD better explanation HERE
 
 1. You can navigate to the following folder: 05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH
 2. you can open the script readFlooplan_andFormat_ToMSD_csv.gh
-3. You can load a .dxf or .3dm file of a flooplans. You can find template files here : 
+3. You can load a .dxf or .3dm file of a flooplan drawn with a detail of 1:50 - 1:200 scale meaning that the floorplan needs to have . You can find template files here: 
 05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH\implenia_CaseStudies_floorplans
 4. To ensure no errors the file should be strcutured as follows 
-	a) room outlines should be closed polylines and in a layer called: ""
-	b) ADd
-	c) ADD
+	a) room outlines should be closed polylines and in a layer called: "areas"
+	b) wall outlines should be closed polylines and in a layer called: "walls"
+	c) window outlines should be closed polylines and in a layer called: "windows"
+	d) door outlines should be closed polylines and in a layer called: "doors"
+	e) room tags should be a text and in a layer called: "textTags"
 
-5. The script identifies the spaces and creates a csv file with the geometry characterized
-6. The .csv file can be loaed onto a Jupyter notebook to run a similarity analysis
+5. The script identifies the spaces, walls, doors and predicts the entrance doors and creates a .csv file with the geometry characterized based on the MSD data structure
+6. The .csv file can be loaded onto the Jupyter notebook (Section D)to run a similarity analysis
  
 
 ### D. Workflow to perform similarity Analysis
@@ -204,7 +201,7 @@ File 02: MSD_to_Apartment_Layouts_EP.ipynb allows one
 1. to load the data, add a floorplan, 
 2. get different elements of the floorplan
 3. Run a similarity analysis
-4. Create a graph
+4. Create a graph from the floorplan
 
 you can also access the files online by going to
 file01: https://colab.research.google.com/drive/1eWkULnThK1OuBiPrxwL76eywloHiC3t9
@@ -212,17 +209,25 @@ file02: https://colab.research.google.com/drive/1vbqq6exLeOkzwvlGbymi_6qU3cqmQNt
 
 	
 ### E. Workflow for assigning specific element types to walls following a set of rules 
+In this workflow from a floorplan which is formated as JSON we create a graph and visualize it and also assign different elements to different parts of the plan (i.e. specific type of walls based on their position)
+
+1) Graph Processing – JSON files are converted into a graph representation using buildGraph.py.
+
+2) Rule-Based Classification – The ruleAssignment.py script assigns classifications to building elements.
+
+3) Final JSON Update – updateJSON.py updates the exported JSON with assigned classifications.
 
 ### How to infer the panel type information 
-(by default, the wall type in the exported JSON file is ""WAL_21_CNI_REN""), you should follow these steps:
+(by default, the wall type in the exported JSON file is ""WAL_21_CNI_REN""), in order to update you should follow these steps:
 
-1. Select a JSON file *i.e. sampleFloorplan.json that you have exported in the previous steps and place it in the same folder of other three python files 
+1. Select a JSON file *i.e. sampleFloorplan_bom.json that you have exported in the previous steps and place it in the same folder of other three python files 
    
-2. In the terminal, run **python buildGraph.py <File_Name>**, output file <File_Name>+bom.graphml
+2. Create the graph from the floopllan. In the terminal, run **python buildGraph.py <File_Name>**, output file <File_Name>+bom.graphml i.e. python buildGraph.py sample_floorplan, output file sample_floorplan+bom.graphml 
    
-3. run **python ruleAssignment.py <File_Name>**, output file <File_Name>+bom_updated.graphml
+3. Assign specific elements to walls based on their location. In order to do that: run **python ruleAssignment.py <File_Name>**, output file <File_Name>+bom_updated.graphml
 
-	3.1 Rule explanation
+	
+	3.1 Here we explain the rules implemented so far:
 
 		3.1.1 Focus entire floorplan
 
@@ -246,7 +251,7 @@ file02: https://colab.research.google.com/drive/1vbqq6exLeOkzwvlGbymi_6qU3cqmQNt
 
 		3.1.4 Focus on the shaft (longer side of bathroom + adjacent wet room)
    
-4. run **python updateJSON.py <File_Name>**, output file <File_Name>+bom_udpated.json
+4. Update the json file with the elements assigned: run **python updateJSON.py <File_Name>**, output file <File_Name>+bom_udpated.json
 
 
 
@@ -261,9 +266,6 @@ file02: https://colab.research.google.com/drive/1vbqq6exLeOkzwvlGbymi_6qU3cqmQNt
 8. Click the button "Mine & Filter"
 9. Click the button "Group Patterns"
 10. Enter the room combination, then click "Search" to query the specific patterns
-
-
-
 
 
 
