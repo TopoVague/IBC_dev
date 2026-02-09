@@ -1,0 +1,1269 @@
+{
+    "panels": {
+        "attributes": {},
+        "items": {
+            "0": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    18.77,
+                    15.94,
+                    0
+                ],
+                "end_point": [
+                    18.77,
+                    19.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "1": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    18.77,
+                    19.94,
+                    0
+                ],
+                "end_point": [
+                    20.67,
+                    19.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "2": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    20.67,
+                    19.94,
+                    0
+                ],
+                "end_point": [
+                    21.61,
+                    19.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "3": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    21.61,
+                    19.94,
+                    0
+                ],
+                "end_point": [
+                    21.61,
+                    15.97,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "4": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    21.61,
+                    15.97,
+                    0
+                ],
+                "end_point": [
+                    18.77,
+                    15.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "5": {
+                "panel_type": "WAL_21 WAL_33",
+                "start_point": [
+                    18.77,
+                    19.94,
+                    0
+                ],
+                "end_point": [
+                    18.77,
+                    22.58,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bathroom",
+                "apartment": "Apartment 1"
+            },
+            "6": {
+                "panel_type": "WAL_33",
+                "start_point": [
+                    18.77,
+                    22.58,
+                    0
+                ],
+                "end_point": [
+                    20.74,
+                    22.58,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bathroom",
+                "apartment": "Apartment 1"
+            },
+            "7": {
+                "panel_type": "WAL_33",
+                "start_point": [
+                    20.74,
+                    22.58,
+                    0
+                ],
+                "end_point": [
+                    20.67,
+                    19.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bathroom",
+                "apartment": "Apartment 1"
+            },
+            "8": {
+                "panel_type": "WAL_33",
+                "start_point": [
+                    20.67,
+                    19.94,
+                    0
+                ],
+                "end_point": [
+                    18.77,
+                    19.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bathroom",
+                "apartment": "Apartment 1"
+            },
+            "9": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    18.77,
+                    22.58,
+                    0
+                ],
+                "end_point": [
+                    18.77,
+                    26.27,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "10": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    18.77,
+                    26.27,
+                    0
+                ],
+                "end_point": [
+                    21.55,
+                    26.27,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "11": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    21.55,
+                    26.27,
+                    0
+                ],
+                "end_point": [
+                    21.55,
+                    22.58,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "12": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    21.55,
+                    22.58,
+                    0
+                ],
+                "end_point": [
+                    20.74,
+                    22.58,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "13": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    20.74,
+                    22.58,
+                    0
+                ],
+                "end_point": [
+                    18.77,
+                    22.58,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "14": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    21.55,
+                    26.27,
+                    0
+                ],
+                "end_point": [
+                    24.1,
+                    26.27,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "15": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    24.1,
+                    26.27,
+                    0
+                ],
+                "end_point": [
+                    24.1,
+                    22.55,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "16": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    24.1,
+                    22.55,
+                    0
+                ],
+                "end_point": [
+                    22.22,
+                    22.55,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "17": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    22.22,
+                    22.55,
+                    0
+                ],
+                "end_point": [
+                    21.55,
+                    22.58,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "18": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    21.55,
+                    22.58,
+                    0
+                ],
+                "end_point": [
+                    21.55,
+                    26.27,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "19": {
+                "panel_type": "WAL_33",
+                "start_point": [
+                    22.22,
+                    22.55,
+                    0
+                ],
+                "end_point": [
+                    22.22,
+                    20.88,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bathroom",
+                "apartment": "Apartment 1"
+            },
+            "20": {
+                "panel_type": "WAL_33",
+                "start_point": [
+                    22.22,
+                    20.88,
+                    0
+                ],
+                "end_point": [
+                    24.07,
+                    20.88,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bathroom",
+                "apartment": "Apartment 1"
+            },
+            "21": {
+                "panel_type": "WAL_33",
+                "start_point": [
+                    24.07,
+                    20.88,
+                    0
+                ],
+                "end_point": [
+                    24.1,
+                    22.55,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bathroom",
+                "apartment": "Apartment 1"
+            },
+            "22": {
+                "panel_type": "WAL_33",
+                "start_point": [
+                    24.1,
+                    22.55,
+                    0
+                ],
+                "end_point": [
+                    22.22,
+                    22.55,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bathroom",
+                "apartment": "Apartment 1"
+            },
+            "23": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    25.19,
+                    17.18,
+                    0
+                ],
+                "end_point": [
+                    25.19,
+                    14.55,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "24": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    25.19,
+                    14.55,
+                    0
+                ],
+                "end_point": [
+                    29.95,
+                    14.55,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "25": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    29.95,
+                    14.55,
+                    0
+                ],
+                "end_point": [
+                    29.95,
+                    17.15,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "26": {
+                "panel_type": "WAL_24",
+                "start_point": [
+                    29.95,
+                    17.15,
+                    0
+                ],
+                "end_point": [
+                    25.19,
+                    17.18,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "bedroom",
+                "apartment": "Apartment 1"
+            },
+            "27": {
+                "panel_type": "WAL_26",
+                "start_point": [
+                    25.19,
+                    17.18,
+                    0
+                ],
+                "end_point": [
+                    25.19,
+                    19.73,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "core"
+            },
+            "28": {
+                "panel_type": "WAL_26",
+                "start_point": [
+                    25.19,
+                    19.73,
+                    0
+                ],
+                "end_point": [
+                    27.71,
+                    19.73,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "core"
+            },
+            "29": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    27.71,
+                    19.73,
+                    0
+                ],
+                "end_point": [
+                    30.01,
+                    19.73,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "core"
+            },
+            "30": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    30.01,
+                    19.73,
+                    0
+                ],
+                "end_point": [
+                    29.95,
+                    17.15,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "core"
+            },
+            "31": {
+                "panel_type": "WAL_26",
+                "start_point": [
+                    29.95,
+                    17.15,
+                    0
+                ],
+                "end_point": [
+                    25.19,
+                    17.18,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "core"
+            },
+            "32": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    25.19,
+                    19.73,
+                    0
+                ],
+                "end_point": [
+                    25.19,
+                    21.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "corridor",
+                "apartment": "Apartment 1"
+            },
+            "33": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    25.19,
+                    21.94,
+                    0
+                ],
+                "end_point": [
+                    27.71,
+                    21.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "corridor",
+                "apartment": "Apartment 1"
+            },
+            "34": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    27.71,
+                    21.94,
+                    0
+                ],
+                "end_point": [
+                    27.71,
+                    19.73,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "corridor",
+                "apartment": "Apartment 1"
+            },
+            "35": {
+                "panel_type": "WAL_24",
+                "start_point": [
+                    27.71,
+                    19.73,
+                    0
+                ],
+                "end_point": [
+                    25.19,
+                    19.73,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "corridor",
+                "apartment": "Apartment 1"
+            },
+            "36": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    25.19,
+                    14.55,
+                    0
+                ],
+                "end_point": [
+                    25.19,
+                    17.18,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "37": {
+                "panel_type": "WAL_24",
+                "start_point": [
+                    25.19,
+                    17.18,
+                    0
+                ],
+                "end_point": [
+                    25.19,
+                    19.73,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "38": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    25.19,
+                    19.73,
+                    0
+                ],
+                "end_point": [
+                    25.19,
+                    21.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "39": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    25.19,
+                    21.94,
+                    0
+                ],
+                "end_point": [
+                    27.71,
+                    21.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "40": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    27.71,
+                    21.94,
+                    0
+                ],
+                "end_point": [
+                    27.71,
+                    26.15,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "41": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    27.71,
+                    26.15,
+                    0
+                ],
+                "end_point": [
+                    24.1,
+                    26.27,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "42": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    24.1,
+                    26.27,
+                    0
+                ],
+                "end_point": [
+                    24.1,
+                    22.55,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "43": {
+                "panel_type": "WAL_31",
+                "start_point": [
+                    24.1,
+                    22.55,
+                    0
+                ],
+                "end_point": [
+                    24.07,
+                    20.88,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "44": {
+                "panel_type": "WAL_31",
+                "start_point": [
+                    24.07,
+                    20.88,
+                    0
+                ],
+                "end_point": [
+                    22.22,
+                    20.88,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "45": {
+                "panel_type": "WAL_31",
+                "start_point": [
+                    22.22,
+                    20.88,
+                    0
+                ],
+                "end_point": [
+                    22.22,
+                    22.55,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "46": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    22.22,
+                    22.55,
+                    0
+                ],
+                "end_point": [
+                    21.55,
+                    22.58,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "47": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    21.55,
+                    22.58,
+                    0
+                ],
+                "end_point": [
+                    20.74,
+                    22.58,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "48": {
+                "panel_type": "WAL_31",
+                "start_point": [
+                    20.74,
+                    22.58,
+                    0
+                ],
+                "end_point": [
+                    20.67,
+                    19.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "49": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    20.67,
+                    19.94,
+                    0
+                ],
+                "end_point": [
+                    21.61,
+                    19.94,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "50": {
+                "panel_type": "WAL_25",
+                "start_point": [
+                    21.61,
+                    19.94,
+                    0
+                ],
+                "end_point": [
+                    21.61,
+                    15.97,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "51": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    21.61,
+                    15.97,
+                    0
+                ],
+                "end_point": [
+                    21.61,
+                    14.58,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            },
+            "52": {
+                "panel_type": "WAL_21",
+                "start_point": [
+                    21.61,
+                    14.58,
+                    0
+                ],
+                "end_point": [
+                    25.19,
+                    14.55,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "living_room",
+                "apartment": "Apartment 1"
+            }
+        },
+        "max_key": 53
+    },
+    "spaces": {
+        "0": {
+            "room_type": "bedroom",
+            "apartment": "Apartment 1",
+            "coordinates": [
+                {
+                    "x": 18.77,
+                    "y": 15.94,
+                    "z": 0
+                },
+                {
+                    "x": 18.77,
+                    "y": 19.94,
+                    "z": 0
+                },
+                {
+                    "x": 20.67,
+                    "y": 19.94,
+                    "z": 0
+                },
+                {
+                    "x": 21.61,
+                    "y": 19.94,
+                    "z": 0
+                },
+                {
+                    "x": 21.61,
+                    "y": 15.97,
+                    "z": 0
+                },
+                {
+                    "x": 18.77,
+                    "y": 15.94,
+                    "z": 0
+                }
+            ]
+        },
+        "1": {
+            "room_type": "bathroom",
+            "apartment": "Apartment 1",
+            "coordinates": [
+                {
+                    "x": 18.77,
+                    "y": 19.94,
+                    "z": 0
+                },
+                {
+                    "x": 18.77,
+                    "y": 22.58,
+                    "z": 0
+                },
+                {
+                    "x": 20.74,
+                    "y": 22.58,
+                    "z": 0
+                },
+                {
+                    "x": 20.67,
+                    "y": 19.94,
+                    "z": 0
+                },
+                {
+                    "x": 18.77,
+                    "y": 19.94,
+                    "z": 0
+                }
+            ]
+        },
+        "2": {
+            "room_type": "bedroom",
+            "apartment": "Apartment 1",
+            "coordinates": [
+                {
+                    "x": 18.77,
+                    "y": 22.58,
+                    "z": 0
+                },
+                {
+                    "x": 18.77,
+                    "y": 26.27,
+                    "z": 0
+                },
+                {
+                    "x": 21.55,
+                    "y": 26.27,
+                    "z": 0
+                },
+                {
+                    "x": 21.55,
+                    "y": 22.58,
+                    "z": 0
+                },
+                {
+                    "x": 20.74,
+                    "y": 22.58,
+                    "z": 0
+                },
+                {
+                    "x": 18.77,
+                    "y": 22.58,
+                    "z": 0
+                }
+            ]
+        },
+        "3": {
+            "room_type": "bedroom",
+            "apartment": "Apartment 1",
+            "coordinates": [
+                {
+                    "x": 21.55,
+                    "y": 26.27,
+                    "z": 0
+                },
+                {
+                    "x": 24.1,
+                    "y": 26.27,
+                    "z": 0
+                },
+                {
+                    "x": 24.1,
+                    "y": 22.55,
+                    "z": 0
+                },
+                {
+                    "x": 22.22,
+                    "y": 22.55,
+                    "z": 0
+                },
+                {
+                    "x": 21.55,
+                    "y": 22.58,
+                    "z": 0
+                },
+                {
+                    "x": 21.55,
+                    "y": 26.27,
+                    "z": 0
+                }
+            ]
+        },
+        "4": {
+            "room_type": "bathroom",
+            "apartment": "Apartment 1",
+            "coordinates": [
+                {
+                    "x": 22.22,
+                    "y": 22.55,
+                    "z": 0
+                },
+                {
+                    "x": 22.22,
+                    "y": 20.88,
+                    "z": 0
+                },
+                {
+                    "x": 24.07,
+                    "y": 20.88,
+                    "z": 0
+                },
+                {
+                    "x": 24.1,
+                    "y": 22.55,
+                    "z": 0
+                },
+                {
+                    "x": 22.22,
+                    "y": 22.55,
+                    "z": 0
+                }
+            ]
+        },
+        "5": {
+            "room_type": "bedroom",
+            "apartment": "Apartment 1",
+            "coordinates": [
+                {
+                    "x": 25.19,
+                    "y": 17.18,
+                    "z": 0
+                },
+                {
+                    "x": 25.19,
+                    "y": 14.55,
+                    "z": 0
+                },
+                {
+                    "x": 29.95,
+                    "y": 14.55,
+                    "z": 0
+                },
+                {
+                    "x": 29.95,
+                    "y": 17.15,
+                    "z": 0
+                },
+                {
+                    "x": 25.19,
+                    "y": 17.18,
+                    "z": 0
+                }
+            ]
+        },
+        "6": {
+            "room_type": "core",
+            "coordinates": [
+                {
+                    "x": 25.19,
+                    "y": 17.18,
+                    "z": 0
+                },
+                {
+                    "x": 25.19,
+                    "y": 19.73,
+                    "z": 0
+                },
+                {
+                    "x": 27.71,
+                    "y": 19.73,
+                    "z": 0
+                },
+                {
+                    "x": 30.01,
+                    "y": 19.73,
+                    "z": 0
+                },
+                {
+                    "x": 29.95,
+                    "y": 17.15,
+                    "z": 0
+                },
+                {
+                    "x": 25.19,
+                    "y": 17.18,
+                    "z": 0
+                }
+            ]
+        },
+        "7": {
+            "room_type": "corridor",
+            "apartment": "Apartment 1",
+            "coordinates": [
+                {
+                    "x": 25.19,
+                    "y": 19.73,
+                    "z": 0
+                },
+                {
+                    "x": 25.19,
+                    "y": 21.94,
+                    "z": 0
+                },
+                {
+                    "x": 27.71,
+                    "y": 21.94,
+                    "z": 0
+                },
+                {
+                    "x": 27.71,
+                    "y": 19.73,
+                    "z": 0
+                },
+                {
+                    "x": 25.19,
+                    "y": 19.73,
+                    "z": 0
+                }
+            ]
+        },
+        "8": {
+            "room_type": "living_room",
+            "apartment": "Apartment 1",
+            "coordinates": [
+                {
+                    "x": 25.19,
+                    "y": 14.55,
+                    "z": 0
+                },
+                {
+                    "x": 25.19,
+                    "y": 17.18,
+                    "z": 0
+                },
+                {
+                    "x": 25.19,
+                    "y": 19.73,
+                    "z": 0
+                },
+                {
+                    "x": 25.19,
+                    "y": 21.94,
+                    "z": 0
+                },
+                {
+                    "x": 27.71,
+                    "y": 21.94,
+                    "z": 0
+                },
+                {
+                    "x": 27.71,
+                    "y": 26.15,
+                    "z": 0
+                },
+                {
+                    "x": 24.1,
+                    "y": 26.27,
+                    "z": 0
+                },
+                {
+                    "x": 24.1,
+                    "y": 22.55,
+                    "z": 0
+                },
+                {
+                    "x": 24.07,
+                    "y": 20.88,
+                    "z": 0
+                },
+                {
+                    "x": 22.22,
+                    "y": 20.88,
+                    "z": 0
+                },
+                {
+                    "x": 22.22,
+                    "y": 22.55,
+                    "z": 0
+                },
+                {
+                    "x": 21.55,
+                    "y": 22.58,
+                    "z": 0
+                },
+                {
+                    "x": 20.74,
+                    "y": 22.58,
+                    "z": 0
+                },
+                {
+                    "x": 20.67,
+                    "y": 19.94,
+                    "z": 0
+                },
+                {
+                    "x": 21.61,
+                    "y": 19.94,
+                    "z": 0
+                },
+                {
+                    "x": 21.61,
+                    "y": 15.97,
+                    "z": 0
+                },
+                {
+                    "x": 21.61,
+                    "y": 14.58,
+                    "z": 0
+                },
+                {
+                    "x": 25.19,
+                    "y": 14.55,
+                    "z": 0
+                }
+            ]
+        }
+    }
+}

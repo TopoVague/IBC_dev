@@ -1,0 +1,2734 @@
+{
+    "panels": {
+        "attributes": {},
+        "items": {
+            "0": {
+                "panel_type": "WAL_02_CNI_REN",
+                "start_point": [
+                    -1.2971278230380139,
+                    7.786841630614586,
+                    0
+                ],
+                "end_point": [
+                    -0.6054193252884478,
+                    7.25229607110518,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "1": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    -1.186963404970697,
+                    0.3131695741517899,
+                    0
+                ],
+                "end_point": [
+                    -1.9747593742650096,
+                    0.9219705915684435,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "2": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    0.2391049253324547,
+                    3.7875385316420647,
+                    0
+                ],
+                "end_point": [
+                    -0.5647477085617977,
+                    2.74734338286309,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "3": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    -0.564748930285343,
+                    2.7473418019378664,
+                    0
+                ],
+                "end_point": [
+                    -0.9413097027435611,
+                    2.260067552634318,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "4": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    3.2568128330643646,
+                    5.157521579114371,
+                    0
+                ],
+                "end_point": [
+                    6.962271759231376,
+                    2.2939791745157936,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "5": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    4.736803632739885,
+                    -0.5858038246691265,
+                    0
+                ],
+                "end_point": [
+                    1.0313447065728718,
+                    2.2777385799294527,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "6": {
+                "panel_type": "WAL_43+45_STD_REN",
+                "start_point": [
+                    -0.7817115544594367,
+                    7.024168500981847,
+                    0
+                ],
+                "end_point": [
+                    0.6524850999988548,
+                    5.915835358338444,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "7": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -3.3511649191477066,
+                    4.900659341399348,
+                    0
+                ],
+                "end_point": [
+                    -2.7204437936062154,
+                    5.716820198946505,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "8": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    1.025783527712144,
+                    2.282034942012837,
+                    0
+                ],
+                "end_point": [
+                    0.27964652448198696,
+                    1.3165245258504186,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "nan"
+            },
+            "9": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    8.641075055092447,
+                    4.466371190760116,
+                    0
+                ],
+                "end_point": [
+                    4.944826670261379,
+                    7.322795779128552,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "10": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    8.641075234693288,
+                    4.466369789435731,
+                    0
+                ],
+                "end_point": [
+                    6.96227316055576,
+                    2.2939793541166327,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "11": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    6.962271938832215,
+                    2.2939777731914086,
+                    0
+                ],
+                "end_point": [
+                    4.736805034064269,
+                    -0.5858036450682871,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "12": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    4.736803812340724,
+                    -0.5858052259935109,
+                    0
+                ],
+                "end_point": [
+                    4.118915421951585,
+                    -1.3853603671590786,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "13": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -4.39821631116618,
+                    12.461514374976733,
+                    0
+                ],
+                "end_point": [
+                    -0.1948557480816163,
+                    9.213198456748282,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "14": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -0.19485416715639242,
+                    9.213197235024737,
+                    0
+                ],
+                "end_point": [
+                    2.1560733020260026,
+                    7.396423487891861,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "15": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    2.1560748829512266,
+                    7.396422266168315,
+                    0
+                ],
+                "end_point": [
+                    3.92850639326793,
+                    6.026704536146491,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "16": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    1.0313445269720325,
+                    2.2777399812538373,
+                    0
+                ],
+                "end_point": [
+                    2.239421146336612,
+                    3.841005915618682,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "17": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    2.2394223680601573,
+                    3.841007496543906,
+                    0
+                ],
+                "end_point": [
+                    3.2568114317399806,
+                    5.157521399513532,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "18": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    3.2568126534635256,
+                    5.157522980438755,
+                    0
+                ],
+                "end_point": [
+                    3.928506572868769,
+                    6.026703134822107,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "19": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    -0.9409244331471497,
+                    2.2597672949983933,
+                    0
+                ],
+                "end_point": [
+                    -1.5369247307707403,
+                    1.4885356138188306,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "20": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    -1.5369259524942855,
+                    1.488534032893607,
+                    0
+                ],
+                "end_point": [
+                    -1.9747595538658487,
+                    0.9219719928928277,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "21": {
+                "panel_type": "WAL_02_CNI_REN",
+                "start_point": [
+                    1.0872531395034166,
+                    6.47842889002558,
+                    0
+                ],
+                "end_point": [
+                    0.6524865013232392,
+                    5.915835537939283,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "22": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    4.944825268936994,
+                    7.322795599527713,
+                    0
+                ],
+                "end_point": [
+                    3.937718335928257,
+                    6.0195868995171935,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "23": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -3.2974768036201993,
+                    4.859167165933324,
+                    0
+                ],
+                "end_point": [
+                    -4.718503815198933,
+                    3.020340817169335,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Kitchen",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "24": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -4.718505036922479,
+                    3.0203392362441113,
+                    0
+                ],
+                "end_point": [
+                    -5.28083401726994,
+                    2.2926786518138993,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "25": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    0.4669894564190671,
+                    5.21072504696489,
+                    0
+                ],
+                "end_point": [
+                    2.2394209667357727,
+                    3.8410073169430663,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "26": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -2.7204439732070553,
+                    5.716821600270889,
+                    0
+                ],
+                "end_point": [
+                    -7.0342334622933675,
+                    9.050475912096749,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "27": {
+                "panel_type": "WAL_02_CNI_REN",
+                "start_point": [
+                    -2.2117920142060585,
+                    1.1051483591608067,
+                    0
+                ],
+                "end_point": [
+                    -1.7739584128344936,
+                    1.6717103991615865,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Kitchen",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "28": {
+                "panel_type": "WAL_02_CNI_REN",
+                "start_point": [
+                    -1.504322925712509,
+                    7.518728631334267,
+                    0
+                ],
+                "end_point": [
+                    -0.812614427962938,
+                    6.9841830718248605,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "29": {
+                "panel_type": "WAL_43+45_STD_REN",
+                "start_point": [
+                    2.1560734816268416,
+                    7.396422086567476,
+                    0
+                ],
+                "end_point": [
+                    1.3122750972762733,
+                    6.304536647694284,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "30": {
+                "panel_type": "WAL_02_CNI_REN",
+                "start_point": [
+                    1.3122738755527283,
+                    6.30453506676906,
+                    0
+                ],
+                "end_point": [
+                    0.8775072373725487,
+                    5.741941714682763,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "31": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    0.8775060156490037,
+                    5.74194013375754,
+                    0
+                ],
+                "end_point": [
+                    0.4669892768182277,
+                    5.210726448289274,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "32": {
+                "panel_type": "WAL_43+45_STD_REN",
+                "start_point": [
+                    -0.19485556848077687,
+                    9.213197055423898,
+                    0
+                ],
+                "end_point": [
+                    -1.2971280026388532,
+                    7.786843031938971,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "33": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    -1.5043243270368938,
+                    7.518728451733428,
+                    0
+                ],
+                "end_point": [
+                    -2.046137944598302,
+                    6.8176149978912095,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "34": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    0.2709641328115368,
+                    1.3232316681251584,
+                    0
+                ],
+                "end_point": [
+                    -0.34731749429651637,
+                    0.5231676738314315,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "nan"
+            },
+            "35": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    -3.2974754022958153,
+                    4.859167345534163,
+                    0
+                ],
+                "end_point": [
+                    -0.5647491098861821,
+                    2.747343203262251,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "36": {
+                "panel_type": "WAL_22_STD_REN",
+                "start_point": [
+                    -2.222423312208712,
+                    1.0913929631303207,
+                    0
+                ],
+                "end_point": [
+                    -4.718503635598094,
+                    3.020339415844951,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "37": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -7.034233641894207,
+                    9.050477313421133,
+                    0
+                ],
+                "end_point": [
+                    -4.398217712490565,
+                    12.461514195375893,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "38": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    0.2709639532106976,
+                    1.3232330694495429,
+                    0
+                ],
+                "end_point": [
+                    -0.9409230318227654,
+                    2.2597674745992324,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "39": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    3.790629721992457,
+                    -1.8101677154100977,
+                    0
+                ],
+                "end_point": [
+                    7.245608649005444,
+                    -4.480141627313676,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "40": {
+                "panel_type": "WAL_02_CNI_REN",
+                "start_point": [
+                    -1.6340415169019338,
+                    -7.653354911861337,
+                    0
+                ],
+                "end_point": [
+                    -2.2695271859679416,
+                    -8.475681147055314,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "41": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -3.649380074190322,
+                    -3.5537618931939603,
+                    0
+                ],
+                "end_point": [
+                    -7.4995594926739315,
+                    -0.5783809080523701,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "42": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -5.514860939307789,
+                    -5.967720236766301,
+                    0
+                ],
+                "end_point": [
+                    -2.557538178257028,
+                    -8.25311033259264,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Kitchen",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "43": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -2.269527006367103,
+                    -8.4756825483797,
+                    0
+                ],
+                "end_point": [
+                    -0.8052491820151269,
+                    -9.607262124808187,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "44": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -0.805247601089903,
+                    -9.607263346531733,
+                    0
+                ],
+                "end_point": [
+                    2.745142396394138,
+                    -12.350970000210598,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "45": {
+                "panel_type": "WAL_43+45_STD_REN",
+                "start_point": [
+                    -0.8273517263480885,
+                    -6.547167521470252,
+                    0
+                ],
+                "end_point": [
+                    -0.34899553088313395,
+                    -6.916836509174638,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "46": {
+                "panel_type": "WAL_43+45_STD_REN",
+                "start_point": [
+                    -0.3489939499579101,
+                    -6.916837730898184,
+                    0
+                ],
+                "end_point": [
+                    0.6670801940838271,
+                    -7.702049888327068,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "47": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    5.0315416105294615,
+                    -9.528168800702076,
+                    0
+                ],
+                "end_point": [
+                    1.4154330087009344,
+                    -6.733675452564788,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "48": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    3.7919217489911556,
+                    -10.996426337325202,
+                    0
+                ],
+                "end_point": [
+                    2.7451437977185233,
+                    -12.350969820609757,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "49": {
+                "panel_type": "WAL_43+45_STD_REN",
+                "start_point": [
+                    -0.9693894457159435,
+                    -6.7309660691148805,
+                    0
+                ],
+                "end_point": [
+                    -0.4910332502509925,
+                    -7.100635056819266,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "50": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    -1.2094631678029262,
+                    -6.508684766340165,
+                    0
+                ],
+                "end_point": [
+                    -4.038791615050885,
+                    -4.3222074239473,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Kitchen",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "51": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -4.038793016375269,
+                    -4.322207603548139,
+                    0
+                ],
+                "end_point": [
+                    -4.463876495307965,
+                    -4.8722708290298975,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Kitchen",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "52": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    7.216709152054009,
+                    -4.5175411976078355,
+                    0
+                ],
+                "end_point": [
+                    7.768605342025231,
+                    -4.94404117356459,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": null,
+                "apartment": null
+            },
+            "53": {
+                "panel_type": "WAL_43+45_STD_REN",
+                "start_point": [
+                    0.5720557493436815,
+                    -2.7345642084644384,
+                    0
+                ],
+                "end_point": [
+                    1.282725153029101,
+                    -3.2837625705709788,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "54": {
+                "panel_type": "WAL_43+45_STD_REN",
+                "start_point": [
+                    1.2827267339543245,
+                    -3.283763792294524,
+                    0
+                ],
+                "end_point": [
+                    2.224792501535888,
+                    -4.011783000479623,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "55": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    2.2247940824611114,
+                    -4.011784222203168,
+                    0
+                ],
+                "end_point": [
+                    3.035014149271002,
+                    -4.637914362786527,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "56": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    1.28272533262994,
+                    -3.2837639718953633,
+                    0
+                ],
+                "end_point": [
+                    -1.0852074008336905,
+                    -6.347897916510681,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "57": {
+                "panel_type": "WAL_02_CNI_REN",
+                "start_point": [
+                    -1.2094629882020862,
+                    -6.50868616766455,
+                    0
+                ],
+                "end_point": [
+                    -2.557536776932643,
+                    -8.2531101529918,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Kitchen",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "58": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    4.3531311946047,
+                    -1.0822822901475888,
+                    0
+                ],
+                "end_point": [
+                    3.790629542391617,
+                    -1.8101663140857127,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "59": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    3.7906283206680715,
+                    -1.8101678950109363,
+                    0
+                ],
+                "end_point": [
+                    2.946024862544728,
+                    -2.9030951092015713,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "60": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    -0.7628723892315464,
+                    -0.014563813581247568,
+                    0
+                ],
+                "end_point": [
+                    -1.9747593742650096,
+                    0.9219705915684434,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "61": {
+                "panel_type": "WAL_40+45_STD_REN",
+                "start_point": [
+                    -0.8052477806907413,
+                    -9.607261945207346,
+                    0
+                ],
+                "end_point": [
+                    0.6670803736846663,
+                    -7.702051289651452,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "62": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    0.6670815954082113,
+                    -7.7020497087262285,
+                    0
+                ],
+                "end_point": [
+                    1.4154316073765498,
+                    -6.733675632165627,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "63": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    1.4154328291000948,
+                    -6.733674051240404,
+                    0
+                ],
+                "end_point": [
+                    3.024176407065328,
+                    -4.6519401676030885,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "64": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    5.584066782964966,
+                    -6.630197142060965,
+                    0
+                ],
+                "end_point": [
+                    3.024177808389712,
+                    -4.651939988002249,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "65": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    6.693241268741923,
+                    -7.377910734682664,
+                    0
+                ],
+                "end_point": [
+                    5.031543011853847,
+                    -9.528168621101235,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "66": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    5.031541790130301,
+                    -9.52817020202646,
+                    0
+                ],
+                "end_point": [
+                    3.599415343088009,
+                    -11.381359356156212,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "67": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    5.637023042813036,
+                    -6.56167436100325,
+                    0
+                ],
+                "end_point": [
+                    6.693241089141083,
+                    -7.3779093333582795,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "68": {
+                "panel_type": "WAL_22_STD_REN",
+                "start_point": [
+                    -2.222423312208712,
+                    1.0913929631303207,
+                    0
+                ],
+                "end_point": [
+                    -4.718503635598094,
+                    3.020339415844951,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "69": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    7.216707750729625,
+                    -4.5175413772086745,
+                    0
+                ],
+                "end_point": [
+                    5.637022863212196,
+                    -6.561672959678866,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "70": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -7.499559672274771,
+                    -0.5783795067279854,
+                    0
+                ],
+                "end_point": [
+                    -4.7185050369224815,
+                    3.0203392362441135,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "71": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -4.718503815198936,
+                    3.0203408171693376,
+                    0
+                ],
+                "end_point": [
+                    -4.156174834845159,
+                    3.748001401607722,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Kitchen",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "72": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    -1.8951301059406211,
+                    -1.9280588784169685,
+                    0
+                ],
+                "end_point": [
+                    -0.5567542837766483,
+                    -0.19618418054643796,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "73": {
+                "panel_type": "WAL_02_CNI_REN",
+                "start_point": [
+                    -0.9693908470403277,
+                    -6.73096624871572,
+                    0
+                ],
+                "end_point": [
+                    -1.952085609970006,
+                    -8.00258530179757,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "74": {
+                "panel_type": "WAL_40+45_STD_REN",
+                "start_point": [
+                    3.0308919455237957,
+                    -2.9686820856647533,
+                    0
+                ],
+                "end_point": [
+                    2.2247939028602723,
+                    -4.011782820878784,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "75": {
+                "panel_type": "WAL_02_CNI_REN",
+                "start_point": [
+                    1.378153612406365,
+                    -1.6914620719260243,
+                    0
+                ],
+                "end_point": [
+                    0.5720555697428424,
+                    -2.734562807140054,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "76": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    -0.556752882452264,
+                    -0.19618400094559885,
+                    0
+                ],
+                "end_point": [
+                    1.1853957047789354,
+                    -1.5424993842896129,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "nan"
+            },
+            "77": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    1.3781550137307494,
+                    -1.6914618923251852,
+                    0
+                ],
+                "end_point": [
+                    2.946023461220344,
+                    -2.9030952888024104,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "78": {
+                "panel_type": "WAL_43+45_STD_REN",
+                "start_point": [
+                    1.1853958843797745,
+                    -1.542500785613997,
+                    0
+                ],
+                "end_point": [
+                    0.3792978417162498,
+                    -2.5856015208280247,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bathroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "79": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    0.37929661999270453,
+                    -2.5856031017532484,
+                    0
+                ],
+                "end_point": [
+                    -0.006422940449400485,
+                    -3.0847289348270484,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "80": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    -1.0319842341054635,
+                    -2.2921864635273934,
+                    0
+                ],
+                "end_point": [
+                    -0.006424341773784952,
+                    -3.0847291144278874,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "81": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    -3.649379894589483,
+                    -3.553763294518345,
+                    0
+                ],
+                "end_point": [
+                    -5.5148611189086285,
+                    -5.967718835441916,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Kitchen",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "82": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    2.9460248625447285,
+                    -2.9030951092015713,
+                    0
+                ],
+                "end_point": [
+                    3.7906283206680724,
+                    -1.810167895010937,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "83": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    3.790629542391618,
+                    -1.8101663140857134,
+                    0
+                ],
+                "end_point": [
+                    4.736803812340725,
+                    -0.585805225993511,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "84": {
+                "panel_type": "WAL_01_CNI_REN",
+                "start_point": [
+                    4.73680503406427,
+                    -0.5858036450682872,
+                    0
+                ],
+                "end_point": [
+                    5.354693424453454,
+                    0.21375149609733868,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "85": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    -0.556752882452264,
+                    -0.19618400094559885,
+                    0
+                ],
+                "end_point": [
+                    1.1853957047789354,
+                    -1.5424993842896129,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "nan"
+            },
+            "86": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    1.3781550137307494,
+                    -1.6914618923251852,
+                    0
+                ],
+                "end_point": [
+                    2.946023461220344,
+                    -2.9030952888024104,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "87": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    0.27096413281153675,
+                    1.3232316681251586,
+                    0
+                ],
+                "end_point": [
+                    -0.7628709879071621,
+                    -0.014563633980408474,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "nan"
+            },
+            "88": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    1.025783527712144,
+                    2.282034942012837,
+                    0
+                ],
+                "end_point": [
+                    0.27964652448198696,
+                    1.3165245258504186,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Corridor",
+                "apartment": "nan"
+            },
+            "89": {
+                "panel_type": "WAL_40_STD_REN",
+                "start_point": [
+                    1.6492329173602192,
+                    3.0772951224181733,
+                    0
+                ],
+                "end_point": [
+                    1.0313445269720323,
+                    2.2777399812538377,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Bedroom",
+                "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a"
+            },
+            "90": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    -0.7628723892315464,
+                    -0.014563813581247568,
+                    0
+                ],
+                "end_point": [
+                    -1.9747593742650096,
+                    0.9219705915684434,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Livingroom",
+                "apartment": "c7ec17346872bea95d2742d3c1e26664"
+            },
+            "91": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    -0.9409244331471497,
+                    2.2597672949983933,
+                    0
+                ],
+                "end_point": [
+                    -1.5369247307707403,
+                    1.4885356138188306,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "92": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    -1.5369259524942855,
+                    1.488534032893607,
+                    0
+                ],
+                "end_point": [
+                    -1.9747595538658487,
+                    0.9219719928928277,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "93": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    4.736803632739885,
+                    -0.5858038246691265,
+                    0
+                ],
+                "end_point": [
+                    1.0313447065728718,
+                    2.2777385799294527,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "94": {
+                "panel_type": "WAL_20_STD_REN",
+                "start_point": [
+                    0.2709639532106976,
+                    1.3232330694495429,
+                    0
+                ],
+                "end_point": [
+                    -0.9409230318227654,
+                    2.2597674745992324,
+                    0
+                ],
+                "height": 3,
+                "thickness": 0.2,
+                "room": "Stairs",
+                "apartment": "nan"
+            },
+            "max_key": 95
+        }
+    },
+    "spaces": {
+        "0": {
+            "room_type": "Bathroom",
+            "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a",
+            "coordinates": [
+                {
+                    "x": -0.5750782791823816,
+                    "y": 7.283156579307882,
+                    "z": 0
+                },
+                {
+                    "x": -0.5749864369826341,
+                    "y": 7.28327542423866,
+                    "z": 0
+                },
+                {
+                    "x": -1.1433067116442786,
+                    "y": 7.7224677721538875,
+                    "z": 0
+                },
+                {
+                    "x": -0.1237438225103773,
+                    "y": 9.041794631872403,
+                    "z": 0
+                },
+                {
+                    "x": 2.029533217841525,
+                    "y": 7.3777632023635,
+                    "z": 0
+                },
+                {
+                    "x": 1.2666896502808385,
+                    "y": 6.390634287440694,
+                    "z": 0
+                },
+                {
+                    "x": 1.0783922381750273,
+                    "y": 6.536148685248071,
+                    "z": 0
+                },
+                {
+                    "x": 1.0506182200091594,
+                    "y": 6.500208765740338,
+                    "z": 0
+                },
+                {
+                    "x": 1.0499720764263287,
+                    "y": 6.500708099179398,
+                    "z": 0
+                },
+                {
+                    "x": 0.7055894897888919,
+                    "y": 6.0550728162435234,
+                    "z": 0
+                },
+                {
+                    "x": -0.6619425483263193,
+                    "y": 7.111888195611602,
+                    "z": 0
+                },
+                {
+                    "x": -0.5465971072959768,
+                    "y": 7.261146608328726,
+                    "z": 0
+                },
+                {
+                    "x": -0.5750782791823816,
+                    "y": 7.283156579307882,
+                    "z": 0
+                }
+            ]
+        },
+        "1": {
+            "room_type": "Bedroom",
+            "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a",
+            "coordinates": [
+                {
+                    "x": 4.06465088646506,
+                    "y": 6.036927563589412,
+                    "z": 0
+                },
+                {
+                    "x": 4.907032255463733,
+                    "y": 7.126979367250581,
+                    "z": 0
+                },
+                {
+                    "x": 8.39402968092741,
+                    "y": 4.432261873007535,
+                    "z": 0
+                },
+                {
+                    "x": 6.871246247118787,
+                    "y": 2.4617614682068503,
+                    "z": 0
+                },
+                {
+                    "x": 3.3852134536711205,
+                    "y": 5.155733504265708,
+                    "z": 0
+                },
+                {
+                    "x": 4.065615518481074,
+                    "y": 6.036182105405224,
+                    "z": 0
+                },
+                {
+                    "x": 4.06465088646506,
+                    "y": 6.036927563589412,
+                    "z": 0
+                }
+            ]
+        },
+        "2": {
+            "room_type": "Corridor",
+            "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a",
+            "coordinates": [
+                {
+                    "x": 2.1990265936400704,
+                    "y": 3.9566765534167843,
+                    "z": 0
+                },
+                {
+                    "x": 0.5780484459966786,
+                    "y": 5.209352606557111,
+                    "z": 0
+                },
+                {
+                    "x": 2.1699295732346613,
+                    "y": 7.2692662725283625,
+                    "z": 0
+                },
+                {
+                    "x": 3.790907720878046,
+                    "y": 6.016590219388032,
+                    "z": 0
+                },
+                {
+                    "x": 2.1990265936400704,
+                    "y": 3.9566765534167843,
+                    "z": 0
+                }
+            ]
+        },
+        "3": {
+            "room_type": "Bedroom",
+            "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a",
+            "coordinates": [
+                {
+                    "x": 6.7769569567839945,
+                    "y": 2.33974997225277,
+                    "z": 0
+                },
+                {
+                    "x": 4.6533710276116835,
+                    "y": -0.4081962163902038,
+                    "z": 0
+                },
+                {
+                    "x": 1.1673382341640206,
+                    "y": 2.285775819668654,
+                    "z": 0
+                },
+                {
+                    "x": 3.290924163336328,
+                    "y": 5.033722008311628,
+                    "z": 0
+                },
+                {
+                    "x": 6.7769569567839945,
+                    "y": 2.33974997225277,
+                    "z": 0
+                }
+            ]
+        },
+        "4": {
+            "room_type": "Livingroom",
+            "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a",
+            "coordinates": [
+                {
+                    "x": -6.743217123213974,
+                    "y": 8.95820549808225,
+                    "z": 0
+                },
+                {
+                    "x": -6.742948453399833,
+                    "y": 8.958553160110721,
+                    "z": 0
+                },
+                {
+                    "x": -6.827118507331406,
+                    "y": 9.023598954284381,
+                    "z": 0
+                },
+                {
+                    "x": -4.311881490075358,
+                    "y": 12.278346445381391,
+                    "z": 0
+                },
+                {
+                    "x": -0.3786514866286694,
+                    "y": 9.238784780732306,
+                    "z": 0
+                },
+                {
+                    "x": -2.0519075183601956,
+                    "y": 7.073570992179544,
+                    "z": 0
+                },
+                {
+                    "x": -1.7969998542419034,
+                    "y": 6.8765808433196405,
+                    "z": 0
+                },
+                {
+                    "x": -1.4345576435225311,
+                    "y": 7.345585500897979,
+                    "z": 0
+                },
+                {
+                    "x": -0.871961983649058,
+                    "y": 6.910817079282452,
+                    "z": 0
+                },
+                {
+                    "x": -0.8705975283275542,
+                    "y": 6.912582701171726,
+                    "z": 0
+                },
+                {
+                    "x": 0.7200838521508821,
+                    "y": 5.683319693278353,
+                    "z": 0
+                },
+                {
+                    "x": 0.3550530999967378,
+                    "y": 5.210965431395284,
+                    "z": 0
+                },
+                {
+                    "x": 0.4954494553898741,
+                    "y": 5.102468501560146,
+                    "z": 0
+                },
+                {
+                    "x": 0.4963252413093642,
+                    "y": 5.103601779261073,
+                    "z": 0
+                },
+                {
+                    "x": 0.8897428843623736,
+                    "y": 4.799572473837127,
+                    "z": 0
+                },
+                {
+                    "x": 0.0351194013047369,
+                    "y": 3.6936792247194177,
+                    "z": 0
+                },
+                {
+                    "x": 0.0349675821163906,
+                    "y": 3.6937965491027995,
+                    "z": 0
+                },
+                {
+                    "x": -0.6176381949177419,
+                    "y": 2.8493166846189055,
+                    "z": 0
+                },
+                {
+                    "x": -3.1730925023693857,
+                    "y": 4.824146771312478,
+                    "z": 0
+                },
+                {
+                    "x": -3.179087972223428,
+                    "y": 4.816388559926629,
+                    "z": 0
+                },
+                {
+                    "x": -3.2475853668802444,
+                    "y": 4.8693226763512385,
+                    "z": 0
+                },
+                {
+                    "x": -2.5757269349922396,
+                    "y": 5.7387157119012,
+                    "z": 0
+                },
+                {
+                    "x": -2.73575178210951,
+                    "y": 5.8623813480991185,
+                    "z": 0
+                },
+                {
+                    "x": -2.7362868391965947,
+                    "y": 5.8616889776784245,
+                    "z": 0
+                },
+                {
+                    "x": -6.743217123213974,
+                    "y": 8.95820549808225,
+                    "z": 0
+                }
+            ]
+        },
+        "5": {
+            "room_type": "Corridor",
+            "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a",
+            "coordinates": [
+                {
+                    "x": -0.8031959429567195,
+                    "y": 2.2683742099755086,
+                    "z": 0
+                },
+                {
+                    "x": 0.1998737519540157,
+                    "y": 3.566358674464574,
+                    "z": 0
+                },
+                {
+                    "x": 0.0469477989562748,
+                    "y": 3.684538354741223,
+                    "z": 0
+                },
+                {
+                    "x": 0.9015712820139115,
+                    "y": 4.7904316038589325,
+                    "z": 0
+                },
+                {
+                    "x": 2.117303388952756,
+                    "y": 3.850925726120746,
+                    "z": 0
+                },
+                {
+                    "x": 0.8975580441763213,
+                    "y": 2.272560318227967,
+                    "z": 0
+                },
+                {
+                    "x": 0.8997857945999037,
+                    "y": 2.270838734496529,
+                    "z": 0
+                },
+                {
+                    "x": 0.2624681061176624,
+                    "y": 1.4461418437509224,
+                    "z": 0
+                },
+                {
+                    "x": 0.2457411596640071,
+                    "y": 1.4590682643168726,
+                    "z": 0
+                },
+                {
+                    "x": 0.2437940446563047,
+                    "y": 1.4565486736609117,
+                    "z": 0
+                },
+                {
+                    "x": -0.8039892724156985,
+                    "y": 2.266265369770739,
+                    "z": 0
+                },
+                {
+                    "x": -0.8026723021176885,
+                    "y": 2.2679695454583104,
+                    "z": 0
+                },
+                {
+                    "x": -0.8031959429567195,
+                    "y": 2.2683742099755086,
+                    "z": 0
+                }
+            ]
+        },
+        "6": {
+            "room_type": "Kitchen",
+            "apartment": "2efd5d164b4fc5b2dd9e556d3d5b498a",
+            "coordinates": [
+                {
+                    "x": -1.7122644473069535,
+                    "y": 1.6810217846339839,
+                    "z": 0
+                },
+                {
+                    "x": -1.7121751391291795,
+                    "y": 1.6811373505093101,
+                    "z": 0
+                },
+                {
+                    "x": -1.7804171338009809,
+                    "y": 1.733874096324282,
+                    "z": 0
+                },
+                {
+                    "x": -2.146246556892372,
+                    "y": 1.2604863444713246,
+                    "z": 0
+                },
+                {
+                    "x": -4.467289752355093,
+                    "y": 3.054165817255994,
+                    "z": 0
+                },
+                {
+                    "x": -3.1861216906670826,
+                    "y": 4.712012972750594,
+                    "z": 0
+                },
+                {
+                    "x": -0.6767646137670198,
+                    "y": 2.772806374820277,
+                    "z": 0
+                },
+                {
+                    "x": -0.984218517422832,
+                    "y": 2.3749572597323443,
+                    "z": 0
+                },
+                {
+                    "x": -0.9839691756219509,
+                    "y": 2.3747645708281393,
+                    "z": 0
+                },
+                {
+                    "x": -1.591943218740532,
+                    "y": 1.5880387163990992,
+                    "z": 0
+                },
+                {
+                    "x": -1.7122644473069535,
+                    "y": 1.6810217846339839,
+                    "z": 0
+                }
+            ]
+        },
+        "7": {
+            "room_type": "Bedroom",
+            "apartment": "c7ec17346872bea95d2742d3c1e26664",
+            "coordinates": [
+                {
+                    "x": -0.6765831332288954,
+                    "y": -9.591035772391338,
+                    "z": 0
+                },
+                {
+                    "x": 1.4326247737371318,
+                    "y": -6.861694920494676,
+                    "z": 0
+                },
+                {
+                    "x": 4.838624776317857,
+                    "y": -9.493818398797984,
+                    "z": 0
+                },
+                {
+                    "x": 3.5836947034710818,
+                    "y": -11.117713275534545,
+                    "z": 0
+                },
+                {
+                    "x": 3.5839196759912184,
+                    "y": -11.117887132097017,
+                    "z": 0
+                },
+                {
+                    "x": 2.729641841871974,
+                    "y": -12.22333310725712,
+                    "z": 0
+                },
+                {
+                    "x": -0.6765831332288954,
+                    "y": -9.591035772391338,
+                    "z": 0
+                }
+            ]
+        },
+        "8": {
+            "room_type": "Bedroom",
+            "apartment": "c7ec17346872bea95d2742d3c1e26664",
+            "coordinates": [
+                {
+                    "x": 3.0033721504264044,
+                    "y": -3.1144590710560944,
+                    "z": 0
+                },
+                {
+                    "x": 3.8186755889456414,
+                    "y": -2.059446440915117,
+                    "z": 0
+                },
+                {
+                    "x": 7.051658881947077,
+                    "y": -4.557864298819901,
+                    "z": 0
+                },
+                {
+                    "x": 6.99311738958977,
+                    "y": -4.633617706577429,
+                    "z": 0
+                },
+                {
+                    "x": 6.9934247913984535,
+                    "y": -4.6338552636876145,
+                    "z": 0
+                },
+                {
+                    "x": 5.663184357053851,
+                    "y": -6.35520267012893,
+                    "z": 0
+                },
+                {
+                    "x": 5.662647442430259,
+                    "y": -6.354787747760895,
+                    "z": 0
+                },
+                {
+                    "x": 5.557028489856187,
+                    "y": -6.491459965346888,
+                    "z": 0
+                },
+                {
+                    "x": 3.0092404432938906,
+                    "y": -4.5225542900632885,
+                    "z": 0
+                },
+                {
+                    "x": 3.00879579978578,
+                    "y": -4.523129664205971,
+                    "z": 0
+                },
+                {
+                    "x": 2.3243229099355744,
+                    "y": -3.9941757116893086,
+                    "z": 0
+                },
+                {
+                    "x": 3.0038649942004305,
+                    "y": -3.1148399359027668,
+                    "z": 0
+                },
+                {
+                    "x": 3.0033721504264044,
+                    "y": -3.1144590710560944,
+                    "z": 0
+                }
+            ]
+        },
+        "9": {
+            "room_type": "Bathroom",
+            "apartment": "c7ec17346872bea95d2742d3c1e26664",
+            "coordinates": [
+                {
+                    "x": -0.960275841728695,
+                    "y": -6.78722978336916,
+                    "z": 0
+                },
+                {
+                    "x": -0.5084613734502952,
+                    "y": -7.136387583983259,
+                    "z": 0
+                },
+                {
+                    "x": -0.50838710931842,
+                    "y": -7.136291485287494,
+                    "z": 0
+                },
+                {
+                    "x": -0.4846243332307445,
+                    "y": -7.154655126157323,
+                    "z": 0
+                },
+                {
+                    "x": -0.3470886981010892,
+                    "y": -6.976682330630071,
+                    "z": 0
+                },
+                {
+                    "x": 0.56613292586011,
+                    "y": -7.682411066831259,
+                    "z": 0
+                },
+                {
+                    "x": -0.8219936977465778,
+                    "y": -9.478663910802863,
+                    "z": 0
+                },
+                {
+                    "x": -2.1495003584199246,
+                    "y": -8.45277975152077,
+                    "z": 0
+                },
+                {
+                    "x": -1.6916583128541767,
+                    "y": -7.86032653979542,
+                    "z": 0
+                },
+                {
+                    "x": -1.7529505205081044,
+                    "y": -7.812960521392396,
+                    "z": 0
+                },
+                {
+                    "x": -0.960275841728695,
+                    "y": -6.78722978336916,
+                    "z": 0
+                }
+            ]
+        },
+        "10": {
+            "room_type": "Bathroom",
+            "apartment": "c7ec17346872bea95d2742d3c1e26664",
+            "coordinates": [
+                {
+                    "x": 2.6976893470317655,
+                    "y": -2.938872251921815,
+                    "z": 0
+                },
+                {
+                    "x": 2.866933112662963,
+                    "y": -3.0696621781510594,
+                    "z": 0
+                },
+                {
+                    "x": 2.2167319363075535,
+                    "y": -3.911030459920296,
+                    "z": 0
+                },
+                {
+                    "x": 0.6646297939367116,
+                    "y": -2.7115811097841505,
+                    "z": 0
+                },
+                {
+                    "x": 1.3155298392338537,
+                    "y": -1.8693084830489735,
+                    "z": 0
+                },
+                {
+                    "x": 2.6983882159734947,
+                    "y": -2.9379679069558744,
+                    "z": 0
+                },
+                {
+                    "x": 2.6976893470317655,
+                    "y": -2.938872251921815,
+                    "z": 0
+                }
+            ]
+        },
+        "11": {
+            "room_type": "Corridor",
+            "apartment": "c7ec17346872bea95d2742d3c1e26664",
+            "coordinates": [
+                {
+                    "x": 2.916575526351707,
+                    "y": -4.640909568390654,
+                    "z": 0
+                },
+                {
+                    "x": 0.6226184787150757,
+                    "y": -7.609318069957945,
+                    "z": 0
+                },
+                {
+                    "x": -0.9723180112168208,
+                    "y": -6.376766755110163,
+                    "z": 0
+                },
+                {
+                    "x": 1.3216390364198034,
+                    "y": -3.408358253542872,
+                    "z": 0
+                },
+                {
+                    "x": 2.916575526351707,
+                    "y": -4.640909568390654,
+                    "z": 0
+                }
+            ]
+        },
+        "12": {
+            "room_type": "Bedroom",
+            "apartment": "c7ec17346872bea95d2742d3c1e26664",
+            "coordinates": [
+                {
+                    "x": 5.498443574583995,
+                    "y": -6.681870612683612,
+                    "z": 0
+                },
+                {
+                    "x": 5.498733979855611,
+                    "y": -6.6814948247070856,
+                    "z": 0
+                },
+                {
+                    "x": 6.446156011600596,
+                    "y": -7.41365330143295,
+                    "z": 0
+                },
+                {
+                    "x": 4.949650229837925,
+                    "y": -9.350150102803136,
+                    "z": 0
+                },
+                {
+                    "x": 1.5436502272571992,
+                    "y": -6.718026624499828,
+                    "z": 0
+                },
+                {
+                    "x": 3.039865603748254,
+                    "y": -4.781905611106168,
+                    "z": 0
+                },
+                {
+                    "x": 5.498443574583995,
+                    "y": -6.681870612683612,
+                    "z": 0
+                }
+            ]
+        },
+        "13": {
+            "room_type": "Corridor",
+            "apartment": "c7ec17346872bea95d2742d3c1e26664",
+            "coordinates": [
+                {
+                    "x": -0.8898088707221916,
+                    "y": -2.433650419024575,
+                    "z": 0
+                },
+                {
+                    "x": -1.6520951006491735,
+                    "y": -1.8445630786082923,
+                    "z": 0
+                },
+                {
+                    "x": -0.5544545855882106,
+                    "y": -0.4242028151375727,
+                    "z": 0
+                },
+                {
+                    "x": 1.0154091382838217,
+                    "y": -1.6373781416817206,
+                    "z": 0
+                },
+                {
+                    "x": -0.0425871400493989,
+                    "y": -3.0064382775140377,
+                    "z": 0
+                },
+                {
+                    "x": -0.8501646339944493,
+                    "y": -2.3823502913861727,
+                    "z": 0
+                },
+                {
+                    "x": -0.8898088707221916,
+                    "y": -2.433650419024575,
+                    "z": 0
+                }
+            ]
+        },
+        "14": {
+            "room_type": "Kitchen",
+            "apartment": "c7ec17346872bea95d2742d3c1e26664",
+            "coordinates": [
+                {
+                    "x": -2.5862246357807948,
+                    "y": -8.115283502808026,
+                    "z": 0
+                },
+                {
+                    "x": -5.379034561727423,
+                    "y": -5.95702731638619,
+                    "z": 0
+                },
+                {
+                    "x": -4.390319358835313,
+                    "y": -4.677617740292563,
+                    "z": 0
+                },
+                {
+                    "x": -4.262329953684954,
+                    "y": -4.776526700367451,
+                    "z": 0
+                },
+                {
+                    "x": -3.986070910251115,
+                    "y": -4.419044116284746,
+                    "z": 0
+                },
+                {
+                    "x": -1.3212503894548426,
+                    "y": -6.478391342631694,
+                    "z": 0
+                },
+                {
+                    "x": -2.5862246357807948,
+                    "y": -8.115283502808026,
+                    "z": 0
+                }
+            ]
+        },
+        "15": {
+            "room_type": "Livingroom",
+            "apartment": "c7ec17346872bea95d2742d3c1e26664",
+            "coordinates": [
+                {
+                    "x": -2.144727000961499,
+                    "y": 0.8033879814153906,
+                    "z": 0
+                },
+                {
+                    "x": -2.144649818177129,
+                    "y": 0.8034878568832156,
+                    "z": 0
+                },
+                {
+                    "x": -0.8008741037056879,
+                    "y": -0.2349688680005508,
+                    "z": 0
+                },
+                {
+                    "x": -0.8002951197126187,
+                    "y": -0.2342196556257727,
+                    "z": 0
+                },
+                {
+                    "x": -0.7779829361752704,
+                    "y": -0.2514622927650487,
+                    "z": 0
+                },
+                {
+                    "x": -1.8852100229368958,
+                    "y": -1.684227697372326,
+                    "z": 0
+                },
+                {
+                    "x": -1.661681672349836,
+                    "y": -1.85696821974485,
+                    "z": 0
+                },
+                {
+                    "x": -1.6612359706273736,
+                    "y": -1.8563914762598355,
+                    "z": 0
+                },
+                {
+                    "x": -0.8532377109273988,
+                    "y": -2.480804626046412,
+                    "z": 0
+                },
+                {
+                    "x": -0.8531699647267246,
+                    "y": -2.4807169616334157,
+                    "z": 0
+                },
+                {
+                    "x": -0.0493494458196544,
+                    "y": -3.101901594209501,
+                    "z": 0
+                },
+                {
+                    "x": -0.049243977733255,
+                    "y": -3.101765117214592,
+                    "z": 0
+                },
+                {
+                    "x": 0.0298455055134532,
+                    "y": -3.1628846960703783,
+                    "z": 0
+                },
+                {
+                    "x": 0.3940853687222727,
+                    "y": -2.691553854164379,
+                    "z": 0
+                },
+                {
+                    "x": 1.15234458831749,
+                    "y": -3.2775291603958134,
+                    "z": 0
+                },
+                {
+                    "x": -1.266968813328102,
+                    "y": -6.408150318625124,
+                    "z": 0
+                },
+                {
+                    "x": -3.9317893341243746,
+                    "y": -4.3488030922781755,
+                    "z": 0
+                },
+                {
+                    "x": -3.9316684810131406,
+                    "y": -4.3486467068727945,
+                    "z": 0
+                },
+                {
+                    "x": -4.059657886163496,
+                    "y": -4.249737746797907,
+                    "z": 0
+                },
+                {
+                    "x": -3.5074770291320334,
+                    "y": -3.535208958168841,
+                    "z": 0
+                },
+                {
+                    "x": -3.5895610444415738,
+                    "y": -3.4717752342328634,
+                    "z": 0
+                },
+                {
+                    "x": -3.587206164716431,
+                    "y": -3.468727991040806,
+                    "z": 0
+                },
+                {
+                    "x": -7.294252629277938,
+                    "y": -0.6039587523031571,
+                    "z": 0
+                },
+                {
+                    "x": -4.6878836767343515,
+                    "y": 2.7687145786654046,
+                    "z": 0
+                },
+                {
+                    "x": -2.144727000961499,
+                    "y": 0.8033879814153906,
+                    "z": 0
+                }
+            ]
+        },
+        "16": {
+            "room_type": "Stairs",
+            "apartment": NaN,
+            "coordinates": [
+                {
+                    "x": 1.5029981841822888,
+                    "y": 0.0183241384315806,
+                    "z": 0
+                },
+                {
+                    "x": 2.365099704556666,
+                    "y": 1.1338940593810136,
+                    "z": 0
+                },
+                {
+                    "x": 4.5438959233081135,
+                    "y": -0.549858341520002,
+                    "z": 0
+                },
+                {
+                    "x": 2.917318391907223,
+                    "y": -2.654669579220908,
+                    "z": 0
+                },
+                {
+                    "x": 0.947467053587637,
+                    "y": -1.132387737638524,
+                    "z": 0
+                },
+                {
+                    "x": 1.7028021946359537,
+                    "y": -0.154974818538598,
+                    "z": 0
+                },
+                {
+                    "x": 1.7125121994939079,
+                    "y": -0.1624786152918851,
+                    "z": 0
+                },
+                {
+                    "x": 1.7216530694721044,
+                    "y": -0.1506502176403401,
+                    "z": 0
+                },
+                {
+                    "x": 1.7119430646141538,
+                    "y": -0.143146420887053,
+                    "z": 0
+                },
+                {
+                    "x": 1.7202906425155575,
+                    "y": -0.1323445528941249,
+                    "z": 0
+                },
+                {
+                    "x": 1.708462244864016,
+                    "y": -0.1232036829159302,
+                    "z": 0
+                },
+                {
+                    "x": 1.7001146669626124,
+                    "y": -0.1340055509088582,
+                    "z": 0
+                },
+                {
+                    "x": 1.5029981841822888,
+                    "y": 0.0183241384315806,
+                    "z": 0
+                }
+            ]
+        },
+        "17": {
+            "room_type": "Corridor",
+            "apartment": NaN,
+            "coordinates": [
+                {
+                    "x": -0.5605069082366114,
+                    "y": 0.0788225301762973,
+                    "z": 0
+                },
+                {
+                    "x": 0.354004981111455,
+                    "y": 1.2622121101695107,
+                    "z": 0
+                },
+                {
+                    "x": 0.3546403745516145,
+                    "y": 1.261721084335532,
+                    "z": 0
+                },
+                {
+                    "x": 1.0445158243641828,
+                    "y": 2.154428361638738,
+                    "z": 0
+                },
+                {
+                    "x": 2.3532713069051283,
+                    "y": 1.1430349293592101,
+                    "z": 0
+                },
+                {
+                    "x": 1.482571765041559,
+                    "y": 0.0163390633483935,
+                    "z": 0
+                },
+                {
+                    "x": 1.4875750429292864,
+                    "y": 0.0124725791479268,
+                    "z": 0
+                },
+                {
+                    "x": 1.4870321944402818,
+                    "y": 0.0117701265577654,
+                    "z": 0
+                },
+                {
+                    "x": 1.6909737969844159,
+                    "y": -0.1458339485604032,
+                    "z": 0
+                },
+                {
+                    "x": 0.9356386559360956,
+                    "y": -1.1232468676603293,
+                    "z": 0
+                },
+                {
+                    "x": -0.5813649437788904,
+                    "y": 0.0490786721091956,
+                    "z": 0
+                },
+                {
+                    "x": -0.5591747515386345,
+                    "y": 0.0777930525136812,
+                    "z": 0
+                },
+                {
+                    "x": -0.5605069082366114,
+                    "y": 0.0788225301762973,
+                    "z": 0
+                }
+            ]
+        },
+        "18": {
+            "room_type": "Stairs",
+            "apartment": NaN,
+            "coordinates": [
+                {
+                    "x": -0.9126779032792811,
+                    "y": 2.1256209509000534,
+                    "z": 0
+                },
+                {
+                    "x": 0.1351054137927221,
+                    "y": 1.315904254790226,
+                    "z": 0
+                },
+                {
+                    "x": -0.723536937134206,
+                    "y": 0.2048105414518915,
+                    "z": 0
+                },
+                {
+                    "x": -1.7713202542062056,
+                    "y": 1.0145272375617225,
+                    "z": 0
+                },
+                {
+                    "x": -0.9126779032792811,
+                    "y": 2.1256209509000534,
+                    "z": 0
+                }
+            ]
+        }
+    }
+}

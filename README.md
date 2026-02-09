@@ -9,6 +9,7 @@ A tool for Rapid Design Generation and Optimization in Modern Methods of Constru
 This project develops an intelligent configurator, including a BIM library offering collaborative BIM data accessibility, 
 a similarity analysis between traditional projects and standardized products, 
 and a generative design to optimize project configurations with modern methods of construction.
+
 In this repository we will store the sourcecode, test and efforts towards the development of the tool 
 
 ## Libraries
@@ -62,7 +63,7 @@ adm_jweis@implenia.com
 You can locally view and export ithe Catalog of parts using the Graphical User Interface within Rhinoceros 3d
 1) You  need to have Rhino 7 or 8 installed on your laptop/machine
 2) You need to have the following libraries installed: a) [Human UI](https://www.food4rhino.com/en/app/human-ui), b) [Metahopper](https://www.food4rhino.com/en/app/metahopper) c) [Bullant and RhinoIfc](https://geometrygym.wordpress.com/downloads-windows/) d) [Speckle](https://www.speckle.systems/download) 
-3) Open the file .ghx which you can find in the  04_readAndParse_ElementCatalog_v0_1
+3) Open the file .ghx which you can find in the  03_readAndParse_ElementCatalog_v0_1
 4) Read the instructions on the top of the script to be able to navigate 
 5) In the folder input you can find a sample .xls file that you can use to parse. You will need to point to this file in the script
 6) you may need to adjust the file path of the catalog images to view them, but you should see something like the following image
@@ -79,16 +80,16 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 
 3) Cd to the root folder i.e. C:\Users\YourUserName\Documents\GitHub\IBC 
 
-4) Make sure you have installed the dependecies above, you can do this by using **pip install** or **npm**
+4) Make sure you have installed the dependecies above, you can do this by using **pip install** or **npm** . Alternatively , if you are using anaconda,  you can create envrironment with all the required libraries by following these steps: a) find in the rootfolder the file IBC_dev/IBCenvironment.yml  b) open the anaconda command prompt and cd to the root folder  c) type: **conda env create -f IBCenvironment.yml** (The first line of the yml file sets the new environment's name) d) **conda activate IBCtestenv** e)  Verify that the new environment was installed correctly by typing:  conda env list
 
-5) Run the python script  appTesting.py or app.py by running the following command: **python appTesting.py**
+6) Run the python script  appTesting.py or app.py by running the following command: **python appTesting.py**
 
-6) Open a browser window and enter the following URL: http://localhost:5000/index.html  (this will create a local server and load the index.html that is located in the templates folder)
+7) Open a browser window and enter the following URL: http://localhost:5000/index.html  (this will create a local server and load the index.html that is located in the templates folder)
 
-7) Navigate to the page of the catalog http://localhost:5000/catalog.html
+8) Navigate to the page of the catalog http://localhost:5000/catalog.html
 
-8) Load the file BuildingElementCatalog_Phase5.csv (or one with the same strcuture) to browse the catalog and you should see sth like the following
-9) You can now browse,filter and download the elements that exist in the catalogue
+9) Load the file BuildingElementCatalog_Phase5.csv (or one with the same strcuture) to browse the catalog and you should see sth like the following
+10) You can now browse,filter and download the elements that exist in the catalogue
     
 ![ZHAW_implenia_GUI_web_04_CatalogBrowser](https://github.com/user-attachments/assets/9c245cff-2155-4871-801a-a4648752415c)
 
@@ -103,7 +104,16 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 
 -Keep tests and development files in the 01_CodingTests Folder 
 
-## C.1 Workflow Overview of Floor Plan Processing Tool
+## C.Floorplan Processing
+
+All the files for can be found under 05_Floorplan_processing. We have developed two methods for processing the floorplans:
+C.1 A web based that allows a user to load a pdf of floorplan scale it accordingly, trace the spaces and export it as a json 
+C.2 A Rhino/Ghx based which allows the user to load a dxf with a floorplan and format it in an msd format 
+
+
+### C.1 Workflow Overview of Floor Plan Processing Tool-WEB
+
+TODO Add an image here
 
 The workflow consists of the following steps:
 
@@ -155,10 +165,48 @@ open the http://127.0.0.1:8000/index.html in your browser. You will see the Floo
 8. Click "Confirm Grouping", the apartment profile will automatically appear in the right side panel. Please check the profile to make sure the apartment is defined correctly
 9. Click "Export JSON", the initial bill of material file could be downloaded as "<File_Name>+bom.json".
 
+
+
+### C.2 Workflow Overview of Floor Plan Processing Tool-Rhino/Ghx 
+
+TODO - EVAN TO ADD better explanation HERE
+
+This workflow allows the user to load a floorplan and format it into a .csv file following the Modified Swiss Dwelling format. The reason to follow this format is to be able to compare candidate Designs with a lot floorplans so that you can run similarity analysis
+
+
+1. You can navigate to the folder 05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH
+2. you can open the script readFlooplan_andFormat_ToMSD_csv.gh
+3. You can load a dxf file of a flooplnas. You can find template files here : 
+05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH\implenia_CaseStudies_floorplans
+4. The file should be strcutured as follows 
+	a) room outlines should be closed polylines and in a layer called: ""
+	b)ADd
+	c) ADD
+
+5. The script identifies the spaces and creates a csv file with the geometry characterized
+6. The .csv file can be loaed onto a Jupyter notebook to run a similarity analysis
+ 
+
+### D. Workflow to do similarity Analysis
+you can use the notebooks in the following folders 
+IBC_dev\06_MSD_Floorplan_SimilarityAnalysis
+
+MSD_to_IBC_Analysis.ipynb allows one understand the structure and content of Modified Swiss Dwellings dataset and create some graphs 
+
+MSD_to_Apartment_Layouts_EP.ipynb allows one 
+1. to load the data, add a floorplan, 
+2. get different elements of the floorplan
+3. Run a similarity analysis
+4. Create a graph
+
+
+	
+### E. Workflow for assigning specific element types to walls following a set of rules 
+
 ### How to infer the panel type information 
 (by default, the wall type in the exported JSON file is ""WAL_21_CNI_REN""), you should follow these steps:
 
-1. Save the exported JSON file in the same folder of other three python files
+1. Select a JSON file *i.e. sampleFloorplan.json that you have exported in the previous steps and place it in the same folder of other three python files 
    
 2. In the terminal, run **python buildGraph.py <File_Name>**, output file <File_Name>+bom.graphml
    
@@ -190,9 +238,11 @@ open the http://127.0.0.1:8000/index.html in your browser. You will see the Floo
    
 4. run **python updateJSON.py <File_Name>**, output file <File_Name>+bom_udpated.json
 
-### D. How to identify the frequent patterns
 
-1. Download "06. Module Platform".
+
+### F. How to identify the frequent patterns of space so that you can identify potential modules
+
+1. Download "07_DetectPossible3dModules.
 2. In the terminal, type "uvicorn app.main:app --reload"
 3. Open the local interface at: http://127.0.0.1:8000
 4. Upload the MSD dataset in csv format
@@ -200,6 +250,9 @@ open the http://127.0.0.1:8000/index.html in your browser. You will see the Floo
 6. Click the button "Mine & Filter"
 7. Click the button "Group Patterns"
 8. Enter the room combination, then click "Search" to query the specific patterns
+
+
+
 
 
 

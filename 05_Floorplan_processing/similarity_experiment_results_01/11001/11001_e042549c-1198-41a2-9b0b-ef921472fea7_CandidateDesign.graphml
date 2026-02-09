@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<graphml xmlns="http://graphml.graphdrawing.org/xmlns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://graphml.graphdrawing.org/xmlns http://graphml.graphdrawing.org/xmlns/1.0/graphml.xsd"><key id="d4" for="edge" attr.name="angle" attr.type="double"/>
+<key id="d3" for="node" attr.name="position" attr.type="string"/>
+<key id="d2" for="node" attr.name="length" attr.type="float"/>
+<key id="d1" for="node" attr.name="room" attr.type="string"/>
+<key id="d0" for="node" attr.name="panel_type" attr.type="string"/>
+<graph edgedefault="undirected"><node id="0">
+  <data key="d0">WAL_45_STD_TIL WAL_43_STD_REN</data>
+  <data key="d1">bathroom corridor</data>
+  <data key="d2">2.0</data>
+  <data key="d3">[[23.22, 15.47, 0], [25.22, 15.42, 0]]</data>
+</node>
+<node id="1">
+  <data key="d0">WAL_45_STD_TIL</data>
+  <data key="d1">bathroom</data>
+  <data key="d2">2.05</data>
+  <data key="d3">[[25.22, 15.42, 0], [25.22, 17.47, 0]]</data>
+</node>
+<node id="2">
+  <data key="d0">WAL_01_CNI_REN WAL_45_STD_TIL</data>
+  <data key="d1">bathroom</data>
+  <data key="d2">2.0</data>
+  <data key="d3">[[23.22, 17.47, 0], [25.22, 17.47, 0]]</data>
+</node>
+<node id="3">
+  <data key="d0">WAL_22_STD_REN WAL_45_STD_TIL</data>
+  <data key="d1">bathroom</data>
+  <data key="d2">2.0</data>
+  <data key="d3">[[23.22, 15.47, 0], [23.22, 17.47, 0]]</data>
+</node>
+<node id="4">
+  <data key="d0">WAL_45_STD_TIL</data>
+  <data key="d1">bathroom</data>
+  <data key="d2">3.11</data>
+  <data key="d3">[[20.11, 8.32, 0], [23.22, 8.32, 0]]</data>
+</node>
+<node id="5">
+  <data key="d0">WAL_45_STD_TIL WAL_43_STD_REN</data>
+  <data key="d1">bathroom corridor</data>
+  <data key="d2">2.05</data>
+  <data key="d3">[[23.22, 8.32, 0], [23.22, 10.37, 0]]</data>
+</node>
+<node id="6">
+  <data key="d0">WAL_22_STD_REN WAL_45_STD_TIL</data>
+  <data key="d1">bathroom</data>
+  <data key="d2">3.16</data>
+  <data key="d3">[[20.06, 10.37, 0], [23.22, 10.37, 0]]</data>
+</node>
+<node id="7">
+  <data key="d0">WAL_01_CNI_REN WAL_45_STD_TIL</data>
+  <data key="d1">bathroom</data>
+  <data key="d2">2.05</data>
+  <data key="d3">[[20.06, 10.37, 0], [20.11, 8.32, 0]]</data>
+</node>
+<node id="8">
+  <data key="d0">WAL_40_STD_REN</data>
+  <data key="d1">corridor</data>
+  <data key="d2">2.0</data>
+  <data key="d3">[[23.22, 8.32, 0], [25.22, 8.37, 0]]</data>
+</node>
+<node id="9">
+  <data key="d0">WAL_40_STD_REN</data>
+  <data key="d1">corridor</data>
+  <data key="d2">2.95</data>
+  <data key="d3">[[25.22, 8.37, 0], [25.22, 11.32, 0]]</data>
+</node>
+<node id="10">
+  <data key="d0">WAL_40_STD_REN</data>
+  <data key="d1">corridor</data>
+  <data key="d2">3.05</data>
+  <data key="d3">[[25.22, 11.32, 0], [25.22, 14.37, 0]]</data>
+</node>
+<node id="11">
+  <data key="d0">WAL_40_STD_REN</data>
+  <data key="d1">corridor</data>
+  <data key="d2">1.05</data>
+  <data key="d3">[[25.22, 14.37, 0], [25.22, 15.42, 0]]</data>
+</node>
+<node id="12">
+  <data key="d0">WAL_22_STD_REN</data>
+  <data key="d1">corridor</data>
+  <data key="d2">5.1</data>
+  <data key="d3">[[23.22, 10.37, 0], [23.22, 15.47, 0]]</data>
+</node>
+<edge source="0" target="1">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="0" target="3">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="0" target="11">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="0" target="12">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="1" target="2">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="1" target="11">
+  <data key="d4">0.0</data>
+</edge>
+<edge source="2" target="3">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="3" target="12">
+  <data key="d4">0.0</data>
+</edge>
+<edge source="4" target="5">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="4" target="7">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="4" target="8">
+  <data key="d4">0.0</data>
+</edge>
+<edge source="5" target="6">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="5" target="8">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="5" target="12">
+  <data key="d4">0.0</data>
+</edge>
+<edge source="6" target="7">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="6" target="12">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="8" target="9">
+  <data key="d4">90.0</data>
+</edge>
+<edge source="9" target="10">
+  <data key="d4">0.0</data>
+</edge>
+<edge source="10" target="11">
+  <data key="d4">0.0</data>
+</edge>
+</graph></graphml>

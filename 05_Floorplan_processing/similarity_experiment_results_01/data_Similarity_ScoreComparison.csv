@@ -1,0 +1,8 @@
+in:UUID,in:Floorplan,in:Reference 3d module,in:Parameter 1,in:Parameter 2,in:Parameter 3,out:Method,out:Score,out:Export Score,img
+e042549c-1198-41a2-9b0b-ef921472fea7,11001,Module1,,,,Kemp A,1.080833333,-1,filepathto/image1.png
+0f63d864-f718-461e-9f04-5c548ac96f14,12001,Module1,,,,Kemp A,1.086666667,-1,filepathto/image1.png
+b30a9e67-30e6-444c-8022-dc5003fb27a4,12009,Module1,,,,Kemp A,0.866666667,-1,filepathto/image1.png
+a40a07d8-8c62-4d1c-a969-31c2c9d106c7,14007,Module1,,,,Kemp A,0.8375,-1,filepathto/image1.png
+ef5ace26-712b-4b43-bd34-5b0337bf3c4c,14012,Module1,,,,Kemp A,0.601666667,-1,filepathto/image1.png
+1108b7be-e16a-4f0f-8440-f3a521cd2031,18003,Module1,,,,Kemp A,0.4725,-1,filepathto/image1.png
+1108b7be-e16a-4f0f-8440-f3a521cd23333,18003,Module2,,,,Evan Method A,0.546,-1,filepathto/image1.png
