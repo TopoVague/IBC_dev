@@ -17,13 +17,15 @@ In this repository we will store the sourcecode, test and efforts towards the de
 
 You can locally view and export ithe Catalog of parts using the Graphical User Interface within Rhinoceros 3d
 1) You  need to have Rhino 7 or 8 installed on your laptop/machine
-2) You need to have the following libraries installed: a) [Human UI](https://www.food4rhino.com/en/app/human-ui), b) [Metahopper](https://www.food4rhino.com/en/app/metahopper) c) [Bullant and RhinoIfc](https://geometrygym.wordpress.com/downloads-windows/) d) [Speckle](https://www.speckle.systems/download) 
+2) You need to have the following libraries installed: a) [Human UI](https://www.food4rhino.com/en/app/human-ui), b) [Metahopper](https://www.food4rhino.com/en/app/metahopper) c) [Bullant and RhinoIfc](https://geometrygym.wordpress.com/downloads-windows/) d) [Speckle](https://www.speckle.systems/download)  From the above libraries only RhinoIfc is proprietary, it is tied to a Rhino Version and are required for exporting in elements .ifc but not for viewing
 3) Open the file .ghx which you can find in the  03_readAndParse_ElementCatalog_v0_1
 4) Read the instructions on the top of the script to be able to navigate 
 5) In the folder input you can find a sample .xls file that you can use to parse. You will need to point to this file in the script
 6) you may need to adjust the file path of the catalog images to view them, but you should see something like the following image
    
 ![ZHAW_implenia_GUI_local_ve03](https://github.com/user-attachments/assets/31968860-6e0d-43e6-ab2d-536bcdf71998)
+
+
 
 
 ### A.2 Web Viewer
