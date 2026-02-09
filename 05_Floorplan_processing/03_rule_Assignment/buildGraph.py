@@ -129,7 +129,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     base_name = sys.argv[1]
-    input_file = f"{base_name}_bom.json"
+    input_file = f"{base_name}.json"
 
     # 1) Load JSON
     print(f"Loading JSON from: {input_file}")
@@ -137,7 +137,7 @@ if __name__ == "__main__":
         data = json.load(f)
 
     panels = data['panels']['items']  # dict of wall definitions
-    rooms = data['rooms']          # dict of polygons
+    rooms = data['spaces']          # dict of polygons
 
     G = nx.Graph()
 

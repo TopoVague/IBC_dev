@@ -12,13 +12,6 @@ and a generative design to optimize project configurations with modern methods o
 
 In this repository we will store the sourcecode, test and efforts towards the development of the tool 
 
-## Libraries
-
-The project relies mainly on open source libraries and platforms whch include
-- https://threejs.org/
-- https://ifcopenshell.org/
-- https://github.com/TopoVague/Topologic
-- https://github.com/mcneel/opennurbs
 
 ## Dependencies
 -flask
@@ -39,26 +32,13 @@ The project relies mainly on open source libraries and platforms whch include
 
 -shapely
 
+-neo4j
 
-## A. Instructions for accessing the SQL database setup by Implenia
-
-You can access the SQL database by doing the following steps
-1) To Connect to the Implenia Virtual Machine and
-2) Open  Azure Data Studio (Suggested software )
-3) Connect to Server: sqs-weu-sqlserver001-dev01.database.windows.net
-4) Select Database: SDB-IBC-DEV01
+-gspan
 
  
-Admin Users 
-exa_epantazis@implenia.com
-exa_jcao@implenia.com
-
-adm_sbinkert@implenia.com
-adm_jweis@implenia.com
-
- 
-## B. Instructions for the Building Element Catalogue - 
-### B.1 Rhino/Ghx Viewer
+## A. Instructions for the Building Element Catalogue - 
+### A.1 Rhino/Ghx Viewer
 
 You can locally view and export ithe Catalog of parts using the Graphical User Interface within Rhinoceros 3d
 1) You  need to have Rhino 7 or 8 installed on your laptop/machine
@@ -71,7 +51,7 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 ![ZHAW_implenia_GUI_local_ve03](https://github.com/user-attachments/assets/31968860-6e0d-43e6-ab2d-536bcdf71998)
 
 
-### B.1 Web Viewer
+### A.2 Web Viewer
 (This part will be developing as we progress)
 
 1) Clone the repository to your computer
@@ -104,6 +84,30 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 
 -Keep tests and development files in the 01_CodingTests Folder 
 
+## Libraries
+
+The project relies mainly on open source libraries and platforms whch include
+- https://threejs.org/
+- https://ifcopenshell.org/
+- https://github.com/TopoVague/Topologic
+- https://github.com/mcneel/opennurbs
+- 
+
+## A.3 Instructions for accessing the SQL database setup by Implenia
+
+You can access the SQL database by doing the following steps
+1) To Connect to the Implenia Virtual Machine and
+2) Open  Azure Data Studio (Suggested software )
+3) Connect to Server: sqs-weu-sqlserver001-dev01.database.windows.net
+4) Select Database: SDB-IBC-DEV01
+
+ 
+Admin Users 
+exa_epantazis@implenia.com
+exa_jcao@implenia.com
+
+
+
 ## C.Floorplan Processing
 
 All the files for can be found under 05_Floorplan_processing. We have developed two methods for processing the floorplans:
@@ -113,19 +117,13 @@ C.2 A Rhino/Ghx based which allows the user to load a dxf with a floorplan and f
 
 ### C.1 Workflow Overview of Floor Plan Processing Tool-WEB
 
-TODO Add an image here
-
 The workflow consists of the following steps:
 
 1) Floor Plan Annotation (Web Interface) – Users can upload PDFs, draw polylines to define rooms, classify spaces, and group them into apartments.
 
 2) Export to JSON – Annotated floor plans are exported as structured JSON files.
 
-3) Graph Processing – JSON files are converted into a graph representation using buildGraph.py.
 
-4) Rule-Based Classification – The ruleAssignment.py script assigns classifications to building elements.
-
-5) Final JSON Update – updateJSON.py updates the exported JSON with assigned classifications.
 
 ## Detailed Instruction
 Before running the files, install the dependency by running 
@@ -158,61 +156,76 @@ open the http://127.0.0.1:8000/index.html in your browser. You will see the Floo
    
    5.5 One the right side panel, you will see the information about the room
    
-   5.6 Chnage the room type, you can create another polyline for a different room
+   5.6 Change the room type, you can create another polyline for a different room
    
 6. After all room is annotated with polyline, click "Define Apartment" to define apartment one by one.
 7. Select rooms you want to group as an apartment by clicking the "room tag" of each room, the color of selected room tag will change to orange.
 8. Click "Confirm Grouping", the apartment profile will automatically appear in the right side panel. Please check the profile to make sure the apartment is defined correctly
 9. Click "Export JSON", the initial bill of material file could be downloaded as "<File_Name>+bom.json".
 
+The Exported file can be loaded and visualized in Rhino/ghx
 
 
 ### C.2 Workflow Overview of Floor Plan Processing Tool-Rhino/Ghx 
 
-TODO - EVAN TO ADD better explanation HERE
-
-This workflow allows the user to load a floorplan and format it into a .csv file following the Modified Swiss Dwelling format. The reason to follow this format is to be able to compare candidate Designs with a lot floorplans so that you can run similarity analysis
+This step allows the user to load a floorplan and format it into a .csv file following the Modified Swiss Dwelling format. The reason to follow this format is to be able to compare candidate Designs with a lot floorplans so that you can run similarity analysis
 
 
-1. You can navigate to the folder 05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH
+1. You can navigate to the following folder: 05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH
 2. you can open the script readFlooplan_andFormat_ToMSD_csv.gh
-3. You can load a dxf file of a flooplnas. You can find template files here : 
+3. You can load a .dxf or .3dm file of a flooplan drawn with a detail of 1:50 - 1:200 scale meaning that the floorplan needs to have . You can find template files here: 
 05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH\implenia_CaseStudies_floorplans
-4. The file should be strcutured as follows 
-	a) room outlines should be closed polylines and in a layer called: ""
-	b)ADd
-	c) ADD
+4. To ensure no errors the file should be strcutured as follows 
+	a) room outlines should be closed polylines and in a layer called: "areas"
+	b) wall outlines should be closed polylines and in a layer called: "walls"
+	c) window outlines should be closed polylines and in a layer called: "windows"
+	d) door outlines should be closed polylines and in a layer called: "doors"
+	e) room tags should be a text and in a layer called: "textTags"
 
-5. The script identifies the spaces and creates a csv file with the geometry characterized
-6. The .csv file can be loaed onto a Jupyter notebook to run a similarity analysis
+5. The script identifies the spaces, walls, doors and predicts the entrance doors and creates a .csv file with the geometry characterized based on the MSD data structure
+6. The .csv file can be loaded onto the Jupyter notebook (Section D)to run a similarity analysis
  
 
-### D. Workflow to do similarity Analysis
-you can use the notebooks in the following folders 
-IBC_dev\06_MSD_Floorplan_SimilarityAnalysis
+### D. Workflow to perform similarity Analysis
+This workflow allows the user to load a candidate floorplan and assess if it is a good fit for being constructed using the kit of parts. You can use the notebooks (.ipynb) in the following folder to run this similarity analysis: IBC_dev\06_MSD_Floorplan_SimilarityAnalysis
 
-MSD_to_IBC_Analysis.ipynb allows one understand the structure and content of Modified Swiss Dwellings dataset and create some graphs 
+File 01: MSD_to_IBC_Analysis.ipynb 
+allows one to:
+1. understand the structure and content of Modified Swiss Dwellings dataset 
+2. access different elements
+3. Ananlyse the floorplans and buildings within the dataset and create some graphs 
 
-MSD_to_Apartment_Layouts_EP.ipynb allows one 
+File 02: MSD_to_Apartment_Layouts_EP.ipynb allows one 
 1. to load the data, add a floorplan, 
 2. get different elements of the floorplan
 3. Run a similarity analysis
-4. Create a graph
+4. Create a graph from the floorplan
 
+you can also access the files online by going to
+file01: https://colab.research.google.com/drive/1eWkULnThK1OuBiPrxwL76eywloHiC3t9
+file02: https://colab.research.google.com/drive/1vbqq6exLeOkzwvlGbymi_6qU3cqmQNt0
 
 	
 ### E. Workflow for assigning specific element types to walls following a set of rules 
+In this workflow from a floorplan which is formated as JSON we create a graph and visualize it and also assign different elements to different parts of the plan (i.e. specific type of walls based on their position)
+
+1) Graph Processing – JSON files are converted into a graph representation using buildGraph.py.
+
+2) Rule-Based Classification – The ruleAssignment.py script assigns classifications to building elements.
+
+3) Final JSON Update – updateJSON.py updates the exported JSON with assigned classifications.
 
 ### How to infer the panel type information 
-(by default, the wall type in the exported JSON file is ""WAL_21_CNI_REN""), you should follow these steps:
+(by default, the wall type in the exported JSON file is ""WAL_21_CNI_REN""), in order to update you should follow these steps:
 
-1. Select a JSON file *i.e. sampleFloorplan.json that you have exported in the previous steps and place it in the same folder of other three python files 
+1. Select a JSON file *i.e. sampleFloorplan_bom.json that you have exported in the previous steps and place it in the same folder of other three python files 
    
-2. In the terminal, run **python buildGraph.py <File_Name>**, output file <File_Name>+bom.graphml
+2. Create the graph from the floopllan. In the terminal, run **python buildGraph.py <File_Name>**, output file <File_Name>+bom.graphml i.e. python buildGraph.py sample_floorplan, output file sample_floorplan+bom.graphml 
    
-3. run **python ruleAssignment.py <File_Name>**, output file <File_Name>+bom_updated.graphml
+3. Assign specific elements to walls based on their location. In order to do that: run **python ruleAssignment.py <File_Name>**, output file <File_Name>+bom_updated.graphml
 
-	3.1 Rule explanation
+	
+	3.1 Here we explain the rules implemented so far:
 
 		3.1.1 Focus entire floorplan
 
@@ -236,25 +249,21 @@ MSD_to_Apartment_Layouts_EP.ipynb allows one
 
 		3.1.4 Focus on the shaft (longer side of bathroom + adjacent wet room)
    
-4. run **python updateJSON.py <File_Name>**, output file <File_Name>+bom_udpated.json
+4. Update the json file with the elements assigned: run **python updateJSON.py <File_Name>**, output file <File_Name>+bom_udpated.json
 
 
 
 ### F. How to identify the frequent patterns of space so that you can identify potential modules
 
-1. Download "07_DetectPossible3dModules.
-2. In the terminal, type "uvicorn app.main:app --reload"
-3. Open the local interface at: http://127.0.0.1:8000
-4. Upload the MSD dataset in csv format
-5. Change the variables, including "Rooms", "Max Width", "Compactness" and "Min Support"
-6. Click the button "Mine & Filter"
-7. Click the button "Group Patterns"
-8. Enter the room combination, then click "Search" to query the specific patterns
-
-
-
-
-
+1. Navigate to the folder and download it "07_DetectPossible3dModules/"
+2. Installed dependencies via pip if have not done so already by typing the following command "python -m pip install "uvicorn[standard]" fastapi neo4j pandas gspan-mining matplotlib flask
+4. In the terminal, type "uvicorn app.main:app --reload"
+5. Open the local interface at: http://127.0.0.1:8000
+6. Upload the MSD dataset in csv format - link to file:https://drive.google.com/file/d/1D67DLh8-EFHx-juhb2mAnI9XtV1O-_7l/view?usp=drive_link
+7. Change the variables, including "Rooms", "Max Width", "Compactness" and "Min Support"
+8. Click the button "Mine & Filter"
+9. Click the button "Group Patterns"
+10. Enter the room combination, then click "Search" to query the specific patterns
 
 
 ## Team

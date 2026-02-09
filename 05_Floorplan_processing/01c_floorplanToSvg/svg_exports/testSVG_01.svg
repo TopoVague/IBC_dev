@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  x="0" y="0" width="11.07px" height="11.22px" viewBox = " 0 0 11.07 11.22"  style="enable-background:new 0 0 11.07 11.22; " preserveAspectRatio="xMinYMin meet"  xml:space="preserve" >
+<g id="main ">
+<g id=" room">
+<polyline id="ee868bec-0d0c-4357-b3f5-223cc00412e0" points="7.3295 7.1965 7.3275 3.2732 6.7736 3.2732 6.7736 3.1582 5.3979 3.1564 5.3937 2.7213 5.1537 2.7213 5.1579 6.0412 5.3979 6.0412 5.3983 7.1976 7.3295 7.1965 "  data-thisiscircle="Key 1" class="cls-1481323330" >  </polyline>
+</g>
+<g id=" text">
+<a xlink:href="https://www.shapediver.com" target="_blank">
+<text id="c5dabd55-8825-4354-868a-08ad93fe5177" x="0.66" y="0.495" transform = "rotate(0 0.66 0.495)" data-thisistext="" class="cls-415080677" > CORRIDOR </text></a>
+
+<a xlink:href="https://www.shapediver.com" target="_blank">
+<text id="e5e16794-4991-4931-b86a-bf8c5f0b1938" x="0.66" y="0.495" transform = "rotate(0 0.66 0.495)" data-thisistext="" class="cls-415080677" > CORRIDOR </text></a>
+
+<a xlink:href="https://www.shapediver.com" target="_blank">
+<text id="d222056b-2174-48b2-8433-c145901a7199" x="0.66" y="0.495" transform = "rotate(0 0.66 0.495)" data-thisistext="" class="cls-415080677" > BATH </text></a>
+
+<a xlink:href="https://www.shapediver.com" target="_blank">
+<text id="2d8413f0-7c71-4183-befe-e9dfd8d028e7" x="0.66" y="0.495" transform = "rotate(0 0.66 0.495)" data-thisistext="" class="cls-415080677" > KITCHEN </text></a>
+
+<a xlink:href="https://www.shapediver.com" target="_blank">
+<text id="84fdfd8e-8045-4090-b732-d70755f0d4dc" x="0.66" y="0.495" transform = "rotate(0 0.66 0.495)" data-thisistext="" class="cls-415080677" > SLEEPING </text></a>
+
+<a xlink:href="https://www.shapediver.com" target="_blank">
+<text id="9a9e0ea3-9a93-4fd1-be7c-81984ce005a8" x="0.66" y="0.495" transform = "rotate(0 0.66 0.495)" data-thisistext="" class="cls-415080677" > LIVING </text></a>
+
+</g>
+</g>
+<defs>
+<style> .cls-1481323330{stroke:#FF0000 ; stroke-opacity:1; stroke-width:2; stroke-dasharray:10, 5, 10, 5; fill:none; } </style>
+<style> .cls-415080677{stroke:none; stroke-linecap:round; stroke-linejoin:round; fill:Black ; fill-opacity:1; font-family: Arial; font-size:4px; text-anchor:middle; dominant-baseline:middle; } </style>
+</defs>
+</svg>
