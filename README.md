@@ -12,13 +12,6 @@ and a generative design to optimize project configurations with modern methods o
 
 In this repository we will store the sourcecode, test and efforts towards the development of the tool 
 
-## Libraries
-
-The project relies mainly on open source libraries and platforms whch include
-- https://threejs.org/
-- https://ifcopenshell.org/
-- https://github.com/TopoVague/Topologic
-- https://github.com/mcneel/opennurbs
 
 ## Dependencies
 -flask
@@ -43,28 +36,9 @@ The project relies mainly on open source libraries and platforms whch include
 
 -gspan
 
--
-
-
-## A. Instructions for accessing the SQL database setup by Implenia
-
-You can access the SQL database by doing the following steps
-1) To Connect to the Implenia Virtual Machine and
-2) Open  Azure Data Studio (Suggested software )
-3) Connect to Server: sqs-weu-sqlserver001-dev01.database.windows.net
-4) Select Database: SDB-IBC-DEV01
-
  
-Admin Users 
-exa_epantazis@implenia.com
-exa_jcao@implenia.com
-
-adm_sbinkert@implenia.com
-adm_jweis@implenia.com
-
- 
-## B. Instructions for the Building Element Catalogue - 
-### B.1 Rhino/Ghx Viewer
+## A. Instructions for the Building Element Catalogue - 
+### A.1 Rhino/Ghx Viewer
 
 You can locally view and export ithe Catalog of parts using the Graphical User Interface within Rhinoceros 3d
 1) You  need to have Rhino 7 or 8 installed on your laptop/machine
@@ -77,7 +51,7 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 ![ZHAW_implenia_GUI_local_ve03](https://github.com/user-attachments/assets/31968860-6e0d-43e6-ab2d-536bcdf71998)
 
 
-### B.1 Web Viewer
+### A.2 Web Viewer
 (This part will be developing as we progress)
 
 1) Clone the repository to your computer
@@ -109,6 +83,30 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 -Put files that you load (i.e. 3d models, images etc) in the 02_assets folder (we might need to change this)  
 
 -Keep tests and development files in the 01_CodingTests Folder 
+
+## Libraries
+
+The project relies mainly on open source libraries and platforms whch include
+- https://threejs.org/
+- https://ifcopenshell.org/
+- https://github.com/TopoVague/Topologic
+- https://github.com/mcneel/opennurbs
+- 
+
+## A.3 Instructions for accessing the SQL database setup by Implenia
+
+You can access the SQL database by doing the following steps
+1) To Connect to the Implenia Virtual Machine and
+2) Open  Azure Data Studio (Suggested software )
+3) Connect to Server: sqs-weu-sqlserver001-dev01.database.windows.net
+4) Select Database: SDB-IBC-DEV01
+
+ 
+Admin Users 
+exa_epantazis@implenia.com
+exa_jcao@implenia.com
+
+
 
 ## C.Floorplan Processing
 
@@ -266,8 +264,6 @@ In this workflow from a floorplan which is formated as JSON we create a graph an
 8. Click the button "Mine & Filter"
 9. Click the button "Group Patterns"
 10. Enter the room combination, then click "Search" to query the specific patterns
-
-
 
 
 ## Team
