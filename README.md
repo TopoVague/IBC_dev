@@ -146,16 +146,16 @@ This step allows the user to load a floorplan and format it into a .csv file fol
 1. You can navigate to the following folder: 05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH
 2. you can open the script readFlooplan_andFormat_ToMSD_csv.gh
 3. You can load a .dxf or .3dm file of a flooplan drawn with a detail of 1:50 - 1:200 scale meaning that the floorplan needs to have . You can find template files here: 
-05_Floorplan_processing\02_readFloorplanAndFormatIntoMSD_csv_GH\implenia_CaseStudies_floorplans
+05_Floorplan_processing\00_implenia_CaseStudies_floorplans\
 4. To ensure no errors the file should be strcutured as follows 
-	a) room outlines should be closed polylines and in a layer called: "areas"
-	b) wall outlines should be closed polylines and in a layer called: "walls"
-	c) window outlines should be closed polylines and in a layer called: "windows"
-	d) door outlines should be closed polylines and in a layer called: "doors"
-	e) room tags should be a text and in a layer called: "textTags"
+	4.1 room outlines should be closed polylines and in a layer called: "areas"
+    4.2  wall outlines should be closed polylines and in a layer called: "walls"
+	4.3 window outlines should be closed polylines and in a layer called: "windows"
+	4.4 door outlines should be closed polylines and in a layer called: "doors"
+    4.5 room tags should be a text and in a layer called: "textTags"
 
-5. The script identifies the spaces, walls, doors and predicts the entrance doors and creates a .csv file with the geometry characterized based on the MSD data structure
-6. The .csv file can be loaded onto the Jupyter notebook (Section D)to run a similarity analysis
+6. The script identifies the spaces, walls, doors and predicts the entrance doors and creates a .csv file with the geometry characterized based on the MSD data structure
+7. The .csv file can be loaded onto the Jupyter notebook (Section D)to run a similarity analysis
  
 
 ### D. Workflow to perform similarity Analysis
