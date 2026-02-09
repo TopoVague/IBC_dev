@@ -9,32 +9,7 @@ A tool for Rapid Design Generation and Optimization in Modern Methods of Constru
 This project develops an intelligent configurator, including a BIM library offering collaborative BIM data accessibility, 
 a similarity analysis between traditional projects and standardized products, 
 and a generative design to optimize project configurations with modern methods of construction.
-
-In this repository we will store the sourcecode, test and efforts towards the development of the tool 
-
-
-## Dependencies
--flask
-
--node.js
-
--three.js
-
--Python
-
--ifcOpenShell
-
--TopologicPy
-
--networkx
-
--matplotlib
-
--shapely
-
--neo4j
-
--gspan
+In this repository we will store the sourcecode, test and efforts towards the development of the tool. Make sure to install all the necessary libraries and dependencies which are listed at the bottom BEFORE you attept to run any scripts
 
  
 ## A. Instructions for the Building Element Catalogue - 
@@ -84,14 +59,6 @@ You can locally view and export ithe Catalog of parts using the Graphical User I
 
 -Keep tests and development files in the 01_CodingTests Folder 
 
-## Libraries
-
-The project relies mainly on open source libraries and platforms whch include
-- https://threejs.org/
-- https://ifcopenshell.org/
-- https://github.com/TopoVague/Topologic
-- https://github.com/mcneel/opennurbs
-- 
 
 ## A.3 Instructions for accessing the SQL database setup by Implenia
 
@@ -252,7 +219,6 @@ In this workflow from a floorplan which is formated as JSON we create a graph an
 4. Update the json file with the elements assigned: run **python updateJSON.py <File_Name>**, output file <File_Name>+bom_udpated.json
 
 
-
 ### F. How to identify the frequent patterns of space so that you can identify potential modules
 
 1. Navigate to the folder and download it "07_DetectPossible3dModules/"
@@ -265,6 +231,37 @@ In this workflow from a floorplan which is formated as JSON we create a graph an
 9. Click the button "Group Patterns"
 10. Enter the room combination, then click "Search" to query the specific patterns
 
+
+## Libraries
+
+The project relies mainly on open source libraries and platforms whch include
+- https://threejs.org/
+- https://ifcopenshell.org/
+- https://github.com/TopoVague/Topologic
+- https://github.com/mcneel/opennurbs
+
+## Dependencies
+-flask
+
+-node.js
+
+-three.js
+
+-Python
+
+-ifcOpenShell
+
+-TopologicPy
+
+-networkx
+
+-matplotlib
+
+-shapely
+
+-neo4j
+
+-gspan
 
 ## Team
 - Evangelos Pantazis / ZHAW - Senior Researcher
