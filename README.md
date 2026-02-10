@@ -226,15 +226,20 @@ In this workflow from a floorplan which is formated as JSON we create a graph an
 
 ### F. How to identify the frequent patterns of space so that you can identify potential modules
 
-1. Navigate to the folder and download it "07_DetectPossible3dModules/"
-2. Installed dependencies via pip if have not done so already by typing the following command "python -m pip install "uvicorn[standard]" fastapi neo4j pandas gspan-mining matplotlib flask
-4. In the terminal, type "uvicorn app.main:app --reload"
-5. Open the local interface at: http://127.0.0.1:8000
-6. Upload the MSD dataset in csv format - link to file:https://drive.google.com/file/d/1D67DLh8-EFHx-juhb2mAnI9XtV1O-_7l/view?usp=drive_link
-7. Change the variables, including "Rooms", "Max Width", "Compactness" and "Min Support"
-8. Click the button "Mine & Filter"
-9. Click the button "Group Patterns"
-10. Enter the room combination, then click "Search" to query the specific patterns
+##Installations
+Install dependencies via pip if have not done so already by typing the following command:
+"python -m pip install "uvicorn[standard]" fastapi neo4j pandas gspan-mining matplotlib flask python-multipart
+
+##Run the workflow
+1. Navigate to the "07_DetectPossible3dModules/" folder and download it locally  . Downloading is important because when you run the following scripts a series of files are created.
+2. In the terminal, type "uvicorn app.main:app --reload"
+3. Open the local interface at: http://127.0.0.1:8000
+4. Upload the MSD dataset in csv format - link to the Modified Swiss Dwellings dataset file:https://drive.google.com/file/d/1D67DLh8-EFHx-juhb2mAnI9XtV1O-_7l/view?usp=drive_link
+5. Once you have uploaded the files you should allow some time to process the floorplans
+6. Change the variables, including "Rooms", "Max Width", "Compactness" and "Min Support"
+7. Click the button "Mine & Filter"
+8. Click the button "Group Patterns"
+9. Enter the room combination, then click "Search" to query the specific patterns
 
 
 ## Libraries
@@ -247,26 +252,20 @@ The project relies mainly on open source libraries and platforms whch include
 
 ## Dependencies
 -flask
-
 -node.js
-
 -three.js
-
 -Python
-
 -ifcOpenShell
-
 -TopologicPy
-
 -networkx
-
 -matplotlib
-
 -shapely
-
 -neo4j
-
 -gspan
+-gspan-mining
+-fastapi 
+-pandas 
+-python-multipart
 
 ## Team
 - Evangelos Pantazis / ZHAW - Senior Researcher
