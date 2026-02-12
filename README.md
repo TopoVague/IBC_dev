@@ -163,9 +163,9 @@ This workflow allows the user to load a candidate floorplan and assess if it is 
 
 File 01: MSD_to_IBC_Analysis.ipynb 
 allows one to:
-1. understand the structure and content of Modified Swiss Dwellings dataset 
-2. access different elements
-3. Ananlyse the floorplans and buildings within the dataset and create some graphs 
+1. Understand the structure and content of Modified Swiss Dwellings dataset 
+2. Access different elements
+3. Analyse the floorplans and buildings within the dataset and create some graphs 
 
 File 02: MSD_to_Apartment_Layouts_EP.ipynb allows one 
 1. to load the data, add a floorplan, 
